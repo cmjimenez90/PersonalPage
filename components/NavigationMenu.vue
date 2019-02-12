@@ -5,27 +5,28 @@
     app
     disable-resize-watcher
    >
-    <v-list>
-      <v-list-tile 
-       v-for="(link, index) in links"
-       :key = "index"
-      >
-       <v-list-tile-content>
-          <nuxt-link v-bind:to='link.route'>
-            {{link.title}}
-          </nuxt-link>
-       </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
-   </v-navigation-drawer>
-   <v-toolbar class="indigo">
-     <v-toolbar-title>Carlos M Jimenez</v-toolbar-title>
-     <v-spacer></v-spacer>
-     <v-toolbar-side-icon
-     class="hidden-sm-and-up"
-     @click="drawer = !drawer"
+   <v-list>
+     <v-list-tile
+       v-for="(link,index) in links"
+       :key = 'index'
      >
-     </v-toolbar-side-icon>
+      <v-list-tile-content>
+        <v-btn block flat :to='link.route' nuxt>{{link.title}}</v-btn>
+      </v-list-tile-content>
+     </v-list-tile>
+   </v-list>
+   </v-navigation-drawer>
+   <v-toolbar>
+     <v-toolbar-title>{{menuTitle}}</v-toolbar-title>
+     <v-spacer />
+     <v-toolbar-side-icon class="hidden-md-and-up" @click='drawer = !drawer'/>
+     <v-toolbar-items
+       class="hidden-sm-and-down"
+       v-for="(link,index) in links"
+       :key = 'index'
+     >
+      <v-btn block flat :to='link.route' nuxt>{{link.title}}</v-btn>
+     </v-toolbar-items>
    </v-toolbar>
 </span>
 </template>
@@ -38,6 +39,7 @@ export default {
     }
   },
   props: {
+    menuTitle: String,
     links: Array
   }
 }

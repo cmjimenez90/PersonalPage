@@ -1,5 +1,5 @@
 <template>
-  <navigation-menu v-bind:links=links></navigation-menu>
+  <navigation-menu v-bind:links=links v-bind:menuTitle=menuTitle></navigation-menu>
 </template>
 
 <script>
@@ -17,7 +17,8 @@ export default {
           title: 'BLOG',
           route: 'BLOG'
         }
-      ]
+      ],
+      menuTitle: 'Carlos M Jimenez'
     }
   },
   components: {
