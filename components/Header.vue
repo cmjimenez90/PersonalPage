@@ -1,11 +1,14 @@
 <template>
-  <navigation-menu v-bind:links=links v-bind:menuTitle=menuTitle></navigation-menu>
+  <navigation-menu :links="links" :menu-title="menuTitle" />
 </template>
 
 <script>
 import NavigationMenu from '~/components/NavigationMenu.vue'
 
 export default {
+  components: {
+    NavigationMenu
+  },
   data: function() {
     return {
       links: [
@@ -20,9 +23,6 @@ export default {
       ],
       menuTitle: 'Carlos M Jimenez'
     }
-  },
-  components: {
-    NavigationMenu
   }
 }
 </script>
