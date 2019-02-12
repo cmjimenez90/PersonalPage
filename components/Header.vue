@@ -1,21 +1,27 @@
 <template>
-  <v-toolbar color="blue-grey lighten-1">
-    <v-toolbar-title>Carlos M Jimenez</v-toolbar-title>
-    <v-spacer />
-    <v-toolbar-items class="hidden-xs-only">
-      <v-btn flat>
-        HOME
-      </v-btn> 
-      <v-btn flat>
-        BLOG
-      </v-btn> 
-    </v-toolbar-items>
-    <v-toolbar-items class="hidden-sm-and-up">
-      <v-toolbar-side-icon>
-        <v-icon>
-          menu
-        </v-icon>
-      </v-toolbar-side-icon>
-    </v-toolbar-items>   
-  </v-toolbar> 
+  <navigation-menu v-bind:links=links></navigation-menu>
 </template>
+
+<script>
+import NavigationMenu from '~/components/NavigationMenu.vue'
+
+export default {
+  data: function() {
+    return {
+      links: [
+        {
+          title: 'HOME',
+          route: '/'
+        },
+        {
+          title: 'BLOG',
+          route: 'BLOG'
+        }
+      ]
+    }
+  },
+  components: {
+    NavigationMenu
+  }
+}
+</script>
