@@ -1,12 +1,14 @@
 <template>
-  <profile></profile>
+  <v-container>
+    <profile-picture profile-picture-path="/self_prof_bw.jpg" profile-name="Carlos M Jimenez"></profile-picture>
+  </v-container>
 </template>
 
 <script>
-import Profile from '~/components/Profile.vue'
+import ProfilePicture from '~/components/ProfilePicture.vue'
 export default {
   components: {
-    Profile
+    ProfilePicture
   }
 }
 </script>
