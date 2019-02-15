@@ -23,11 +23,11 @@
         <v-img src:titleIcon></v-img>
       </v-avatar>
       <v-spacer />
-      <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer" />
+      <v-toolbar-side-icon class="hidden-sm-and-up" @click="drawer = !drawer" />
       <v-toolbar-items
         v-for="(link,index) in links"
         :key="index"
-        class="hidden-sm-and-down"
+        class="hidden-xs-only"
       >
         <v-btn block flat :to="link.route" nuxt>
           {{ link.title }}
