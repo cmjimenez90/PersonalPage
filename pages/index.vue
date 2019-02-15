@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout row wrap justify-center>
-      <Bio/>  
+      <Bio />  
     </v-layout>
   </v-container>
 </template>

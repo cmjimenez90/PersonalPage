@@ -1,5 +1,5 @@
 <template>
-  <navigation-menu :links="links"/>
+  <navigation-menu :links="links" />
 </template>
 
 <script>
