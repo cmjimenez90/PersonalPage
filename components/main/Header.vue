@@ -1,5 +1,5 @@
 <template>
-  <navigation-menu :links="links" :menu-title="menuTitle" />
+  <navigation-menu :links="links"/>
 </template>
 
 <script>
@@ -20,8 +20,7 @@ export default {
           title: 'BLOG',
           route: 'BLOG'
         }
-      ],
-      menuTitle: 'Carlos M Jimenez'
+      ]
     }
   }
 }
