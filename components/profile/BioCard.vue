@@ -1,7 +1,7 @@
 <template>
   <v-card max-width="750">
     <v-layout wrap>
-      <v-flex xs12 sm5 md4 lg3 class="text-xs-center pt-3">
+      <v-flex xs12 sm5 md4 class="text-xs-center pt-3">
         <v-avatar class="pt-3" size="90">
           <v-img src="/self_prof_bw.jpg" />
         </v-avatar>
@@ -14,7 +14,7 @@
           </p>
         </v-card-text>
       </v-flex>
-      <v-flex xs12 sm6 md8 lg9 class="align-center justify-center">     
+      <v-flex xs12 sm6 md8 class="align-center justify-center">     
         <v-container fill-height>
           <p class="subheading">
             Writing code is one thing, building a solution that works for you is another.
