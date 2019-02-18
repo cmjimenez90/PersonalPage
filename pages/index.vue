@@ -20,14 +20,22 @@ export default {
     return {
       projects: [
         {
-          title: 'Test Project 1',
-          pictureUrl: '/Octocat.jpg',
-          description: 'short description about project'
+          project_title: 'Test Project 1',
+          project_image: '/Octocat.jpg',
+          project_description: 'short description about project',
+          project_vc_url: 'https://www.github.com',
+          project_vc_icon: '/Octocat.jpg',
+          project_example_url: 'https://www.github.com',
+          project_example_icon: '/Octocat.jpg'
         },
         {
-          title: 'Test Project 2',
-          pictureUrl: '/Octocat.jpg',
-          description: 'short description about project'
+          project_title: 'Test Project 2',
+          project_image: '/Octocat.jpg',
+          project_description: 'short description about project',
+          project_vc_url: 'https://www.github.com',
+          project_vc_icon: '/Octocat.jpg',
+          project_example_url: 'https://www.github.com',
+          project_example_icon: '/Octocat.jpg'
         }
       ]
     }
