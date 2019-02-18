@@ -6,6 +6,7 @@
     lg3
     v-for='(project,index) in projects'
     :key='index'
+    class="pa-1"
     >
     <project-card :project='project' />
     </v-flex>
