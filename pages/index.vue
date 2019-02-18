@@ -1,16 +1,16 @@
 <template>
   <v-container fluid>
     <v-layout row wrap justify-center>
-      <Bio />  
+      <BioCard />  
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import Bio from '~/components/profile/Bio.vue'
+import BioCard from '~/components/profile/BioCard.vue'
 export default {
   components: {
-    Bio
+    BioCard
   }
 }
 </script>
