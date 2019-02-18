@@ -2,10 +2,6 @@
 
 Personal Web page based on nuxt vue vuetify and buttercms
 
-# personal-page
-
-> Personal blog and webpage
-
 ## Build Setup
 
 ``` bash
