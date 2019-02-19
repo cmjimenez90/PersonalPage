@@ -5,7 +5,7 @@
       :key="index"
       xs12
       sm6
-      lg3
+      lg4
       class="pa-1"
     >
       <project-card :project="project" />
