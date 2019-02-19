@@ -14,7 +14,7 @@
           </p>
         </v-card-text>
       </v-flex>
-      <v-flex xs12 sm6 md8 class="align-center justify-center">     
+      <v-flex xs12 sm6 md8 class="align-center justify-center">
         <v-container fill-height>
           <p class="subheading">
             Writing code is one thing, building a solution that works for you is another.

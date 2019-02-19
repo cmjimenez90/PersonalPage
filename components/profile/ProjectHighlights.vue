@@ -1,14 +1,14 @@
 <template>
   <v-layout wrap justify-space-around>
     <v-flex
-    xs12
-    sm6
-    lg3
-    v-for='(project,index) in projects'
-    :key='index'
-    class="pa-1"
+      v-for="(project,index) in projects"
+      :key="index"
+      xs12
+      sm6
+      lg3
+      class="pa-1"
     >
-    <project-card :project='project' />
+      <project-card :project="project" />
     </v-flex>
   </v-layout>
 </template>

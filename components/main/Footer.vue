@@ -1,40 +1,40 @@
 <template>
-  <v-footer class='mt-2' height="auto">
-      <v-layout
-       wrap
-       class="text-xs-center"
-       justify-space-around
-       align-center
+  <v-footer class="mt-2" height="auto">
+    <v-layout
+      wrap
+      class="text-xs-center"
+      justify-space-around
+      align-center
+    >
+      <v-flex
+        xs12
+        md6
+        class="text-md-right text-xs-center"
       >
-        <v-flex
-         xs12
-         md6
-         class="text-md-right text-xs-center"
+        <div class="title">
+          Made With: 
+        </div>
+      </v-flex>
+      <v-flex
+        v-for="tool in tools"
+        :key="tool.logo"
+        xs12
+        sm6
+        md2
+      >
+        <v-btn
+          :href="tool.link"
+          block
+          flat   
         >
-          <div class="title">
-            Made With: 
-          </div>
-        </v-flex>
-        <v-flex
-         xs12
-         sm6
-         md2
-         v-for='tool in tools'
-         :key="tool.logo"
-        >
-          <v-btn
-           :href="tool.link"
-            block
-            flat   
-          >
-            <v-img
-             :src='tool.logo'
-             max-height="35"
-             contain
-            />
-          </v-btn>
-        </v-flex>
-      </v-layout>
+          <v-img
+            :src="tool.logo"
+            max-height="35"
+            contain
+          />
+        </v-btn>
+      </v-flex>
+    </v-layout>
   </v-footer>
 </template>
 

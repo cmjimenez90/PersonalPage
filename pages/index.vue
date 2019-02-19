@@ -5,9 +5,11 @@
     </v-layout>
     <v-layout row wrap justify-center>
       <v-flex xs12 class="text-xs-center ma-3">
-        <div class="subheading">Recent Projects</div>
+        <div class="subheading">
+          Recent Projects
+        </div>
       </v-flex>
-      <project-highlights :projects='projects' />
+      <project-highlights :projects="projects" />
     </v-layout>
   </v-container>
 </template>
@@ -16,6 +18,10 @@
 import BioCard from '~/components/profile/BioCard.vue'
 import ProjectHighlights from '~/components/profile/ProjectHighlights.vue'
 export default {
+  components: {
+    BioCard,
+    ProjectHighlights
+  },
   data: function() {
     return {
       projects: [
@@ -57,10 +63,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    BioCard,
-    ProjectHighlights
   }
 }
 </script>
