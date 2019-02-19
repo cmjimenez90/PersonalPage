@@ -14,13 +14,26 @@
 </template>
 
 <script>
+import { butter } from '@/buttercms'
 import ProjectCard from '~/components/profile/ProjectCard.vue'
 export default {
   components: {
     ProjectCard
   },
-  props: {
-    projects: Array
+  data: function() {
+    return {
+      projects: []
+    }
+  },
+  created() {
+    this.getProjects()
+  },
+  methods: {
+    getProjects() {
+      butter.content.retrieve(['cmjimenez_projects']).then(res => {
+        this.projects = res.data.data.cmjimenez_projects
+      })
+    }
   }
 }
 </script>
