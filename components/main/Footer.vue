@@ -24,12 +24,13 @@
         >
           <v-btn
            :href="tool.link"
-           flat
+            block
+            flat   
           >
             <v-img
              :src='tool.logo'
+             max-height="35"
              contain
-             max-height="25"
             />
           </v-btn>
         </v-flex>
