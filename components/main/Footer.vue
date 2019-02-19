@@ -11,8 +11,8 @@
         md6
         class="text-md-right text-xs-center"
       >
-        <div class="title">
-          Made With: 
+        <div class="display-1 font-weight-bold">
+          Made With
         </div>
       </v-flex>
       <v-flex
@@ -27,8 +27,32 @@
           block
           flat   
         >
+          <v-avatar>
+            <v-img
+              :src="tool.logo"
+              max-height="35"
+              contain
+            />
+            <span
+              class="align-left font-weight-black"
+            >
+              {{ tool.name }}
+            </span>
+          </v-avatar>
+        </v-btn>
+      </v-flex>
+      <v-flex
+        xs12
+        sm6
+        md2
+      >
+        <v-btn
+          :href="butterCMSreference.link"
+          block
+          flat   
+        >
           <v-img
-            :src="tool.logo"
+            :src="butterCMSreference.logo"
             max-height="35"
             contain
           />
@@ -45,17 +69,19 @@ export default {
       tools: [
         {
           link: 'https://vuetifyjs.com/en/',
-          logo: '/v.png'
+          logo: '/v.png',
+          name: 'Vuetify'
         },
         {
           link: 'https://vuejs.org/',
-          logo: '/Vue.png'
-        },
-        {
-          link: 'https://buttercms.com/',
-          logo: 'https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH'
+          logo: '/Vue.png',
+          name: 'Vue'
         }
-      ]
+      ],
+      butterCMSreference: {
+        link: 'https://buttercms.com/',
+        logo: 'https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH'
+      }
     }
   }
 }

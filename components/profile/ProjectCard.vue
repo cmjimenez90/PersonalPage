@@ -1,10 +1,12 @@
 <template>
   <v-card>
-    <v-card-title>{{ project.project_title }}</v-card-title>
+    <v-card-title class="title">
+      {{ project.project_title }}
+    </v-card-title>
     <v-responsive class="pt-2">
       <v-img :src="project.project_image" max-height="125" contain />
     </v-responsive>
-    <v-card-text>
+    <v-card-text class="subheading">
       <div>{{ project.project_description }}</div>
     </v-card-text>
     <v-card-actions>
@@ -23,7 +25,15 @@
 <script>
 export default {
   props: {
-    project: Object
+    project: {
+      type: Object,
+      default: function() {
+        return {
+          project_title: 'MISSING TITLE',
+          project_description: 'MISSING DESCRIPTION'
+        }
+      }
+    }
   }
 }
 </script>

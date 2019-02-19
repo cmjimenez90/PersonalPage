@@ -5,7 +5,7 @@
     </v-layout>
     <v-layout row wrap justify-center>
       <v-flex xs12 class="text-xs-center ma-3">
-        <div class="subheading">
+        <div class="font-weight-bold">
           Recent Projects
         </div>
       </v-flex>
