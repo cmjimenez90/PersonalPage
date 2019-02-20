@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card height="100%">
     <v-card-title class="title">
       {{ project.project_title }}
     </v-card-title>

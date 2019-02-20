@@ -1,9 +1,8 @@
 <template>
-  <v-layout wrap justify-space-around fill-height>
+  <v-layout wrap justify-space-around>
     <v-flex
       v-for="(project,index) in projects"
       :key="index"
-      height="100%"
       xs12
       sm6
       lg5
