@@ -1,11 +1,12 @@
 <template>
-  <v-layout wrap justify-space-around>
+  <v-layout wrap justify-space-around fill-height>
     <v-flex
       v-for="(project,index) in projects"
       :key="index"
+      height="100%"
       xs12
       sm6
-      lg4
+      lg5
       class="pa-1"
     >
       <project-card :project="project" />
