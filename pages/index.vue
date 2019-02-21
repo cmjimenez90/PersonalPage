@@ -9,7 +9,6 @@
       </v-flex>
       <project-highlights :projects="projects" />
     </v-layout>
-    </biocard>
   </v-container>
 </template>
 
