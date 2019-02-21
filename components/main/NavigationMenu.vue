@@ -19,9 +19,6 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar>
-      <v-avatar>
-        <v-img src:title-icon />
-      </v-avatar>
       <v-spacer />
       <v-toolbar-side-icon class="hidden-sm-and-up" @click="drawer = !drawer" />
       <v-toolbar-items
@@ -40,9 +37,14 @@
 <script>
 export default {
   props: {
-    menuTitle: String,
-    links: Array,
-    titleIcon: String
+    links: {
+      type: Array,
+      default: function() {
+        return {
+          defaultArray: []
+        }
+      }
+    }
   },
   data: function() {
     return {
