@@ -22,11 +22,11 @@
           </p>
         </v-card-text>
       </v-flex>
-      <v-flex xs12 sm6 md8 class="align-center justify-center">
+      <v-flex xs12 sm6 md8>
         <v-container fill-height>
           <v-expansion-panel v-if="$vuetify.breakpoint.xs" v-model="descriptionPanel" popout>
             <v-expansion-panel-content>
-              <div slot="header" class="text-xs-center font-weight-bold headline text-truncate">
+              <div slot="header" class="text-xs-center font-weight-bold subheading text-truncate">
                 <span v-if="descriptionPanel !== 0">
                   {{ description }}
                 </span>
