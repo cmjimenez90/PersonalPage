@@ -21,8 +21,8 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar class="primary darken-2" dark>
-      <v-spacer />
       <v-toolbar-side-icon class="hidden-sm-and-up" @click="drawer = !drawer" />
+      <v-spacer />
       <v-toolbar-items
         v-for="(link,index) in links"
         :key="index"
