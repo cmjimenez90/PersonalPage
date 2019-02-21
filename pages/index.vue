@@ -1,8 +1,6 @@
 <template>
   <v-container>
-    <v-layout row wrap justify-center>
-      <BioCard />
-    </v-layout>
+    <BioCard />
     <v-layout row wrap justify-center>
       <v-flex xs12 class="text-xs-center ma-3">
         <div class="font-weight-bold">

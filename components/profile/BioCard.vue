@@ -1,24 +1,41 @@
 <template>
-  <v-card max-width="750">
+  <v-card>
     <v-layout wrap>
-      <v-flex xs12 sm5 md4 class="text-xs-center pt-3">
-        <v-avatar class="pt-3" size="90">
+      <v-flex
+        xs12
+        sm5
+        md4
+        class="text-xs-center pt-3"
+        align-center
+        justify-center
+        fill-height
+      >
+        <v-avatar class="pt-3" :size="avatarHeight">
           <v-img src="/self_prof_bw.jpg" />
         </v-avatar>
         <v-card-text>
           <p class="title">
-            Carlos M. Jimenez
+            {{ name }}
           </p>
           <p class="caption">
-            Everyone's input counts
+            {{ caption }}
           </p>
         </v-card-text>
       </v-flex>
       <v-flex xs12 sm6 md8 class="align-center justify-center">
         <v-container fill-height>
-          <p class="subheading">
-            Writing code is one thing, building a solution that works for you is another.
-            Every client is unique. Lets build something that works for you, together!
+          <v-expansion-panel v-if="$vuetify.breakpoint.xs" popout>
+            <v-expansion-panel-content>
+              <div slot="header" class="text-xs-center font-weight-bold headline">
+                About
+              </div>
+              <p class="subheading">
+                {{ description }}
+              </p>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+          <p v-if="$vuetify.breakpoint.smAndUp" class="subheading">
+            {{ description }}
           </p>
         </v-container>
       </v-flex>
@@ -27,5 +44,33 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    caption: {
+      type: String,
+      default: 'Caption Here'
+    },
+    name: {
+      type: String,
+      default: 'Name Here'
+    },
+    description: {
+      type: String,
+      default:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel egestas leo, varius posuere arcu. Proin feugiat purus leo, suscipit iaculis sem cursus nec. Vivamus egestas leo nisl, sed sodales libero commodo eu. Duis congue sollicitudin elementum. Sed nisl orci, euismod et quam viverra, viverra finibus ex. Nulla vitae neque a dolor pharetra malesuada ac eget nulla. Quisque et neque sit amet lacus aliquam sodales vestibulum ut nisi. Etiam enim risus, vulputate eu congue eget, aliquam eu felis. Donec pellentesque vel mauris vitae rhoncus. Sed vestibulum leo a urna convallis imperdiet. Aenean rutrum magna eget magna vestibulum, ut pellentesque ex congue.'
+    }
+  },
+  computed: {
+    avatarHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return '100'
+        case 'sm':
+          return '120'
+        default:
+          return '180'
+      }
+    }
+  }
+}
 </script>
