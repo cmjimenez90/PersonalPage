@@ -17,7 +17,7 @@
           <p class="title">
             {{ name }}
           </p>
-          <p class="caption">
+          <p class="body-2">
             {{ caption }}
           </p>
         </v-card-text>
