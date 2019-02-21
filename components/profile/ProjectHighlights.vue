@@ -1,16 +1,18 @@
 <template>
-  <v-layout wrap justify-space-around>
-    <v-flex
-      v-for="(project,index) in projects"
-      :key="index"
-      xs12
-      sm6
-      lg5
-      class="pa-1"
-    >
-      <project-card :project="project" />
-    </v-flex>
-  </v-layout>
+  <v-container fill-height>
+    <v-layout wrap justify-space-around align-center>
+      <v-flex
+        v-for="(project,index) in projects"
+        :key="index"
+        xs12
+        sm6
+        lg5
+        class="pa-1"
+      >
+        <project-card :project="project" />
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
