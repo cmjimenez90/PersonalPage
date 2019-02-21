@@ -24,10 +24,13 @@
       </v-flex>
       <v-flex xs12 sm6 md8 class="align-center justify-center">
         <v-container fill-height>
-          <v-expansion-panel v-if="$vuetify.breakpoint.xs" popout>
+          <v-expansion-panel v-if="$vuetify.breakpoint.xs" v-model="descriptionPanel" popout>
             <v-expansion-panel-content>
-              <div slot="header" class="text-xs-center font-weight-bold headline">
-                About
+              <div slot="header" class="text-xs-center font-weight-bold headline text-truncate">
+                <span v-if="descriptionPanel !== 0">
+                  {{ description }}
+                </span>
+                <span v-else />
               </div>
               <p class="subheading">
                 {{ description }}
@@ -58,6 +61,11 @@ export default {
       type: String,
       default:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel egestas leo, varius posuere arcu. Proin feugiat purus leo, suscipit iaculis sem cursus nec. Vivamus egestas leo nisl, sed sodales libero commodo eu. Duis congue sollicitudin elementum. Sed nisl orci, euismod et quam viverra, viverra finibus ex. Nulla vitae neque a dolor pharetra malesuada ac eget nulla. Quisque et neque sit amet lacus aliquam sodales vestibulum ut nisi. Etiam enim risus, vulputate eu congue eget, aliquam eu felis. Donec pellentesque vel mauris vitae rhoncus. Sed vestibulum leo a urna convallis imperdiet. Aenean rutrum magna eget magna vestibulum, ut pellentesque ex congue.'
+    }
+  },
+  data: function() {
+    return {
+      descriptionPanel: [false]
     }
   },
   computed: {
