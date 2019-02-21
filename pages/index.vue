@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <BioCard />
+    <BioCard :name="name" :caption="caption" :description="description" />
     <v-layout row wrap justify-center>
       <v-flex xs12 class="text-xs-center ma-3">
         <div class="font-weight-bold">
@@ -9,6 +9,7 @@
       </v-flex>
       <project-highlights :projects="projects" />
     </v-layout>
+    </biocard>
   </v-container>
 </template>
 
@@ -19,6 +20,14 @@ export default {
   components: {
     BioCard,
     ProjectHighlights
+  },
+  data: function() {
+    return {
+      name: 'Carlos Jimenez',
+      caption: 'Forward Thinker, Aspiring Developer, Computer Technician',
+      description:
+        'An aspiring developer with a strong desire to take on any challenge. Carlos is currently employed as a Technical Support Technician for a Rowan College at Gloucester County while also pursuing a degree in Computer Science. In the meantime, he continues to push him self by learning new technologies and creating different tools on the side; whether its to solve a problem at work or just for fun.'
+    }
   }
 }
 </script>
