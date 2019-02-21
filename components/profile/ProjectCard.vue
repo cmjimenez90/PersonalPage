@@ -1,12 +1,12 @@
 <template>
   <v-card>
-    <v-card-title class="title primary lighten-1 white--text">
+    <v-card-title class="subheading primary lighten-1 white--text">
       {{ project.project_title }}
     </v-card-title>
     <v-responsive class="pt-2">
       <v-img :src="project.project_image" height="125" contain />
     </v-responsive>
-    <v-card-text class="subheading">
+    <v-card-text class="body-2">
       <div>{{ project.project_description }}</div>
     </v-card-text>
     <v-card-actions class="secondary lighten-4">

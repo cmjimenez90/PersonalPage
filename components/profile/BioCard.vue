@@ -8,7 +8,6 @@
         class="text-xs-center pt-3 primary lighten-1 white--text"
         align-center
         justify-center
-        fill-height
       >
         <v-avatar class="pt-3" :size="avatarHeight">
           <v-img src="/self_prof_bw.jpg" />
