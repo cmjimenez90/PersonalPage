@@ -4,11 +4,13 @@
       v-model="drawer"
       app
       disable-resize-watcher
+      class="primary"
     >
       <v-list>
         <v-list-tile
           v-for="(link,index) in links"
           :key="index"
+          dark
         >
           <v-list-tile-content>
             <v-btn block flat :to="link.route" nuxt>
@@ -18,7 +20,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar>
+    <v-toolbar class="primary" dark>
       <v-spacer />
       <v-toolbar-side-icon class="hidden-sm-and-up" @click="drawer = !drawer" />
       <v-toolbar-items

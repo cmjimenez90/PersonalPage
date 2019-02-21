@@ -5,7 +5,7 @@
         xs12
         sm5
         md4
-        class="text-xs-center pt-3"
+        class="text-xs-center pt-3 primary lighten-1 white--text"
         align-center
         justify-center
         fill-height
@@ -24,7 +24,7 @@
       </v-flex>
       <v-flex xs12 sm6 md8>
         <v-container fill-height>
-          <v-expansion-panel v-if="$vuetify.breakpoint.xs" v-model="descriptionPanel" popout>
+          <v-expansion-panel v-if="$vuetify.breakpoint.xs" v-model="descriptionPanel" popout class="secondary lighten-4">
             <v-expansion-panel-content>
               <div slot="header" class="text-xs-center font-weight-bold subheading text-truncate">
                 <span v-if="descriptionPanel !== 0">

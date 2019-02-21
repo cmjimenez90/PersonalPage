@@ -1,6 +1,6 @@
 <template>
   <v-card height="100%">
-    <v-card-title class="title">
+    <v-card-title class="title primary lighten-1 white--text">
       {{ project.project_title }}
     </v-card-title>
     <v-responsive class="pt-2">
@@ -9,7 +9,7 @@
     <v-card-text class="subheading">
       <div>{{ project.project_description }}</div>
     </v-card-text>
-    <v-card-actions>
+    <v-card-actions class="secondary lighten-4">
       <v-layout justify-space-around>
         <v-btn v-if="project.project_vc_url !== ''" block flat round :href="project.project_vc_url">
           <v-img :src="project.project_vc_icon" contain height="35" />

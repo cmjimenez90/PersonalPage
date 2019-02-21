@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="mt-2" height="auto">
+  <v-footer class="mt-2 primary" height="auto" dark>
     <v-layout
       wrap
       class="text-xs-center"
@@ -11,7 +11,7 @@
         md6
         class="text-md-right text-xs-center"
       >
-        <div class="display-1 font-weight-bold">
+        <div class="display-1 font-weight-bold" :class="{'pt-3': $vuetify.breakpoint.smAndDown}">
           Made With
         </div>
       </v-flex>
@@ -80,7 +80,7 @@ export default {
       ],
       butterCMSreference: {
         link: 'https://buttercms.com/',
-        logo: 'https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH'
+        logo: 'https://cdn.buttercms.com/RyJ7UhcVTCRqrCFXwgCo'
       }
     }
   }
