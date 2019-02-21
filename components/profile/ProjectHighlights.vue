@@ -8,15 +8,15 @@
       secondary
       lighten-2
     >
-      <v-flex
-        xs12
-        primary
-        darken-2
-        white--text
-        title
-        pa-3
-      >
-        <span>RECENT PROJECTS</span>
+      <v-flex xs12>
+        <v-toolbar
+          class="primary
+          darken-2
+          white--text
+          title"
+        >
+          <v-toolbar-title>RECENT PROJECTS</v-toolbar-title>
+        </v-toolbar>
       </v-flex>
       <v-flex
         v-for="(project,index) in projects"
