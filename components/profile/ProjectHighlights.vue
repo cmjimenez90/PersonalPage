@@ -1,6 +1,23 @@
 <template>
   <v-container fill-height>
-    <v-layout wrap justify-space-around align-center>
+    <v-layout
+      wrap
+      justify-space-around
+      align-center
+      fill-height
+      secondary
+      lighten-2
+    >
+      <v-flex
+        xs12
+        primary
+        darken-2
+        white--text
+        title
+        pa-3
+      >
+        <span>RECENT PROJECTS</span>
+      </v-flex>
       <v-flex
         v-for="(project,index) in projects"
         :key="index"

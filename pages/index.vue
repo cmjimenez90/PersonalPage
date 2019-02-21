@@ -2,11 +2,6 @@
   <v-container>
     <BioCard :name="name" :caption="caption" :description="description" />
     <v-layout row wrap justify-center>
-      <v-flex xs12 class="text-xs-center ma-3">
-        <div class="font-weight-bold">
-          Recent Projects
-        </div>
-      </v-flex>
       <project-highlights />
     </v-layout>
   </v-container>
