@@ -7,7 +7,7 @@
           Recent Projects
         </div>
       </v-flex>
-      <project-highlights :projects="projects" />
+      <project-highlights />
     </v-layout>
   </v-container>
 </template>
