@@ -22,6 +22,9 @@ export default {
       description:
         'An aspiring developer with a strong desire to take on any challenge. Carlos is currently employed as a Technical Support Technician for a Rowan College at Gloucester County while also pursuing a degree in Computer Science. In the meantime, he continues to push him self by learning new technologies and creating different tools on the side; whether its to solve a problem at work or just for fun.'
     }
+  },
+  async fetch({ store }) {
+    await store.dispatch('projects/fetchProjects')
   }
 }
 </script>
