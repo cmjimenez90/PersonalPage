@@ -23,7 +23,7 @@
       </v-flex>
       <v-flex xs12 sm6 md8>
         <v-container fill-height>
-          <v-expansion-panel v-if="$vuetify.breakpoint.xs" v-model="descriptionPanel" popout class="secondary lighten-4">
+          <v-expansion-panel v-show="$vuetify.breakpoint.xs" v-model="descriptionPanel" popout class="secondary lighten-4">
             <v-expansion-panel-content>
               <div slot="header" class="text-xs-center font-weight-bold subheading text-truncate">
                 <span v-if="descriptionPanel !== 0">
@@ -36,7 +36,7 @@
               </p>
             </v-expansion-panel-content>
           </v-expansion-panel>
-          <p v-if="$vuetify.breakpoint.smAndUp" class="subheading">
+          <p v-show="$vuetify.breakpoint.smAndUp" class="subheading">
             {{ description }}
           </p>
         </v-container>

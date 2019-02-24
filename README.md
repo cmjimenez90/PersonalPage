@@ -17,6 +17,9 @@ $ npm start
 
 # generate static project
 $ npm run generate
-```
+
+# run local docker static site
+$ docker build -t IMAGENAMEHERE .
+$ docker run --name CONTAINERNAMEHERE -d -p 8080:80 IMAGENAME
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
