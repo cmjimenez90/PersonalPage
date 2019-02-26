@@ -23,7 +23,7 @@
         <v-card-actions class="justify-space-around secondary lighten-4">
           <v-btn fab flat href="https://github.com/cmjimenez90">
             <v-avatar tile>
-              <v-img src="/Github-Mark-32px.png" contain />
+              <v-img src="/github_32.png" contain />
             </v-avatar>
           </v-btn>
           <v-btn fab flat href="https://twitter.com/CodeDebugolo">
