@@ -20,6 +20,23 @@
             {{ caption }}
           </p>
         </v-card-text>
+        <v-card-actions class="justify-space-around secondary lighten-4">
+          <v-btn fab flat href="https://github.com/cmjimenez90">
+            <v-avatar tile>
+              <v-img src="/Github-Mark-32px.png" contain />
+            </v-avatar>
+          </v-btn>
+          <v-btn fab flat href="https://twitter.com/CodeDebugolo">
+            <v-avatar tile>
+              <v-img src="/Twitter_Social_Icon_Rounded_Square_Color.png" contain />
+            </v-avatar>
+          </v-btn>
+          <v-btn fab flat href="https://www.linkedin.com/in/carlos-jimenez-82094182">
+            <v-avatar tile>
+              <v-img src="/In-2C-34px-TM.png" contain />
+            </v-avatar>
+          </v-btn>
+        </v-card-actions>
       </v-flex>
       <v-flex xs12 sm6 md8>
         <v-container fill-height>
