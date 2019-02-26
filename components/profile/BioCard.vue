@@ -10,7 +10,7 @@
         justify-center
       >
         <v-avatar class="pt-3" :size="avatarHeight">
-          <v-img src="/self_prof_bw.jpg" />
+          <v-img src="/self_prof_bw.jpg" alt="Headshot of Carlos Jimenez" />
         </v-avatar>
         <v-card-text>
           <p class="title">
@@ -23,15 +23,15 @@
         <v-card-actions class="justify-space-around secondary lighten-4">
           <v-btn fab flat href="https://github.com/cmjimenez90">
             <v-avatar tile>
-              <v-img src="/github_32.png" contain />
+              <v-img src="/github_32.png" contain alt="link to github" />
             </v-avatar>
           </v-btn>
           <v-btn fab flat href="https://twitter.com/CodeDebugolo">
             <v-avatar tile>
-              <v-img src="/Twitter_Social_Icon_Rounded_Square_Color.png" contain />
+              <v-img src="/Twitter_Social_Icon_Rounded_Square_Color.png" contain alt="link to twitter" />
             </v-avatar>
           </v-btn>
-          <v-btn fab flat href="https://www.linkedin.com/in/carlos-jimenez-82094182">
+          <v-btn fab flat href="https://www.linkedin.com/in/carlos-jimenez-82094182" alt="link to LinkedIn">
             <v-avatar tile>
               <v-img src="/In-2C-34px-TM.png" contain />
             </v-avatar>

@@ -4,7 +4,7 @@
       {{ project.project_title }}
     </v-card-title>
     <v-responsive class="pt-2">
-      <v-img :src="project.project_image" height="125" contain />
+      <v-img :src="project.project_image" height="125" contain alt="reference picture of " />
     </v-responsive>
     <v-card-text class="body-2">
       <div>{{ project.project_description }}</div>
