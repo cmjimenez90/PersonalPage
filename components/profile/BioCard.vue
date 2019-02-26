@@ -5,7 +5,7 @@
         xs12
         sm5
         md4
-        class="text-xs-center pt-3 primary lighten-1 white--text"
+        class="text-xs-center pt-3 primary darken-2 white--text"
         align-center
         justify-center
       >

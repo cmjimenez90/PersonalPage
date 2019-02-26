@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title class="subheading primary lighten-1 white--text">
+    <v-card-title class="subheading primary white--text">
       {{ project.project_title }}
     </v-card-title>
     <v-responsive class="pt-2">

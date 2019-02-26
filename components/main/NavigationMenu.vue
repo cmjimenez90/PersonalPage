@@ -4,7 +4,7 @@
       v-model="drawer"
       app
       disable-resize-watcher
-      class="primary darken-2"
+      class="primary darken-4"
     >
       <v-list>
         <v-list-tile
@@ -20,7 +20,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar class="primary darken-2" dark>
+    <v-toolbar class="primary darken-4" dark>
       <v-toolbar-side-icon class="hidden-sm-and-up" @click="drawer = !drawer" />
       <v-spacer />
       <v-toolbar-items

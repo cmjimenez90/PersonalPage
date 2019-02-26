@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="mt-2 primary" height="auto" dark>
+  <v-footer class="mt-2 primary darken-4" height="auto" dark>
     <v-layout
       wrap
       class="text-xs-center"
