@@ -25,13 +25,13 @@
         <v-container fill-height>
           <v-expansion-panel v-show="$vuetify.breakpoint.xs" v-model="descriptionPanel" popout class="secondary lighten-4">
             <v-expansion-panel-content>
-              <div slot="header" class="text-xs-center font-weight-bold subheading text-truncate">
+              <div slot="header" class="text-xs-center subheading text-truncate ">
                 <span v-if="descriptionPanel !== 0">
                   {{ description }}
                 </span>
                 <span v-else />
               </div>
-              <p class="subheading">
+              <p class="subheading text-xs-left px-3">
                 {{ description }}
               </p>
             </v-expansion-panel-content>
