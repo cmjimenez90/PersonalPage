@@ -4,11 +4,13 @@
       v-model="drawer"
       app
       disable-resize-watcher
+      class="primary darken-4"
     >
       <v-list>
         <v-list-tile
           v-for="(link,index) in links"
           :key="index"
+          dark
         >
           <v-list-tile-content>
             <v-btn block flat :to="link.route" nuxt>
@@ -18,12 +20,9 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar>
-      <v-avatar>
-        <v-img src:title-icon />
-      </v-avatar>
-      <v-spacer />
+    <v-toolbar class="primary darken-4" dark>
       <v-toolbar-side-icon class="hidden-sm-and-up" @click="drawer = !drawer" />
+      <v-spacer />
       <v-toolbar-items
         v-for="(link,index) in links"
         :key="index"
@@ -40,9 +39,14 @@
 <script>
 export default {
   props: {
-    menuTitle: String,
-    links: Array,
-    titleIcon: String
+    links: {
+      type: Array,
+      default: function() {
+        return {
+          defaultArray: []
+        }
+      }
+    }
   },
   data: function() {
     return {
