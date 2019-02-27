@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="pt-2 primary darken-4" height="auto" dark :class="{'pt-3': $vuetify.breakpoint.smAndDown}">
+  <v-footer class="py-2 primary darken-4" height="auto" dark :class="{'py-3': $vuetify.breakpoint.smAndDown}">
     <v-layout
       wrap
       class="text-xs-center"
@@ -11,7 +11,7 @@
         md6
         class="text-md-right text-xs-center"
       >
-        <div class="display-1 font-weight-bold" :class="{'pt-3': $vuetify.breakpoint.smAndDown}">
+        <div class="display-1 font-weight-bold">
           Made With
         </div>
       </v-flex>
