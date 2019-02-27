@@ -1,7 +1,7 @@
 {
   "name": "personal-page",
   "version": "1.0.0",
-  "description": "Personal blog and webpage",
+  "description": "The personal page of Carlos Jimenez. A developer, technical support technician, and all around problem solver.",
   "author": "Carlos M Jimenez",
   "private": true,
   "scripts": {
