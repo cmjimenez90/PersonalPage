@@ -19,7 +19,7 @@ $ npm start
 $ npm run generate
 
 # run local docker static site
-$ docker build -t IMAGENAMEHERE .
-$ docker run --name CONTAINERNAMEHERE -d -p 8080:80 IMAGENAME
+$ docker build --rm -f "dockerfile" -t personalpage:latest .
+$ docker run --rm -d -p 80:80/tcp personalpage:latest
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
