@@ -1,9 +1,23 @@
 <template>
   <v-container justify-center align-center fill-height>
-    <v-card>
-      <v-card-text class="primary--text text-xs-center" :class="{'display-4': $vuetify.breakpoint.mdAndUp,'display-1': $vuetify.breakpoint.smAnddown}">
-        COMING SOON
-      </v-card-text>
-    </v-card>
+    <BlogSummaryCard v-for="post in blogPosts" :key="post.title" :blog-summary="post" />
   </v-container>
 </template>
+
+<script>
+import BlogSummaryCard from '~/components/blog/BlogSummaryCard'
+
+export default {
+  components: {
+    BlogSummaryCard
+  },
+  computed: {
+    blogPosts: function() {
+      return this.$store.state.blog.list
+    }
+  },
+  async fetch({ store }) {
+    await store.dispatch('blog/fetchBlogPosts')
+  }
+}
+</script>
