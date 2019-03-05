@@ -8,7 +8,9 @@
       {{ BlogSummary.summary }}
     </v-card-text>
     <v-card-actions>
-      <v-btn nuxt :to="BlogSummary.slug" />
+      <v-btn nuxt :to="/blog/+BlogSummary.slug" flat>
+        READ MORE
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>

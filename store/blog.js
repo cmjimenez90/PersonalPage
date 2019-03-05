@@ -18,3 +18,9 @@ export const actions = {
     commit('set', data.data)
   }
 }
+
+export const getters = {
+  blogPostBySlug: state => slug => {
+    return state.list.find(post => post.slug === slug)
+  }
+}
