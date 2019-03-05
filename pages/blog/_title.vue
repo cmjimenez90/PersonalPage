@@ -1,6 +1,9 @@
 <template>
   <v-container>
-    <h1>{{ post.title }}</h1>
+    <body>
+      <h1>{{ post.title }}</h1>
+      <section v-html="post.body" />
+    </body>
   </v-container>
 </template>
 
