@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <BlogSummaryCard v-for="post in blogPosts" :key="post.title" :blog-summary="post" class="my-2" />
+    <BlogSummaryCard v-for="post in blogPosts" :key="post.title" :blog-post="post" class="my-2" />
   </v-container>
 </template>
 

@@ -1,0 +1,48 @@
+<template>
+  <v-container>
+    <template v-if="reduceItemsShown">
+      <v-chip v-for="n in 3" :key="n" small label>
+        {{ items[n].name }}
+      </v-chip>
+      <v-tooltip bottom>
+        <span slot="activator">
+          ...
+        </span>
+        <span>
+          <v-chip v-for="(item,index) in items" :key="index" small label>
+            {{ item.name }}
+          </v-chip>
+        </span>
+      </v-tooltip>
+    </template>
+    <template v-else>
+      <v-chip v-for="(item,index) in items" :key="index" small label>
+        {{ item.name }}
+      </v-chip>
+    </template>
+  </v-container>
+</template>
+
+<script>
+export default {
+  props: {
+    items: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
+  computed: {
+    reduceItemsShown: function() {
+      return this.items.length > 3
+    },
+    itemsCount: function() {
+      return this.items.length
+    }
+  }
+}
+</script>
+
+<style>
+</style>
