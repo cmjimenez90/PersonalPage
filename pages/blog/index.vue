@@ -1,6 +1,10 @@
 <template>
   <v-container>
-    <BlogSummaryCard v-for="post in blogPosts" :key="post.title" :blog-post="post" class="my-2" />
+    <v-layout justify-center>
+      <v-flex xs12 sm6>
+        <BlogSummaryCard v-for="post in blogPosts" :key="post.title" :blog-post="post" class="my-2" />
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 

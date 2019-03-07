@@ -16,6 +16,11 @@
         </v-flex>
       </v-layout>
     </v-card-text>
+    <v-card-actions class="secondary lighten-4">
+      <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
+        READ
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
