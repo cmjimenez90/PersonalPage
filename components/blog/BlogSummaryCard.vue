@@ -1,7 +1,17 @@
 <template>
   <v-card>
     <v-card-title class="primary white--text">
-      <h3>{{ BlogPost.title }}</h3>
+      <v-layout column>
+        <v-flex>
+          <v-chip small class="white--text" outline>
+            {{ BlogPost.categories[0].name }}
+          </v-chip>
+        </v-flex>
+        <v-spacer />
+        <v-flex>
+          <h3>{{ BlogPost.title }}</h3>
+        </v-flex>
+      </v-layout>
     </v-card-title>
     <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" max-height="150" contain />
     <v-card-text>
