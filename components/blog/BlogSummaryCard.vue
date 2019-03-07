@@ -13,7 +13,7 @@
         </v-flex>
       </v-layout>
     </v-card-title>
-    <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" max-height="150" contain />
+    <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" max-height="100" :aspect-ratio="4/3" contain />
     <v-card-text>
       <v-layout column>
         <v-flex>

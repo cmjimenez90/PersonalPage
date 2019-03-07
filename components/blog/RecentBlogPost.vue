@@ -2,13 +2,12 @@
   <v-container>
     <v-layout
       wrap
-      justify-space-around
       align-center
       fill-height
       secondary
       lighten-2
     >
-      <v-flex>
+      <v-flex xs12>
         <v-toolbar
           class="primary
           darken-2
