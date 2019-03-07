@@ -12,7 +12,7 @@
           </p>
         </v-flex>
         <v-flex>
-          <BlogSummaryChipContainer :items=" BlogPost.tags" />
+          <ChipContainer :items="BlogPost.tags" heading="Tags:" />
         </v-flex>
       </v-layout>
     </v-card-text>
@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import BlogSummaryChipContainer from '~/components/blog/BlogSummaryChipContainer.vue'
+import ChipContainer from '~/components/blog/ChipContainer.vue'
 export default {
   components: {
-    BlogSummaryChipContainer
+    ChipContainer
   },
   props: {
     blogPost: {
