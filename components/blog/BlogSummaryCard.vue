@@ -1,36 +1,26 @@
 <template>
-  <v-card>
-    <v-card-title class="primary white--text">
-      <v-layout column>
-        <v-flex>
-          <v-chip small class="white--text" outline>
-            {{ BlogPost.categories[0].name }}
-          </v-chip>
-        </v-flex>
-        <v-spacer />
-        <v-flex>
-          <h3>{{ BlogPost.title }}</h3>
-        </v-flex>
-      </v-layout>
-    </v-card-title>
-    <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" max-height="100" :aspect-ratio="4/3" contain />
-    <v-card-text>
-      <v-layout column>
-        <v-flex>
-          <p>
-            {{ BlogPost.summary }}
-          </p>
-        </v-flex>
-        <v-flex>
-          <ChipContainer :items="BlogPost.tags" heading="Tags:" />
-        </v-flex>
-      </v-layout>
-    </v-card-text>
-    <v-card-actions class="secondary lighten-4">
-      <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
-        READ
-      </v-btn>
-    </v-card-actions>
+  <v-card height="100%">
+    <v-layout column fill-height>
+      <v-flex class="primary white--text">
+        <v-chip small class="white--text" outline>
+          {{ BlogPost.categories[0].name }}
+        </v-chip>
+        <h3>{{ BlogPost.title }}</h3>
+        <p>{{ BlogPost.published }}</p>
+      </v-flex>
+      <v-flex>
+        <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="100" :aspect-ratio="4/3" contain />
+      </v-flex>
+      <v-flex fill-height>
+        <p>{{ BlogPost.summary }}</p>
+      </v-flex>
+      <v-flex><ChipContainer :items="BlogPost.tags" heading="Tags:" /></v-flex>
+      <v-flex class="secondary lighten-4">
+        <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
+          READ
+        </v-btn>
+      </v-flex>
+    </v-layout>
   </v-card>
 </template>
 

@@ -1,10 +1,6 @@
 <template>
-  <v-container>
-    <v-layout justify-center>
-      <v-flex xs12 sm6>
-        <RecentBlogPost :blog-posts="blogPosts" />
-      </v-flex>
-    </v-layout>
+  <v-container fluid>
+    <RecentBlogPost :blog-posts="blogPosts" /> 
   </v-container>
 </template>
 

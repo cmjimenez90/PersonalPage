@@ -1,38 +1,10 @@
 <template>
-  <v-container>
-    <v-layout
-      wrap
-      align-center
-      fill-height
-      secondary
-      lighten-2
-    >
-      <v-flex xs12>
-        <v-toolbar
-          class="primary
-          darken-2
-          white--text
-          title"
-        >
-          <v-toolbar-title>RECENT POST</v-toolbar-title>
-        </v-toolbar>
-      </v-flex>
-      <v-layout column>
-        <v-flex
-          v-for="(post,index) in blogPosts"
-          :key="index"
-          xs12
-          sm6
-          lg5
-          class="pa-1"
-        >
-          <BlogSummaryCard :blog-post="post" />
-        </v-flex>
-      </v-layout>
-    </v-layout>
-  </v-container>
+  <v-layout>
+    <v-flex v-for="(post,index) in sortedBlogPost.slice(0,blogLimit)" :key="index">
+      <BlogSummaryCard :blog-post="post" />
+    </v-flex>
+  </v-layout>
 </template>
-
 <script>
 import BlogSummaryCard from '~/components/blog/BlogSummaryCard.vue'
 export default {
@@ -45,6 +17,31 @@ export default {
       default: () => {
         return []
       }
+    },
+    shownBlogCount: {
+      type: Number,
+      default: 3
+    }
+  },
+  computed: {
+    sortedBlogPost: function() {
+      return this.blogPosts.slice(0).sort(function(a, b) {
+        const currentDate = a.published
+        const nextDate = b.published
+        if (currentDate < nextDate) {
+          return -1
+        }
+        if (currentDate > nextDate) {
+          return 1
+        }
+        return 0
+      })
+    },
+    blogLimit: function() {
+      if (this.blogPosts.length >= this.shownBlogCount) {
+        return this.shownBlogCount
+      }
+      return this.blogPosts.length
     }
   }
 }
