@@ -1,7 +1,29 @@
 <template>
-  <v-layout>
+  <v-layout v-if="!carousel" wrap>
     <v-flex v-for="(post,index) in sortedBlogPost" :key="index">
       <BlogSummaryCard :blog-post="post" />
+    </v-flex>
+  </v-layout>
+  <v-layout v-else>
+    <v-flex>
+      <v-card>
+        <v-card-title
+          class="primary
+          darken-2
+          white--text
+          title"
+          primary-title
+        >
+          RECENT POST
+        </v-card-title>
+        <v-container>
+          <v-carousel hide-delimiters light>
+            <v-carousel-item v-for="(post,index) in sortedBlogPost" :key="index">
+              <BlogSummaryCard :blog-post="post" />
+            </v-carousel-item>
+          </v-carousel>
+        </v-container>
+      </v-card>
     </v-flex>
   </v-layout>
 </template>
@@ -21,6 +43,10 @@ export default {
     shownBlogCount: {
       type: Number,
       default: 3
+    },
+    carousel: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
