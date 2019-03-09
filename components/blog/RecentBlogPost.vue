@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-flex v-for="(post,index) in sortedBlogPost.slice(0,blogLimit)" :key="index">
+    <v-flex v-for="(post,index) in sortedBlogPost" :key="index">
       <BlogSummaryCard :blog-post="post" />
     </v-flex>
   </v-layout>
@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     sortedBlogPost: function() {
-      return this.blogPosts.slice(0).sort(function(a, b) {
+      const sortedPost = this.blogPosts.slice(0).sort(function(a, b) {
         const currentDate = a.published
         const nextDate = b.published
         if (currentDate < nextDate) {
@@ -36,6 +36,7 @@ export default {
         }
         return 0
       })
+      return sortedPost.slice(0, this.blogLimit).reverse()
     },
     blogLimit: function() {
       if (this.blogPosts.length >= this.shownBlogCount) {
