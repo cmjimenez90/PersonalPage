@@ -6,7 +6,7 @@
           {{ BlogPost.categories[0].name }}
         </v-chip>
         <h3>{{ BlogPost.title }}</h3>
-        <p>{{ BlogPost.published }}</p>
+        <p>{{ formatedPublishedDate }}</p>
       </v-flex>
       <v-flex>
         <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="100" :aspect-ratio="4/3" contain />
@@ -41,6 +41,12 @@ export default {
   data: function() {
     return {
       BlogPost: this.blogPost
+    }
+  },
+  computed: {
+    formatedPublishedDate: function() {
+      const unformattedDate = new Date(this.BlogPost.published)
+      return unformattedDate.toDateString()
     }
   }
 }
