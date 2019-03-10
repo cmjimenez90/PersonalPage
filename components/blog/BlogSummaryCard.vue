@@ -2,7 +2,7 @@
   <v-card height="100%">
     <v-layout column fill-height>
       <v-flex class="primary white--text">
-        <v-chip small class="white--text" outline>
+        <v-chip small class="secondary lighten-4 caption">
           {{ BlogPost.categories[0].name }}
         </v-chip>
         <h3>{{ BlogPost.title }}</h3>

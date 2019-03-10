@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout justify-center>
       <v-flex>
-        <RecentBlogPost :blog-posts="blogPosts" />
+        <RecentBlogPost :blog-posts="blogPosts" carousel />
       </v-flex> 
     </v-layout>
   </v-container>
