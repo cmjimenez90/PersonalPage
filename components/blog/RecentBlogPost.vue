@@ -1,36 +1,43 @@
 <template>
-  <v-card>
-    <v-card-title
-      class="primary
+  <v-container>
+    <v-layout
+      wrap
+      secondary
+      lighten-2
+    >
+      <v-flex xs12>
+        <v-toolbar
+          class="primary
           darken-2
           white--text
-          title
-          "
-      primary-title
-    >
-      RECENT POST
-    </v-card-title>
-    <v-layout v-if="!carousel">
-      <v-container fluid>
-        <v-layout wrap>
-          <v-flex v-for="(post,index) in sortedBlogPost" :key="index">
-            <BlogSummaryCard :blog-post="post" />
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-layout>
-    <v-layout v-else>
-      <v-flex>
-        <v-container>
-          <v-carousel hide-delimiters light>
-            <v-carousel-item v-for="(post,index) in sortedBlogPost" :key="index">
-              <BlogSummaryCard :blog-post="post" />
-            </v-carousel-item>
-          </v-carousel>
-        </v-container>
+          title"
+        >
+          <v-toolbar-title>RECENT POST</v-toolbar-title>
+        </v-toolbar>
       </v-flex>
+      <v-layout v-if="!carousel">
+        <v-container fluid>
+          <v-layout wrap>
+            <v-flex v-for="(post,index) in sortedBlogPost" :key="index">
+              <BlogSummaryCard :blog-post="post" />
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-layout>
+      <v-layout v-else>
+        <v-flex>
+          <v-container>
+            <v-carousel hide-delimiters light>
+              <v-carousel-item v-for="(post,index) in sortedBlogPost" :key="index">
+                <BlogSummaryCard :blog-post="post" />
+              </v-carousel-item>
+            </v-carousel>
+          </v-container>
+        </v-flex>
+      </v-layout>
     </v-layout>
-  </v-card>
+    </v-layoutwrap>
+  </v-container>
 </template>
 <script>
 import BlogSummaryCard from '~/components/blog/BlogSummaryCard.vue'

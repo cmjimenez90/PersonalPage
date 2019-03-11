@@ -22,8 +22,6 @@
         v-for="(project,index) in projects"
         :key="index"
         xs12
-        sm6
-        lg5
         class="pa-1"
       >
         <project-card :project="project" />
