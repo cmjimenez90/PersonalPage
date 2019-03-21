@@ -1,6 +1,6 @@
 <template>
-  <v-card height="100%">
-    <v-layout column fill-height>
+  <v-card>
+    <v-layout column>
       <v-flex class="primary white--text">
         <v-chip small class="secondary lighten-4 caption">
           {{ BlogPost.categories[0].name }}
@@ -11,7 +11,7 @@
       <v-flex>
         <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="100" :aspect-ratio="4/3" contain />
       </v-flex>
-      <v-flex fill-height>
+      <v-flex>
         <p>{{ BlogPost.summary }}</p>
       </v-flex>
       <v-flex><ChipContainer :items="BlogPost.tags" heading="Tags:" /></v-flex>

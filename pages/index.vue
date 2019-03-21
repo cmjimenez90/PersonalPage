@@ -6,7 +6,7 @@
         <ProjectHighlights />
       </v-flex>
       <v-flex xs12 sm6>
-        <RecentBlogPost :blog-posts="blogPosts" carousel />
+        <RecentBlogPost :blog-posts="blogPosts" />
       </v-flex>
     </v-layout>
   </v-container>

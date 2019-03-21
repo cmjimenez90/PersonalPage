@@ -15,24 +15,18 @@
           <v-toolbar-title>RECENT POST</v-toolbar-title>
         </v-toolbar>
       </v-flex>
-      <v-layout v-if="!carousel">
-        <v-container fluid>
-          <v-layout wrap>
-            <v-flex v-for="(post,index) in sortedBlogPost" :key="index">
-              <BlogSummaryCard :blog-post="post" />
-            </v-flex>
-          </v-layout>
-        </v-container>
+      <v-layout v-if="!carousel" wrap>
+        <v-flex v-for="(post,index) in sortedBlogPost" :key="index" class="pa-1" xs12>
+          <BlogSummaryCard :blog-post="post" />
+        </v-flex>
       </v-layout>
       <v-layout v-else>
         <v-flex>
-          <v-container>
-            <v-carousel hide-delimiters light>
-              <v-carousel-item v-for="(post,index) in sortedBlogPost" :key="index">
-                <BlogSummaryCard :blog-post="post" />
-              </v-carousel-item>
-            </v-carousel>
-          </v-container>
+          <v-carousel hide-delimiters light>
+            <v-carousel-item v-for="(post,index) in sortedBlogPost" :key="index">
+              <BlogSummaryCard :blog-post="post" />
+            </v-carousel-item>
+          </v-carousel>
         </v-flex>
       </v-layout>
     </v-layout>

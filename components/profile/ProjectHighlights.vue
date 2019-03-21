@@ -1,10 +1,7 @@
 <template>
-  <v-container fill-height>
+  <v-container>
     <v-layout
       wrap
-      justify-space-around
-      align-center
-      fill-height
       secondary
       lighten-2
     >
