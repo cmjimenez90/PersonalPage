@@ -3,7 +3,7 @@
     <BioCard :name="name" :caption="caption" :description="description" />
     <v-layout row wrap>
       <v-flex sm6 xs12>
-        <ProjectHighlightsList />
+        <ProjectHighlightsList :projects="projects" />
       </v-flex>
       <v-flex sm6 xs12>
         <RecentBlogPostList :blog-posts="blogPosts" :carousel="$vuetify.breakpoint.xsOnly" />
@@ -33,6 +33,9 @@ export default {
   computed: {
     blogPosts: function() {
       return this.$store.state.blog.list
+    },
+    projects: function() {
+      return this.$store.state.projects.list
     }
   },
   async fetch({ store }) {

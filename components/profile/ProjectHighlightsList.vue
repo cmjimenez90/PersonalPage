@@ -16,7 +16,7 @@
         </v-toolbar>
       </v-flex>
       <v-flex
-        v-for="(project,index) in projects"
+        v-for="(project,index) in projectsList"
         :key="index"
         class="pa-1"
       >
@@ -32,9 +32,17 @@ export default {
   components: {
     ProjectCard
   },
-  computed: {
-    projects: function() {
-      return this.$store.state.projects.list
+  props: {
+    projects: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
+  data: function() {
+    return {
+      projectsList: this.projects
     }
   }
 }
