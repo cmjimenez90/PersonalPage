@@ -18,7 +18,6 @@
       <v-flex
         v-for="(project,index) in projects"
         :key="index"
-        xs12
         class="pa-1"
       >
         <project-card :project="project" />

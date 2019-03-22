@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card width="100%">
     <v-layout column>
       <v-flex class="primary white--text">
         <v-chip small class="secondary lighten-4 caption">

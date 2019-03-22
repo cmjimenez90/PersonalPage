@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card width="100%">
     <v-card-title class="subheading primary white--text">
       {{ project.project_title }}
     </v-card-title>

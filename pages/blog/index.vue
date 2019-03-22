@@ -1,20 +1,10 @@
 <template>
-  <v-container fluid>
-    <v-layout justify-center>
-      <v-flex>
-        <RecentBlogPost :blog-posts="blogPosts" carousel />
-      </v-flex> 
-    </v-layout>
-  </v-container>
+  <v-container />
 </template>
 
 <script>
-import RecentBlogPost from '~/components/blog/RecentBlogPost.vue'
-
 export default {
-  components: {
-    RecentBlogPost
-  },
+  components: {},
   computed: {
     blogPosts: function() {
       return this.$store.state.blog.list

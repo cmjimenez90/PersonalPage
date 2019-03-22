@@ -1,12 +1,12 @@
 <template>
   <v-container>
     <BioCard :name="name" :caption="caption" :description="description" />
-    <v-layout row wrap justify-center>
-      <v-flex xs12 sm6>
-        <ProjectHighlights />
+    <v-layout row wrap>
+      <v-flex sm6 xs12>
+        <ProjectHighlightsList />
       </v-flex>
-      <v-flex xs12 sm6>
-        <RecentBlogPost :blog-posts="blogPosts" />
+      <v-flex sm6 xs12>
+        <RecentBlogPostList :blog-posts="blogPosts" :carousel="$vuetify.breakpoint.xsOnly" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -14,13 +14,13 @@
 
 <script>
 import BioCard from '~/components/profile/BioCard.vue'
-import ProjectHighlights from '~/components/profile/ProjectHighlights.vue'
-import RecentBlogPost from '~/components/blog/RecentBlogPost.vue'
+import ProjectHighlightsList from '~/components/profile/ProjectHighlightsList.vue'
+import RecentBlogPostList from '~/components/blog/RecentBlogPostList.vue'
 export default {
   components: {
     BioCard,
-    ProjectHighlights,
-    RecentBlogPost
+    ProjectHighlightsList,
+    RecentBlogPostList
   },
   data: function() {
     return {

@@ -15,22 +15,12 @@
           <v-toolbar-title>RECENT POST</v-toolbar-title>
         </v-toolbar>
       </v-flex>
-      <v-layout v-if="!carousel" wrap>
-        <v-flex v-for="(post,index) in sortedBlogPost" :key="index" class="pa-1" xs12>
+      <v-layout column>
+        <v-flex v-for="(post,index) in sortedBlogPost" :key="index" class="pa-1">
           <BlogSummaryCard :blog-post="post" />
         </v-flex>
       </v-layout>
-      <v-layout v-else>
-        <v-flex>
-          <v-carousel hide-delimiters light>
-            <v-carousel-item v-for="(post,index) in sortedBlogPost" :key="index">
-              <BlogSummaryCard :blog-post="post" />
-            </v-carousel-item>
-          </v-carousel>
-        </v-flex>
-      </v-layout>
     </v-layout>
-    </v-layoutwrap>
   </v-container>
 </template>
 <script>
@@ -49,10 +39,6 @@ export default {
     shownBlogCount: {
       type: Number,
       default: 3
-    },
-    carousel: {
-      type: Boolean,
-      default: false
     }
   },
   computed: {
