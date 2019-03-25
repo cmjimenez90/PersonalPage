@@ -6,7 +6,7 @@
         <ProjectHighlightsList :projects="projects" />
       </v-flex>
       <v-flex sm6 xs12>
-        <RecentBlogPostList :blog-posts="blogPosts" :carousel="$vuetify.breakpoint.xsOnly" />
+        <RecentBlogPostList :blog-posts="blogPosts" />
       </v-flex>
     </v-layout>
   </v-container>
