@@ -2,20 +2,34 @@ import { butter } from '@/buttercms'
 
 export const state = () => ({
   list: [],
-  fetched: false
+  categories: [],
+  tags: []
 })
 
 export const mutations = {
-  set(state, blogPosts) {
+  setBlogPost(state, blogPosts) {
     state.list = blogPosts
-    state.fetched = true
+  },
+  setCategories(state, categories) {
+    state.categories = categories
+  },
+  setTags(state, tags) {
+    state.tags = tags
   }
 }
 
 export const actions = {
   async fetchBlogPosts({ commit }) {
     const { data } = await butter.post.list({ page_size: 5 })
-    commit('set', data.data)
+    commit('setBlogPost', data.data)
+  },
+  async fetchCategories({ commit }) {
+    const { data } = await butter.category.list()
+    commit('setCategories', data.data)
+  },
+  async fetchTags({ commit }) {
+    const { data } = await butter.tag.list()
+    commit('setTags', data.data)
   }
 }
 
