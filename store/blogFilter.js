@@ -1,7 +1,8 @@
 export const state = () => ({
   filterParams: [],
   categories: [],
-  tags: []
+  tags: [],
+  initialized: false
 })
 
 export const mutations = {
@@ -27,6 +28,9 @@ export const mutations = {
     } else {
       state.tags.push(param)
     }
+  },
+  setInitializationFlag(state) {
+    state.initialized = true
   }
 }
 
@@ -43,17 +47,20 @@ export const getters = {
 }
 
 export const actions = {
-  initializeBlogFilter({ commit, rootState }) {
-    const categories = rootState.blog.categories
-    categories.forEach(category => {
-      category.type = 'category'
-    })
-    commit('setCategories', categories)
-    const tags = rootState.blog.tags
-    tags.forEach(tag => {
-      tag.type = 'tag'
-    })
-    commit('setTags', tags)
+  initializeBlogFilter({ commit, state, rootState }) {
+    if (state.initialized === false) {
+      const categories = rootState.blog.categories
+      categories.forEach(category => {
+        category.type = 'category'
+      })
+      commit('setCategories', categories)
+      const tags = rootState.blog.tags
+      tags.forEach(tag => {
+        tag.type = 'tag'
+      })
+      commit('setTags', tags)
+      commit('setInitializationFlag')
+    }
   },
   addFilterParam({ commit }, param) {
     commit('addFilterParam', param)
