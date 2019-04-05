@@ -12,25 +12,16 @@
       <v-subheader>
         Filter
       </v-subheader>
-      <v-combobox
-        v-model="filter"
-        clearable
-        deleteable-chips
-        chips
-        multiple
-        append-icon=""
-        @click:clear="onReset()"
-      />
+      <v-chip v-for="param in filterParams" :key="param.slug" close small @input="removeFilter(param)">
+        {{ param.name }}
+      </v-chip>
       <v-list>
         <v-subheader>
           Categories
         </v-subheader>
-        <v-list-tile
-          v-for="category in blogCategories"
-          :key="category.slug"
-        >
+        <v-list-tile v-for="category in blogCategories" :key="category.slug">
           <v-list-tile-content>
-            <v-chip small @click="onFilter(item)">
+            <v-chip small @click="onFilter(category)">
               {{ category.name }}
             </v-chip>
           </v-list-tile-content>
@@ -39,15 +30,9 @@
         <v-subheader>
           Tags
         </v-subheader>
-        <v-list-tile
-          v-for="tag in blogTags"
-          :key="tag.slug"
-        >
+        <v-list-tile v-for="tag in blogTags" :key="tag.slug">
           <v-list-tile-content>
-            <v-chip
-              small
-              @click="onFilter(item)"
-            >
+            <v-chip small @click="onFilter(tag)">
               {{ tag.name }}
             </v-chip>
           </v-list-tile-content>
@@ -68,6 +53,14 @@ export default {
     },
     filterParams: function() {
       return this.$store.getters['blogFilter/getFilterParams']
+    }
+  },
+  methods: {
+    onFilter(param) {
+      this.$store.dispatch('blogFilter/addFilterParam', param)
+    },
+    removeFilter(param) {
+      this.$store.dispatch('blogFilter/removeFilterParam', param)
     }
   }
 }

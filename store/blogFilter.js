@@ -13,6 +13,7 @@ export const mutations = {
   },
   addFilterParam(state, param) {
     state.filterParams.push(param)
+
     if (param.type === 'category') {
       state.categories.splice(state.categories.indexOf(param), 1)
     } else {
@@ -20,7 +21,7 @@ export const mutations = {
     }
   },
   removeFilterParam(state, param) {
-    state.filterParams.splice(state.filterParams.indexOf(param))
+    state.filterParams.splice(state.filterParams.indexOf(param), 1)
     if (param.type === 'category') {
       state.categories.push(param)
     } else {
@@ -31,13 +32,13 @@ export const mutations = {
 
 export const getters = {
   getFilterParams: state => {
-    return state.filterParams.slice().sort()
+    return state.filterParams.slice().sort(sortAlpha)
   },
   getCategories: state => {
-    return state.categories.slice().sort()
+    return state.categories.slice().sort(sortAlpha)
   },
   getTags: state => {
-    return state.tags.slice().sort()
+    return state.tags.slice().sort(sortAlpha)
   }
 }
 
@@ -60,4 +61,14 @@ export const actions = {
   removeFilterParam({ commit }, param) {
     commit('removeFilterParam', param)
   }
+}
+
+function sortAlpha(current, next) {
+  if (current.name.toUpperCase() < next.name.toUpperCase()) {
+    return -1
+  }
+  if (current.name.toUpperCase() > next.name.toUpperCase()) {
+    return 1
+  }
+  return 0
 }
