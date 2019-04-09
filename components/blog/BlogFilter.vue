@@ -10,7 +10,11 @@
     </v-toolbar>
     <v-card-text>
       <v-subheader>
-        Filter
+        <span>Active Filter</span>
+        <v-spacer />
+        <v-icon @click="resetFilter()">
+          clear
+        </v-icon>
       </v-subheader>
       <v-chip v-for="param in filterParams" :key="param.slug" close small @input="removeFilter(param)">
         {{ param.name }}
@@ -61,6 +65,9 @@ export default {
     },
     removeFilter(param) {
       this.$store.dispatch('blogFilter/removeFilterParam', param)
+    },
+    resetFilter() {
+      this.$store.dispatch('blogFilter/resetFilterParams')
     }
   }
 }

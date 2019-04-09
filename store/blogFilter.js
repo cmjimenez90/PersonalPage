@@ -29,6 +29,16 @@ export const mutations = {
       state.tags.push(param)
     }
   },
+  resetFilter(state) {
+    while (state.filterParams.length >= 1) {
+      const param = state.filterParams.pop()
+      if (param.type === 'category') {
+        state.categories.push(param)
+      } else {
+        state.tags.push(param)
+      }
+    }
+  },
   setInitializationFlag(state) {
     state.initialized = true
   }
@@ -67,6 +77,9 @@ export const actions = {
   },
   removeFilterParam({ commit }, param) {
     commit('removeFilterParam', param)
+  },
+  resetFilterParams({ commit }) {
+    commit('resetFilter')
   }
 }
 
