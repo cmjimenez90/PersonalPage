@@ -9,34 +9,41 @@
       <v-toolbar-title>Filter</v-toolbar-title>
     </v-toolbar>
     <v-card-text>
-      <v-subheader>
+      <v-subheader class="black--text">
         <span>Active Filter</span>
         <v-spacer />
         <v-icon @click="resetFilter()">
           clear
         </v-icon>
       </v-subheader>
-      <v-chip v-for="param in filterParams" :key="param.slug" close small @input="removeFilter(param)">
+      <v-chip
+        v-for="param in filterParams"
+        :key="param.slug"
+        close
+        small
+        class="secondary lighten-4"
+        @input="removeFilter(param)"
+      >
         {{ param.name }}
       </v-chip>
       <v-list>
-        <v-subheader>
-          Categories
+        <v-subheader class="black--text">
+          <span>Categories</span>
         </v-subheader>
         <v-list-tile v-for="category in blogCategories" :key="category.slug">
           <v-list-tile-content>
-            <v-chip small @click="onFilter(category)">
+            <v-chip small class="secondary lighten-4" @click="onFilter(category)">
               {{ category.name }}
             </v-chip>
           </v-list-tile-content>
         </v-list-tile>
         <v-divider />
-        <v-subheader>
-          Tags
+        <v-subheader class="black--text">
+          <span>Tags</span>
         </v-subheader>
         <v-list-tile v-for="tag in blogTags" :key="tag.slug">
           <v-list-tile-content>
-            <v-chip small @click="onFilter(tag)">
+            <v-chip small class="secondary lighten-4" @click="onFilter(tag)">
               {{ tag.name }}
             </v-chip>
           </v-list-tile-content>
