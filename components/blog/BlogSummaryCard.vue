@@ -3,11 +3,13 @@
     <v-card width="100%">
       <v-card-title class=" primary white--text">
         <v-layout column>
-          <div class="text-xs-right font-italic text-uppercase">
+          <div class="text-xs-right subheading text-uppercase">
             {{ BlogPost.categories[0].name }}
           </div>
-          <h3>{{ BlogPost.title }}</h3>
-          <div class="blog-date">
+          <h3 class="title">
+            {{ BlogPost.title }}
+          </h3>
+          <div class="blog-date caption">
             {{ formatedPublishedDate }}
           </div>
         </v-layout>
