@@ -1,27 +1,35 @@
 <template>
-  <v-card width="100%">
-    <v-card-title class=" primary white--text">
-      <v-layout column>
-        <h3>{{ BlogPost.title }}</h3>
-        <p>{{ formatedPublishedDate }}</p>
-        <v-flex class="text-xs-right">
-          <v-chip small class="secondary lighten-4 " selected>
+  <section>
+    <v-card width="100%">
+      <v-card-title class=" primary white--text">
+        <v-layout column>
+          <div class="text-xs-right font-italic text-uppercase">
             {{ BlogPost.categories[0].name }}
-          </v-chip>
-        </v-flex>
-      </v-layout>
-    </v-card-title>
-    <v-card-text>
-      <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="100" :aspect-ratio="4/3" contain />
-      <p>{{ BlogPost.summary }}</p>
-      <ChipContainer :items="BlogPost.tags" heading="Tags:" />
-    </v-card-text>
-    <v-card-actions class="secondary lighten-4">
-      <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
-        READ
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+          </div>
+          <h3>{{ BlogPost.title }}</h3>
+          <div class="blog-date">
+            {{ formatedPublishedDate }}
+          </div>
+        </v-layout>
+      </v-card-title>
+      <v-card-text class="body-1">
+        <v-responsive>
+          <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="125px" contain />
+        </v-responsive>
+        <p class="pt-5">
+          {{ BlogPost.summary }}
+        </p>
+        <ChipContainer :items="BlogPost.tags" heading="Tags:" />
+      </v-card-text>
+      <v-card-actions class="secondary lighten-4">
+        <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
+          <span class="font-weight-bold">
+            READ
+          </span>
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </section>
 </template>
 
 <script>
@@ -52,5 +60,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.blog-date
+  padding-left 10px
 </style>
