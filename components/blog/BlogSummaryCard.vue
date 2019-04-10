@@ -9,7 +9,7 @@
           <h3 class="title">
             {{ BlogPost.title }}
           </h3>
-          <div class="blog-date caption">
+          <div class="blog-date subheading">
             {{ formatedPublishedDate }}
           </div>
         </v-layout>
