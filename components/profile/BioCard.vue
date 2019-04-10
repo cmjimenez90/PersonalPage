@@ -13,10 +13,10 @@
           <v-img src="/self_prof_bw.jpg" alt="Headshot of Carlos Jimenez" />
         </v-avatar>
         <v-card-text>
-          <p class="title">
+          <p class="">
             {{ name }}
           </p>
-          <p class="body-2">
+          <p class="">
             {{ caption }}
           </p>
         </v-card-text>
@@ -40,7 +40,7 @@
       </v-flex>
       <v-flex xs12 sm6 md8>
         <v-container fill-height>
-          <p class="subheading px-2">
+          <p class="px-2">
             {{ description }}
           </p>
         </v-container>

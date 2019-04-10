@@ -1,13 +1,13 @@
 <template>
   <v-card width="100%">
-    <v-card-title class="subheading primary white--text">
+    <v-card-title class=" primary white--text">
       {{ project.project_title }}
     </v-card-title>
     <v-responsive class="pt-2">
       <v-img :src="project.project_image" height="125" contain alt="reference picture of " />
     </v-responsive>
-    <v-card-text class="body-2">
-      <div>{{ project.project_description }}</div>
+    <v-card-text class="">
+      {{ project.project_description }}
     </v-card-text>
     <v-card-actions class="secondary lighten-4">
       <v-layout>

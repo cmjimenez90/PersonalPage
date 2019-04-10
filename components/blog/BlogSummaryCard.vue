@@ -1,26 +1,26 @@
 <template>
   <v-card width="100%">
-    <v-layout column>
-      <v-flex class="primary white--text">
-        <v-chip small class="secondary lighten-4 caption">
-          {{ BlogPost.categories[0].name }}
-        </v-chip>
+    <v-card-title class=" primary white--text">
+      <v-layout column>
         <h3>{{ BlogPost.title }}</h3>
         <p>{{ formatedPublishedDate }}</p>
-      </v-flex>
-      <v-flex>
-        <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="100" :aspect-ratio="4/3" contain />
-      </v-flex>
-      <v-flex>
-        <p>{{ BlogPost.summary }}</p>
-      </v-flex>
-      <v-flex><ChipContainer :items="BlogPost.tags" heading="Tags:" /></v-flex>
-      <v-flex class="secondary lighten-4">
-        <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
-          READ
-        </v-btn>
-      </v-flex>
-    </v-layout>
+        <v-flex class="text-xs-right">
+          <v-chip small class="secondary lighten-4 " selected>
+            {{ BlogPost.categories[0].name }}
+          </v-chip>
+        </v-flex>
+      </v-layout>
+    </v-card-title>
+    <v-card-text>
+      <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="100" :aspect-ratio="4/3" contain />
+      <p>{{ BlogPost.summary }}</p>
+      <ChipContainer :items="BlogPost.tags" heading="Tags:" />
+    </v-card-text>
+    <v-card-actions class="secondary lighten-4">
+      <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
+        READ
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 

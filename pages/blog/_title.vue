@@ -1,9 +1,11 @@
 <template>
   <v-container>
-    <body>
-      <h1>{{ post.title }}</h1>
-      <section v-html="post.body" />
-    </body>
+    <v-layout>
+      <section class="post-content">
+        <h1>{{ post.title }}</h1>
+        <section v-html="post.body" />
+      </section>
+    </v-layout>
   </v-container>
 </template>
 
