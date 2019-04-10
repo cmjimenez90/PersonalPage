@@ -19,7 +19,7 @@
         <p class="pt-5">
           {{ BlogPost.summary }}
         </p>
-        <ChipContainer :items="BlogPost.tags" heading="Tags:" />
+        <ChipContainer :items="BlogPost.tags" heading="Tag:" />
       </v-card-text>
       <v-card-actions class="secondary lighten-4">
         <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
