@@ -1,5 +1,9 @@
 <template>
-  <v-layout column>
+  <v-layout
+    column
+    secondary
+    lighten-2
+  >
     <v-flex xs12>
       <v-toolbar
         class="primary
@@ -12,7 +16,7 @@
         </v-toolbar-title>
       </v-toolbar>
     </v-flex>
-    <v-flex v-for="post in filteredBlogs" :key="post.slug" class="py-2">
+    <v-flex v-for="post in filteredBlogs" :key="post.slug" class="pa-1">
       <BlogSummaryCard :blog-post="post" />
     </v-flex>
   </v-layout>

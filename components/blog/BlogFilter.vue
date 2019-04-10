@@ -10,7 +10,7 @@
     </v-toolbar>
     <v-card-text>
       <v-subheader class="black--text">
-        <span>Active Filter</span>
+        <span>Active Filters</span>
         <v-spacer />
         <v-icon @click="resetFilter()">
           clear
