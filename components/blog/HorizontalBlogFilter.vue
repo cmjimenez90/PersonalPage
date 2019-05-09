@@ -1,13 +1,5 @@
 <template>
   <v-card>
-    <v-toolbar
-      class="primary
-          darken-2
-          white--text
-          title"
-    >
-      <v-toolbar-title>Filter</v-toolbar-title>
-    </v-toolbar>
   </v-card>
 </template>
 
