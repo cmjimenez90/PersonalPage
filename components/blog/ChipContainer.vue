@@ -10,9 +10,9 @@
             v-for="n in 3"
             :key="n"
             small
-            class="secondary lighten-4"
+            class="secondary font-weight-bold"
+            text-color="secondary lighten-4"
             label
-            disabled
           >
             {{ items[n].name }}
           </v-chip>
@@ -26,8 +26,8 @@
                 :key="index"
                 small
                 label
-                disabled
-                class="secondary lighten-4"
+                class="secondary font-weight-bold"
+                text-color="secondary lighten-4"
               >
                 {{ item.name }}
               </v-chip>
@@ -40,8 +40,8 @@
             :key="index"
             small
             label
-            disabled
-            class="secondary lighten-4"
+            class="secondary font-weight-bold"
+            text-color="secondary lighten-4"
           >
             {{ item.name }}
           </v-chip>
@@ -80,7 +80,5 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-.v-chip__content
-  color: black
+<style lang="stylus" scoped>
 </style>

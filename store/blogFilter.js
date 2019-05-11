@@ -30,7 +30,7 @@ export const mutations = {
   addFilter(state, filter) {
     if (state.categories.indexOf(filter) !== -1) {
       state.filteredCategories.push(filter)
-    } else if (state.filteredTags.push(filter) !== -1) {
+    } else if (state.tags.indexOf(filter) !== -1) {
       state.filteredTags.push(filter)
     } else {
     }
@@ -64,6 +64,33 @@ export const getters = {
   },
   getFilteredTags: state => {
     return state.filteredTags.slice().sort(sortAlpha)
+  },
+  getFilteredBlogPosts: state => {
+    return state.blogPosts.filter(post => {
+      let isValid = true
+
+      if (state.filteredCategories.length > 0) {
+        const filteredCategorySlugs = state.filteredCategories.map(
+          category => category.slug
+        )
+        const postCategorySlugs = post.categories.map(category => category.slug)
+        const resultCategorySlugs = filteredCategorySlugs.filter(
+          category => postCategorySlugs.indexOf(category) !== -1
+        )
+        isValid = filteredCategorySlugs.length === resultCategorySlugs.length
+      }
+
+      if (state.filteredTags.length > 0 && isValid === true) {
+        const filteredTagSlugs = state.filteredTags.map(tag => tag.slug)
+        const postTagSlugs = post.tags.map(tag => tag.slug)
+        const resultTagSlugs = filteredTagSlugs.filter(
+          tag => postTagSlugs.indexOf(tag) !== -1
+        )
+        isValid = filteredTagSlugs.length === resultTagSlugs.length
+      }
+
+      return isValid
+    })
   }
 }
 

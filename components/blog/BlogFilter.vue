@@ -1,18 +1,59 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span>FILTER</span>
-    </v-card-title>
-    <v-list>
-      <v-list-tile v-for="tag in blogTags" :key="tag.slug">
-        {{ tag.name }}
-      </v-list-tile>
-    </v-list>
-    <v-list>
-      <v-list-tile v-for="category in blogCategories" :key="category.slug">
+    <v-toolbar class="primary darken-2">
+      <v-toolbar-title class="title white--text">
+        Filter
+      </v-toolbar-title>
+    </v-toolbar>
+    <v-card-text>
+      <v-subheader class="headline secondary--text ">
+        <span>Active</span>
+        <v-spacer />
+        <v-btn v-if="(filterParams.length > 0)" icon @click="resetFilter()">
+          <v-icon>close</v-icon>
+        </v-btn>
+      </v-subheader>
+      <v-divider inset />
+      <v-chip
+        v-for="param in filterParams"
+        :key="param.slug"
+        small
+        class="secondary font-weight-bold"
+        text-color="secondary lighten-4"
+        close
+        @input="removeFilter(param)"
+      >
+        {{ param.name }}
+      </v-chip>
+      <v-subheader class="headline secondary--text ">
+        Categories
+      </v-subheader>
+      <v-divider inset />
+      <v-chip
+        v-for="category in blogCategories"
+        :key="category.slug"
+        small
+        class="secondary font-weight-bold"
+        text-color="secondary lighten-4"
+        @click="onFilter(category)"
+      >
         {{ category.name }}
-      </v-list-tile>
-    </v-list>
+      </v-chip>
+      <v-subheader class="headline secondary--text ">
+        Tags
+      </v-subheader>
+      <v-divider inset />
+      <v-chip
+        v-for="tag in blogTags"
+        :key="tag.slug"
+        small
+        class="secondary font-weight-bold"
+        text-color="secondary lighten-4"
+        @click="onFilter(tag)"
+      >
+        {{ tag.name }}
+      </v-chip>
+    </v-card-text>
   </v-card>
 </template>
 
@@ -26,7 +67,10 @@ export default {
       return this.$store.getters['blogFilter/getCategories']
     },
     filterParams: function() {
-      return this.$store.getters['blogFilter/getFilteredCategories']
+      // eslint-disable-next-line prettier/prettier
+      const filterCategories = this.$store.getters['blogFilter/getFilteredCategories']
+      const filterTags = this.$store.getters['blogFilter/getFilteredTags']
+      return filterTags.concat(filterCategories)
     }
   },
   methods: {
@@ -43,5 +87,5 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
 </style>
