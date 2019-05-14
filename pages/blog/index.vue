@@ -1,35 +1,26 @@
 <template>
-  <article>
-    <v-layout justify-space-around py-2 wrap>
-      <v-flex v-if="$vuetify.breakpoint.mdAndUp" md3>
+  <v-container fluid>
+    <v-layout wrap>
+      <v-flex md4>
         <BlogFilter />
       </v-flex>
-      <v-flex v-else xs12 pb-2>
-        <HorizontalBlogFilter />
-      </v-flex>
-      <v-flex xs12 md8>
-        <BlogList :blog-list="blogPosts" />
+      <v-flex xs12 offset-md2 md4>
+        <BlogList />
       </v-flex>
     </v-layout>
-  </article>
+  </v-container>
 </template>
 
 <script>
 import BlogList from '~/components/blog/BlogList.vue'
 import BlogFilter from '~/components/blog/BlogFilter.vue'
-import HorizontalBlogFilter from '~/components/blog/HorizontalBlogFilter.vue'
 
 export default {
   components: {
     BlogList,
-    BlogFilter,
-    HorizontalBlogFilter
+    BlogFilter
   },
-  computed: {
-    blogPosts: function() {
-      return this.$store.getters['blogFilter/getFilteredBlogPosts']
-    }
-  },
+  computed: {},
   async fetch({ store }) {
     await store.dispatch('blog/fetchBlogPosts')
     await store.dispatch('blog/fetchCategories')
