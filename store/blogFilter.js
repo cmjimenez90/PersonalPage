@@ -37,6 +37,39 @@ export const getters = {
   },
   getFilterCategories: state => {
     return state.filterCategories
+  },
+  getFilteredItems: state => {
+    return [
+      ...state.filterCategories.filter(category => category.checked === true),
+      ...state.filterTags.filter(tag => tag.checked === true)
+    ]
+  },
+  getFilteredBlogs: state => posts => {
+    posts.filter(post => {
+      let isValid = true
+
+      if (state.filterCategories.length > 0) {
+        const filterCategorySlugs = state.filteredCategories.map(
+          category => category.slug
+        )
+        const postCategorySlugs = post.categories.map(category => category.slug)
+        const resultCategorySlugs = filterCategorySlugs.filter(
+          category => postCategorySlugs.indexOf(category) !== -1
+        )
+        isValid = filterCategorySlugs.length === resultCategorySlugs.length
+      }
+
+      if (state.filterTags.length > 0 && isValid === true) {
+        const filterTagSlugs = state.filteredTags.map(tag => tag.slug)
+        const postTagSlugs = post.tags.map(tag => tag.slug)
+        const resultTagSlugs = filterTagSlugs.filter(
+          tag => postTagSlugs.indexOf(tag) !== -1
+        )
+        isValid = filterTagSlugs.length === resultTagSlugs.length
+      }
+
+      return isValid
+    })
   }
 }
 

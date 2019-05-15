@@ -5,19 +5,32 @@
     </v-toolbar>
     <v-container fill-height>
       <v-layout column>
-        <v-flex />
         <v-flex>
+          <v-card flat min-height="100px">
+            <v-subheader>Active</v-subheader>
+            <v-chip
+              v-for="item in filteredItems"
+              :key="item.slug"
+              small
+              color="secondary lighten-2"
+              text-color="white"
+              close
+              @input="toggleChecked(item)"
+            >
+              {{ item.name }}
+            </v-chip>
+          </v-card>
           <v-list>
             <v-subheader>Categories</v-subheader>
             <v-list-tile v-for="category in filterCategories" :key="category.slug">
               <v-list-tile-action>
-                <v-checkbox :label="category.name" @change="toggleChecked(category)" />
+                <v-checkbox color="secondary lighten-2" :label="category.name" @change="toggleChecked(category)" />
               </v-list-tile-action>      
             </v-list-tile>
             <v-subheader>Tags</v-subheader>
             <v-list-tile v-for="tag in filterTags" :key="tag.slug">
               <v-list-tile-action>
-                <v-checkbox :label="tag.name" @change="toggleChecked(tag)" />
+                <v-checkbox color="secondary lighten-2" :label="tag.name" @change="toggleChecked(tag)" />
               </v-list-tile-action>           
             </v-list-tile>
           </v-list>
@@ -35,6 +48,9 @@ export default {
     },
     filterCategories: function() {
       return this.$store.getters['blogFilter/getFilterCategories']
+    },
+    filteredItems: function() {
+      return this.$store.getters['blogFilter/getFilteredItems']
     }
   },
   methods: {
@@ -46,4 +62,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .v-checkbox
+    color: red
 </style>
