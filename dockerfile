@@ -17,5 +17,5 @@ RUN npm ci --only=production
 COPY . /usr/src/app
 RUN npm run generate
 
-FROM nginx
+FROM nginx as prod
 COPY --from=build-prod /usr/src/app/website/dist /usr/share/nginx/html
