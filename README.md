@@ -19,9 +19,25 @@ $ npm start
 
 # generate static project
 $ npm run generate
+```
 
-# run local docker static site
-$ docker build --rm -f "dockerfile" -t personalpage:latest .
-$ docker run --rm -d -p 80:80/tcp personalpage:latest
+## run local docker dev environment
+
+``` bash
+#Easiest (access at http://localhost:3000)
+$  docker-compose up
+```
+
+``` bash
+#Manual (access at http://localhost:3000)
+$ docker build --rm -f "dockerfile" --target dev -t personalpage:dev .
+$ docker run --rm -d -p 3000:3000/tcp personalpage:dev
+```
+
+``` bash
+#Run local docker static site
+$ docker build --rm -f "dockerfile" --target prod -t personalpagestatic:latest .
+$ docker run --rm -d -p 80:80/tcp personalpagestatic:latest
+```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
