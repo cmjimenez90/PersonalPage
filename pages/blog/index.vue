@@ -1,10 +1,13 @@
 <template>
   <v-container fluid>
     <v-layout wrap>
-      <v-flex md4>
+      <v-flex v-if="$vuetify.breakpoint.mdAndUp" md4>
         <BlogFilter />
       </v-flex>
-      <v-flex xs12 offset-md2 md4>
+      <v-flex v-else xs12>
+        <ExpandingBlogFilter />
+      </v-flex>
+      <v-flex xs12 offset-md1 md6>
         <BlogList :blog-list="filteredBlogs" />
       </v-flex>
     </v-layout>
@@ -14,11 +17,13 @@
 <script>
 import BlogList from '~/components/blog/BlogList.vue'
 import BlogFilter from '~/components/blog/BlogFilter.vue'
+import ExpandingBlogFilter from '~/components/blog/ExpandingBlogFilter.vue'
 
 export default {
   components: {
     BlogList,
-    BlogFilter
+    BlogFilter,
+    ExpandingBlogFilter
   },
   computed: {
     filteredBlogs: function() {
