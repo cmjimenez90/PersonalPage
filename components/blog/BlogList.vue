@@ -31,7 +31,7 @@ export default {
   props: {
     blogList: {
       type: Array,
-      default: () => {
+      default: function() {
         return []
       }
     }

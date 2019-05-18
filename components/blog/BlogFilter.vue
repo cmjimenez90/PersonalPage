@@ -63,10 +63,10 @@
 export default {
   computed: {
     filterTags: function() {
-      return this.$store.getters['blogFilter/getFilterTags']
+      return this.$store.getters['blogFilter/getTags']
     },
     filterCategories: function() {
-      return this.$store.getters['blogFilter/getFilterCategories']
+      return this.$store.getters['blogFilter/getCategories']
     },
     filteredItems: function() {
       return this.$store.getters['blogFilter/getFilteredItems']

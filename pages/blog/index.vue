@@ -5,7 +5,7 @@
         <BlogFilter />
       </v-flex>
       <v-flex xs12 offset-md2 md4>
-        <BlogList />
+        <BlogList :blog-list="filteredBlogs" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -20,7 +20,11 @@ export default {
     BlogList,
     BlogFilter
   },
-  computed: {},
+  computed: {
+    filteredBlogs: function() {
+      return this.$store.getters['blogFilter/getFilteredBlogs']
+    }
+  },
   async fetch({ store }) {
     await store.dispatch('blog/fetchBlogPosts')
     await store.dispatch('blog/fetchCategories')

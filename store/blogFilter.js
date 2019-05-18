@@ -1,6 +1,7 @@
 export const state = () => ({
-  filterCategories: [],
-  filterTags: [],
+  blogPost: [],
+  categories: [],
+  tags: [],
   initialized: false
 })
 
@@ -14,13 +15,16 @@ export const mutations = {
     const updatedCategoryModel = categories.map(category => {
       return { name: category.name, slug: category.slug, checked: false }
     })
-    state.filterCategories = updatedCategoryModel
+    state.categories = updatedCategoryModel
   },
   loadTags(state, tags) {
     const updatedTagModel = tags.map(tag => {
       return { name: tag.name, slug: tag.slug, checked: false }
     })
-    state.filterTags = updatedTagModel
+    state.tags = updatedTagModel
+  },
+  loadPost(state, post) {
+    state.blogPost = post
   },
   toggleChecked(state, item) {
     item.checked = !item.checked
@@ -28,44 +32,20 @@ export const mutations = {
 }
 
 export const getters = {
-  getFilterTags: state => {
-    return state.filterTags
+  getTags: state => {
+    return state.tags
   },
-  getFilterCategories: state => {
-    return state.filterCategories
+  getCategories: state => {
+    return state.categories
   },
   getFilteredItems: state => {
     return [
-      ...state.filterCategories.filter(category => category.checked === true),
-      ...state.filterTags.filter(tag => tag.checked === true)
+      ...state.categories.filter(category => category.checked === true),
+      ...state.tags.filter(tag => tag.checked === true)
     ]
   },
-  getFilteredBlogs: state => posts => {
-    posts.filter(post => {
-      let isValid = true
-
-      if (state.filterCategories.length > 0) {
-        const filterCategorySlugs = state.filteredCategories.map(
-          category => category.slug
-        )
-        const postCategorySlugs = post.categories.map(category => category.slug)
-        const resultCategorySlugs = filterCategorySlugs.filter(
-          category => postCategorySlugs.indexOf(category) !== -1
-        )
-        isValid = filterCategorySlugs.length === resultCategorySlugs.length
-      }
-
-      if (state.filterTags.length > 0 && isValid === true) {
-        const filterTagSlugs = state.filteredTags.map(tag => tag.slug)
-        const postTagSlugs = post.tags.map(tag => tag.slug)
-        const resultTagSlugs = filterTagSlugs.filter(
-          tag => postTagSlugs.indexOf(tag) !== -1
-        )
-        isValid = filterTagSlugs.length === resultTagSlugs.length
-      }
-
-      return isValid
-    })
+  getFilteredBlogs: state => {
+    return state.blogPost.filter(post => filterPost(post, state))
   }
 }
 
@@ -76,6 +56,8 @@ export const actions = {
       commit('loadCategories', categories)
       const tags = rootState.blog.tags
       commit('loadTags', tags)
+      const post = rootState.blog.list
+      commit('loadPost', post)
       commit('setInitializationFlag')
     }
   },
@@ -83,15 +65,47 @@ export const actions = {
     commit('toggleChecked', item)
   },
   resetFilter({ commit, state }) {
-    state.filterCategories.forEach(element => {
+    state.categories.forEach(element => {
       if (element.checked === true) {
         commit('toggleChecked', element)
       }
     })
-    state.filterTags.forEach(element => {
+    state.tags.forEach(element => {
       if (element.checked === true) {
         commit('toggleChecked', element)
       }
     })
   }
+}
+
+function filterPost(post, state) {
+  let isValidPost = true
+
+  const filteredCategories = state.categories
+    .filter(category => {
+      return category.checked === true
+    })
+    .map(category => category.slug)
+  const filteredTags = state.tags
+    .filter(tag => {
+      return tag.checked === true
+    })
+    .map(tag => tag.slug)
+
+  if (filteredCategories.length > 0) {
+    const postCategories = post.categories.map(category => category.slug)
+    const matchingCategories = postCategories.filter(category => {
+      return filteredCategories.indexOf(category) !== -1
+    })
+    isValidPost = matchingCategories.length === filteredCategories.length
+  }
+
+  if (filteredTags.length > 0 && isValidPost === true) {
+    const postTags = post.tags.map(tag => tag.slug)
+    const matchingTags = postTags.filter(tag => {
+      return filteredTags.indexOf(tag) !== -1
+    })
+    return matchingTags.length === filteredTags.length
+  }
+  return isValidPost
 }
