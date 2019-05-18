@@ -11,5 +11,8 @@ Vue.use(Vuetify, {
     warning: colors.deepOrange.accent3,
     error: colors.red.accent4,
     success: colors.green
+  },
+  options: {
+    customProperties: true
   }
 })
