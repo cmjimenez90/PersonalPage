@@ -23,11 +23,7 @@ export const mutations = {
     state.filterTags = updatedTagModel
   },
   toggleChecked(state, item) {
-    if (item.checked === false) {
-      item.checked = true
-    } else {
-      item.checked = false
-    }
+    item.checked = !item.checked
   }
 }
 
@@ -85,5 +81,17 @@ export const actions = {
   },
   toggleChecked({ commit }, item) {
     commit('toggleChecked', item)
+  },
+  resetFilter({ commit, state }) {
+    state.filterCategories.forEach(element => {
+      if (element.checked === true) {
+        commit('toggleChecked', element)
+      }
+    })
+    state.filterTags.forEach(element => {
+      if (element.checked === true) {
+        commit('toggleChecked', element)
+      }
+    })
   }
 }
