@@ -24,13 +24,13 @@
             <v-subheader>Categories</v-subheader>
             <v-list-tile v-for="category in filterCategories" :key="category.slug">
               <v-list-tile-action>
-                <v-checkbox color="secondary lighten-2" :label="category.name" @change="toggleChecked(category)" />
+                <v-checkbox color="secondary lighten-2" :value="category.checked" :label="category.name" @change="toggleChecked(category)" />
               </v-list-tile-action>      
             </v-list-tile>
             <v-subheader>Tags</v-subheader>
             <v-list-tile v-for="tag in filterTags" :key="tag.slug">
               <v-list-tile-action>
-                <v-checkbox color="secondary lighten-2" :label="tag.name" @change="toggleChecked(tag)" />
+                <v-checkbox color="secondary lighten-2" :value="tag.checked" :label="tag.name" @change="toggleChecked(tag)" />
               </v-list-tile-action>           
             </v-list-tile>
           </v-list>
