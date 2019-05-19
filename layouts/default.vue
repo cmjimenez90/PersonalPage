@@ -1,20 +1,20 @@
 <template>
   <v-app>
-    <Header />
+    <PageHeader />
     <v-content>
       <nuxt />
     </v-content>
-    <Footer />
+    <PageFooter />
   </v-app>
 </template>
 
 <script>
-import Header from '~/components/main/Header.vue'
-import Footer from '~/components/main/Footer.vue'
+import PageHeader from '~/components/core/PageHeader.vue'
+import PageFooter from '~/components/core/PageFooter.vue'
 export default {
   components: {
-    Header,
-    Footer
+    PageHeader,
+    PageFooter
   }
 }
 </script>

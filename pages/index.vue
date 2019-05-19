@@ -14,7 +14,7 @@
 
 <script>
 import BioCard from '~/components/profile/BioCard.vue'
-import ProjectHighlightsList from '~/components/profile/ProjectHighlightsList.vue'
+import ProjectHighlightsList from '~/components/project/ProjectHighlightsList.vue'
 import RecentBlogPostList from '~/components/blog/RecentBlogPostList.vue'
 export default {
   components: {
