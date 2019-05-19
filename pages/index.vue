@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <BioCard :name="name" :caption="caption" :description="description" />
+    <v-flex xs12 sm6 offset-sm3>
+      <HeadshotCard />
+    </v-flex>
     <v-layout row wrap>
       <v-flex sm6 xs12>
         <ProjectHighlightsList :projects="projects" />
@@ -13,19 +15,17 @@
 </template>
 
 <script>
-import BioCard from '~/components/profile/BioCard.vue'
+import HeadshotCard from '~/components/profile/HeadshotCard.vue'
 import ProjectHighlightsList from '~/components/project/ProjectHighlightsList.vue'
 import RecentBlogPostList from '~/components/blog/RecentBlogPostList.vue'
 export default {
   components: {
-    BioCard,
     ProjectHighlightsList,
-    RecentBlogPostList
+    RecentBlogPostList,
+    HeadshotCard
   },
   data: function() {
     return {
-      name: 'Carlos Jimenez',
-      caption: 'Problem Solver, Developer, Computer Technician',
       description:
         'A new developer with a strong desire to take on any challenge. Carlos is currently employed as a Technical Support Technician for Rowan College at Gloucester County while also pursuing a degree in Computer Science. In the meantime, he continues to push himself by learning new technologies and creating different tools on the side; whether it is to solve a problem at work or just for fun!'
     }
