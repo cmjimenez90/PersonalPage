@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex v-for="link in imageLinks" :key="link.href" class="text-xs-center">
-      <ImageLinkButton :href="link.href" :img-src="link.imgSrc" :img-src-alternate="imgSrcAlternate" />
+      <ImageLinkButton :href="link.href" :img-src="link.imgSrc" :img-src-alternate="link.imgSrcAlternate" />
     </v-flex>
   </v-layout>
 </template>
