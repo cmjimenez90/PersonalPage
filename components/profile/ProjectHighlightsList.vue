@@ -1,10 +1,7 @@
 <template>
-  <v-container fill-height>
+  <v-container>
     <v-layout
       wrap
-      justify-space-around
-      align-center
-      fill-height
       secondary
       lighten-2
     >
@@ -19,11 +16,8 @@
         </v-toolbar>
       </v-flex>
       <v-flex
-        v-for="(project,index) in projects"
+        v-for="(project,index) in projectsList"
         :key="index"
-        xs12
-        sm6
-        lg5
         class="pa-1"
       >
         <project-card :project="project" />
@@ -38,9 +32,17 @@ export default {
   components: {
     ProjectCard
   },
-  computed: {
-    projects: function() {
-      return this.$store.state.projects.list
+  props: {
+    projects: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
+  data: function() {
+    return {
+      projectsList: this.projects
     }
   }
 }

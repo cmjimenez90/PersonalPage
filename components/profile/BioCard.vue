@@ -16,7 +16,7 @@
           <p class="title">
             {{ name }}
           </p>
-          <p class="body-2">
+          <p class="subheading">
             {{ caption }}
           </p>
         </v-card-text>
@@ -40,7 +40,7 @@
       </v-flex>
       <v-flex xs12 sm6 md8>
         <v-container fill-height>
-          <p class="subheading px-2">
+          <p class="px-2 subheading">
             {{ description }}
           </p>
         </v-container>

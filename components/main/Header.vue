@@ -18,7 +18,7 @@ export default {
         },
         {
           title: 'BLOG',
-          route: 'blog'
+          route: '/blog'
         }
       ]
     }
