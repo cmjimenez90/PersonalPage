@@ -1,5 +1,5 @@
 <template>
-  <v-btn fab flat :href="href">
+  <v-btn icon :href="href">
     <v-avatar tile>
       <v-img :src="imgSrc" contain :alt="imgSrcAlternate" />
     </v-avatar>

@@ -1,6 +1,6 @@
 <template>
-  <v-layout>
-    <v-flex v-for="link in imageLinks" :key="link.href" class="text-xs-center">
+  <v-layout row>
+    <v-flex v-for="link in imageLinks" :key="link.href" class="text-xs-center" py-2>
       <ImageLinkButton :href="link.href" :img-src="link.imgSrc" :img-src-alternate="link.imgSrcAlternate" />
     </v-flex>
   </v-layout>
@@ -8,6 +8,7 @@
 
 <script>
 import ImageLinkButton from '~/components/core/ImageLinkButton.vue'
+
 export default {
   components: {
     ImageLinkButton
@@ -18,14 +19,6 @@ export default {
       required: true,
       default: function() {
         return []
-      },
-      validator: function(values) {
-        values.every(element => {
-          if (!element.href || !element.imgSrc || !element.imgSrcAlternate) {
-            return false
-          }
-          return true
-        })
       }
     }
   }
