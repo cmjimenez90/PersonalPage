@@ -12,7 +12,7 @@ export default {}
 
 <style lang="stylus" scoped>
 .summary-card
-    background-color: var(--v-primary-darken2)
-    color: var(--v-secondary-lighten4)
+    background-color: var(--v-primary-base)
+    color: var(--v-secondary-base)
     font-size: 1.2em
 </style>
