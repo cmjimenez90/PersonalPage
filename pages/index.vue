@@ -1,8 +1,13 @@
 <template>
   <v-container>
-    <v-flex xs12 sm6 offset-sm3>
-      <HeadshotCard />
-    </v-flex>
+    <v-layout justify-center>
+      <v-flex xs12 sm8 md10>
+        <v-card>
+          <Headshot />
+          <HeadshotSummary />
+        </v-card>
+      </v-flex>
+    </v-layout>
     <v-layout row wrap>
       <v-flex sm6 xs12>
         <ProjectHighlightsList :projects="projects" />
@@ -15,14 +20,16 @@
 </template>
 
 <script>
-import HeadshotCard from '~/components/profile/HeadshotCard.vue'
+import Headshot from '~/components/profile/Headshot.vue'
+import HeadshotSummary from '~/components/profile/HeadshotSummary.vue'
 import ProjectHighlightsList from '~/components/project/ProjectHighlightsList.vue'
 import RecentBlogPostList from '~/components/blog/RecentBlogPostList.vue'
 export default {
   components: {
     ProjectHighlightsList,
     RecentBlogPostList,
-    HeadshotCard
+    Headshot,
+    HeadshotSummary
   },
   data: function() {
     return {
