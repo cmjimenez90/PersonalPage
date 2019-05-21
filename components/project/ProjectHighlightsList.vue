@@ -20,17 +20,17 @@
         :key="index"
         class="pa-1"
       >
-        <project-card :project="project" />
+        <v-card><project-item :project="project" /></v-card>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import ProjectCard from '~/components/project/ProjectCard.vue'
+import ProjectItem from '~/components/project/ProjectItem.vue'
 export default {
   components: {
-    ProjectCard
+    ProjectItem
   },
   props: {
     projects: {
