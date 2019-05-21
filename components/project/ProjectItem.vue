@@ -14,27 +14,13 @@
           {{ project.project_description }}
         </p>
       </v-flex>
-      <v-flex class="text-xs-center project-links" py-2>
-        <ImageLinkButton
-          v-if="project.project_vc_url !== ''"
-          :href="project.project_vc_url"
-          :img-src="project.project_vc_icon"
-        />
-        <ImageLinkButton 
-          v-if="project.project_url !== ''"
-          :href="project.project_url" 
-          :img-src="project.project_url_icon"
-        />
-      </v-flex>
+      <v-layout justify-center />
     </v-layout>
   </v-container>
 </template>
 <script>
-import ImageLinkButton from '~/components/core/ImageLinkButton.vue'
 export default {
-  components: {
-    ImageLinkButton
-  },
+  components: {},
   props: {
     project: {
       type: Object,
