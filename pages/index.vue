@@ -6,7 +6,7 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap justify-center>
-      <v-flex sm4 xs12 mr-3>
+      <v-flex sm4 xs12 mr-2>
         <ProjectCardList :projects="projects" title="Recent Projects">
           <template #project="{project}">
             <ProjectItemCard :project="project" />

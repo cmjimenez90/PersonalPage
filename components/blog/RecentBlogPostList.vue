@@ -1,12 +1,19 @@
 <template>
   <v-layout column>
-    <v-flex mb-2>
+    <v-flex>
       <v-toolbar class="list-title">
-        <v-toolbar-title><h3>{{ title }}</h3></v-toolbar-title>
+        <v-toolbar-title><h3>{{ title }}</h3>
+        </v-toolbar-title>
       </v-toolbar>
     </v-flex>
-    <v-flex v-for="(post,index) in sortedBlogPost" :key="index" class="mb-2">
-      <BlogSummaryCard :blog-post="post" />
+    <v-flex>
+      <v-container pt-2>
+        <v-layout column>
+          <v-flex v-for="(post,index) in sortedBlogPost" :key="index" mb-2>
+            <BlogSummaryCard :blog-post="post" />
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-flex>
   </v-layout>
 </template>

@@ -1,14 +1,20 @@
 <template>
   <v-layout column>
-    <v-flex mb-2>
+    <v-flex>
       <v-toolbar class="list-title">
         <v-toolbar-title><h3>{{ title }}</h3></v-toolbar-title>
       </v-toolbar>
     </v-flex>
-    <v-flex v-for="(project,index) in projects" :key="index" mb-2>
-      <slot name="project" :project="project">
-        {{ project.project_title }}
-      </slot>
+    <v-flex>
+      <v-container pt-2>
+        <v-layout column>
+          <v-flex v-for="(project,index) in projects" :key="index" mb-2>
+            <slot name="project" :project="project">
+              {{ project.project_title }}
+            </slot>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-flex>
   </v-layout>
 </template>
