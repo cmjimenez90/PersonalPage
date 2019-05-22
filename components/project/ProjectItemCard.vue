@@ -14,6 +14,16 @@
           {{ project.project_description }}
         </p>
       </v-flex>
+      <v-flex class="project-links">
+        <v-layout justify-space-around>
+          <v-btn v-if="project.project_vc_url !== ''" :href="project.project_vc_url" block flat target="_blank">
+            <v-img :src="project.project_vc_icon" height="35" contain />
+          </v-btn>
+          <v-btn v-if="project.project_url !== ''" :href="project.project_url" target="_blank" block flat>
+            <v-img height="35" contain :src="project.project_url_icon" />
+          </v-btn>
+        </v-layout>
+      </v-flex>
     </v-layout>
   </v-card>
 </template>

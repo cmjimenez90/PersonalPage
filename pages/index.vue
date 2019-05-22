@@ -6,8 +6,8 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex sm6 xs12>
-        <ProjectHighlightsList :projects="projects" />
+      <v-flex v-for="(project,index) in projects" :key="index" sm6 xs12>
+        <ProjectItemCard :project="project" />
       </v-flex>
       <v-flex sm6 xs12>
         <RecentBlogPostList :blog-posts="blogPosts" />
@@ -18,13 +18,13 @@
 
 <script>
 import HeadshotCard from '~/components/profile/HeadshotCard.vue'
-import ProjectHighlightsList from '~/components/project/ProjectHighlightsList.vue'
 import RecentBlogPostList from '~/components/blog/RecentBlogPostList.vue'
+import ProjectItemCard from '~/components/project/ProjectItemCard.vue'
 export default {
   components: {
-    ProjectHighlightsList,
     RecentBlogPostList,
-    HeadshotCard
+    HeadshotCard,
+    ProjectItemCard
   },
   data: function() {
     return {
