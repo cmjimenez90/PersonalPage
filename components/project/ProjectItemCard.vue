@@ -9,7 +9,7 @@
       <v-flex py-1>
         <v-img :src="project.project_image" height="125" contain alt="reference picture of " />
       </v-flex>
-      <v-flex class="project-description" px-3>
+      <v-flex class="project-description">
         <p>
           {{ project.project_description }}
         </p>
@@ -52,4 +52,10 @@ export default {
 .project-title
   background-color: var(--v-secondary-base)
   color: var(--v-primary-base)
+.project-description
+    margin: 20px 15px
+    font-size: 1.1em 
+    @media screen and (min-width: 600px) {
+      font-size: 1.2em
+    }
 </style>
