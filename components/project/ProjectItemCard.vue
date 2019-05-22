@@ -16,20 +16,19 @@
       </v-flex>
       <v-flex class="project-links">
         <v-layout justify-space-around>
-          <v-btn v-if="project.project_vc_url !== ''" :href="project.project_vc_url" flat target="_blank">
-            <v-img :src="project.project_vc_icon" height="35" width="125" contain />
-          </v-btn>
-          <v-btn v-if="project.project_url !== ''" :href="project.project_url" target="_blank" flat>
-            <v-img height="35" width="125" contain :src="project.project_url_icon" />
-          </v-btn>
+          <ImageLinkButton v-if="project.project_vc_url !== ''" :href="project.project_vc_url" :img-src="project.project_vc_icon" />
+          <ImageLinkButton v-if="project.project_url !== ''" :href="project.project_url" :img-src="project.project_url_icon" />
         </v-layout>
       </v-flex>
     </v-layout>
   </v-card>
 </template>
 <script>
+import ImageLinkButton from '~/components/core/button/ImageLinkButton.vue'
 export default {
-  components: {},
+  components: {
+    ImageLinkButton
+  },
   props: {
     project: {
       type: Object,
