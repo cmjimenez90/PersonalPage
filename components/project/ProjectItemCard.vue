@@ -1,16 +1,16 @@
 <template>
   <v-card class="project-item">
     <v-layout column>
-      <v-flex class="project-title" py-2>
+      <v-flex class="project-title" py-2 mb-2>
         <h3 class="text-xs-center">
           {{ project.project_title }}
         </h3>
       </v-flex>
-      <v-flex py-1>
+      <v-flex mb-1>
         <v-img :src="project.project_image" height="125" contain alt="reference picture of " />
       </v-flex>
       <v-flex class="project-description">
-        <p>
+        <p class="pl-2">
           {{ project.project_description }}
         </p>
       </v-flex>

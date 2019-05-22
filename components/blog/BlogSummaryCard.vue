@@ -1,9 +1,9 @@
 <template>
   <v-card class="blog-summary-card">
     <v-layout column>
-      <v-flex>
+      <v-flex mb-3>
         <v-layout column class="blog-summary-heading" pa-2>
-          <v-flex class="blog-summary-category">
+          <v-flex class="blog-summary-category pr-2">
             <h4 class="text-xs-right">
               {{ BlogPost.categories[0].name }}
             </h4>
@@ -13,21 +13,21 @@
               {{ BlogPost.title }}
             </h3>
           </v-flex>
-          <v-flex class="blog-summary-date">
+          <v-flex class="blog-summary-date pl-2">
             <span>{{ formatedPublishedDate }}</span>
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex class="blog-summary-image" my-2>
+      <v-flex class="blog-summary-image">
         <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="125px" contain />
       </v-flex>
       <v-flex>
-        <p class="blog-summary-summary">
+        <p class="blog-summary-summary pl-2">
           {{ BlogPost.summary }}
         </p>
         <ChipContainer :items="BlogPost.tags" heading="Tag:" />
       </v-flex>
-      <v-flex class="text-xs-right">
+      <v-flex class="text-xs-right" pr-4 mb-2>
         <v-btn nuxt :to="/blog/+BlogPost.slug" class="blog-summary-button primary--text" color="accent">
           <span>
             READ
