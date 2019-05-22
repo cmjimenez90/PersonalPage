@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="primary darken-1">
     <PageHeader />
     <v-content>
       <nuxt />
