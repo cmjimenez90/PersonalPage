@@ -1,22 +1,21 @@
 <template>
-  <v-container fluid class="project-item">
+  <v-card class="project-item">
     <v-layout column>
-      <v-flex>
-        <h3 class="project-title">
+      <v-flex class="project-title" py-2>
+        <h3 class="text-xs-center">
           {{ project.project_title }}
         </h3>
       </v-flex>
-      <v-flex>
+      <v-flex py-1>
         <v-img :src="project.project_image" height="125" contain alt="reference picture of " />
       </v-flex>
-      <v-flex>
-        <p class="project-description">
+      <v-flex class="project-description" px-3>
+        <p>
           {{ project.project_description }}
         </p>
       </v-flex>
-      <v-layout justify-center />
     </v-layout>
-  </v-container>
+  </v-card>
 </template>
 <script>
 export default {
@@ -37,6 +36,10 @@ export default {
 
 <style lang="stylus" scoped>
 .project-item
-    background-color : var(--v-primary-darken2)
-    color: var(--v-secondary-lighten4)
+    background-color : var(--v-primary-base)
+    color: var(--v-secondary-base)
+    font-size: 1.1em
+.project-title
+  background-color: var(--v-secondary-base)
+  color: var(--v-primary-base)
 </style>

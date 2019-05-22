@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout justify-center>
-      <v-flex xs12 sm8 md6 class="elevation-15">
+      <v-flex xs12 sm8 lg6 class="elevation-1">
         <HeadshotCard />
       </v-flex>
     </v-layout>
