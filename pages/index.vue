@@ -5,16 +5,16 @@
         <HeadshotCard />
       </v-flex>
     </v-layout>
-    <v-layout row wrap>
-      <v-flex sm5 xs12>
+    <v-layout row wrap justify-center>
+      <v-flex sm4 xs12 mr-3>
         <ProjectCardList :projects="projects" title="Recent Projects">
           <template #project="{project}">
             <ProjectItemCard :project="project" />
           </template>
         </ProjectCardList>
       </v-flex>
-      <v-flex sm6 xs12>
-        <RecentBlogPostList :blog-posts="blogPosts" />
+      <v-flex sm4 xs12>
+        <RecentBlogPostList title="Recent Blog Post" :blog-posts="blogPosts" />
       </v-flex>
     </v-layout>
   </v-container>
