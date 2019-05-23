@@ -1,8 +1,6 @@
 <template>
   <v-btn icon :href="href" target="_blank">
-    <v-avatar tile>
-      <v-img :src="imgSrc" contain :alt="imgSrcAlternate" />
-    </v-avatar>
+    <v-img :src="imgSrc" contain :alt="imgSrcAlternate" />
   </v-btn>
 </template>
 
