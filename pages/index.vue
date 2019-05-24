@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container :fluid="$vuetify.breakpoint.lgAndDown">
     <v-layout :column="$vuetify.breakpoint.mdAndDown" justify-center align-center mb-2>
       <v-flex :mr-3="$vuetify.breakpoint.lgAndUp" :mb-2="$vuetify.breakpoint.mdAndDown">
         <HeadshotCard />
