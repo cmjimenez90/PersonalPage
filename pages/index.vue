@@ -1,11 +1,16 @@
 <template>
   <v-container>
-    <v-layout>
-      <v-flex shrink mr-2>
+    <v-layout row justify-center align-center mb-2>
+      <v-flex mr-3>
         <HeadshotCard />
       </v-flex>
       <v-flex>
         <MostRecentProject :projects="projects" />
+      </v-flex>
+    </v-layout>
+    <v-layout>
+      <v-flex>
+        <ProjectListing :projects="projects.slice(1)" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -14,16 +19,12 @@
 <script>
 import HeadshotCard from '~/components/profile/HeadshotCard.vue'
 import MostRecentProject from '~/components/project/MostRecentProject.vue'
+import ProjectListing from '~/components/project/ProjectListing.vue'
 export default {
   components: {
     HeadshotCard,
-    MostRecentProject
-  },
-  data: function() {
-    return {
-      description:
-        'A new developer with a strong desire to take on any challenge. Carlos is currently employed as a Technical Support Technician for Rowan College at Gloucester County while also pursuing a degree in Computer Science. In the meantime, he continues to push himself by learning new technologies and creating different tools on the side; whether it is to solve a problem at work or just for fun!'
-    }
+    MostRecentProject,
+    ProjectListing
   },
   computed: {
     blogPosts: function() {
@@ -41,4 +42,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 </style>
