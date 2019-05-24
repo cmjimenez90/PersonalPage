@@ -1,8 +1,16 @@
 <template>
   <v-container>
-    <v-layout justify-center mb-4>
-      <v-flex>
+    <v-layout :column="$vuetify.breakpoint.mdAndDown" justify-center align-center mb-2>
+      <v-flex :mr-3="$vuetify.breakpoint.lgAndUp" :mb-2="$vuetify.breakpoint.mdAndDown">
         <HeadshotCard />
+      </v-flex>
+      <v-flex>
+        <MostRecentProject :projects="projects" />
+      </v-flex>
+    </v-layout>
+    <v-layout>
+      <v-flex>
+        <ProjectListing :projects="projects.slice(1)" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -10,15 +18,13 @@
 
 <script>
 import HeadshotCard from '~/components/profile/HeadshotCard.vue'
+import MostRecentProject from '~/components/project/MostRecentProject.vue'
+import ProjectListing from '~/components/project/ProjectListing.vue'
 export default {
   components: {
-    HeadshotCard
-  },
-  data: function() {
-    return {
-      description:
-        'A new developer with a strong desire to take on any challenge. Carlos is currently employed as a Technical Support Technician for Rowan College at Gloucester County while also pursuing a degree in Computer Science. In the meantime, he continues to push himself by learning new technologies and creating different tools on the side; whether it is to solve a problem at work or just for fun!'
-    }
+    HeadshotCard,
+    MostRecentProject,
+    ProjectListing
   },
   computed: {
     blogPosts: function() {
@@ -36,4 +42,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 </style>

@@ -1,12 +1,12 @@
 <template>
   <v-card>
-    <v-layout wrap>
-      <v-flex id="headshot-image" xs12 class="text-xs-center" py-3>
+    <v-layout column>
+      <v-flex id="headshot-image" class="text-xs-center" py-3>
         <v-avatar size="160">
           <v-img src="/self_prof_bw.jpg" alt="Headshot of Carlos Jimenez" />
         </v-avatar>
       </v-flex>
-      <v-flex id="headshot-body" xs12 class="text-xs-center" py-2>
+      <v-flex id="headshot-body" class="text-xs-center" py-2>
         <h1 class="display-1">
           Carlos M. Jimenez
         </h1>
