@@ -4,9 +4,7 @@
       <h2>Other Projects</h2>
     </v-flex>
     <v-layout :column="$vuetify.breakpoint.mdAndDown">
-      <v-flex v-for="project in projects" :key="project.slug" px-2>
-        <ProjectItemCard :project="project" />
-      </v-flex>
+      <ProjectItemCard v-for="project in projects" :key="project.slug" :project="project" />
     </v-layout>
   </v-layout>
 </template>
