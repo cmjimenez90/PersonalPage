@@ -1,6 +1,6 @@
 <template>
-  <v-layout row>
-    <v-flex v-for="link in imageLinks" :key="link.href" class="text-xs-center" py-2>
+  <v-layout row justify-center>
+    <v-flex v-for="link in imageLinks" :key="link.href" shrink>
       <IconLinkButton :href="link.href" :img-src="link.imgSrc" :img-src-alternate="link.imgSrcAlternate" />
     </v-flex>
   </v-layout>
