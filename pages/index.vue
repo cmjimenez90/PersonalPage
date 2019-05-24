@@ -1,20 +1,11 @@
 <template>
   <v-container>
-    <v-layout justify-center mb-4>
-      <v-flex xs12 sm8 lg6 class="elevation-1">
+    <v-layout>
+      <v-flex shrink mr-2>
         <HeadshotCard />
       </v-flex>
-    </v-layout>
-    <v-layout row wrap justify-center>
-      <v-flex sm4 xs12 mr-2>
-        <ProjectCardList :projects="projects" title="Recent Projects">
-          <template #project="{project}">
-            <ProjectItemCard :project="project" />
-          </template>
-        </ProjectCardList>
-      </v-flex>
-      <v-flex sm4 xs12>
-        <RecentBlogPostList title="Recent Blog Post" :blog-posts="blogPosts" />
+      <v-flex>
+        <MostRecentProject :projects="projects" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -22,15 +13,11 @@
 
 <script>
 import HeadshotCard from '~/components/profile/HeadshotCard.vue'
-import RecentBlogPostList from '~/components/blog/RecentBlogPostList.vue'
-import ProjectCardList from '~/components/project/ProjectCardList.vue'
-import ProjectItemCard from '~/components/project/ProjectItemCard.vue'
+import MostRecentProject from '~/components/project/MostRecentProject.vue'
 export default {
   components: {
-    RecentBlogPostList,
     HeadshotCard,
-    ProjectItemCard,
-    ProjectCardList
+    MostRecentProject
   },
   data: function() {
     return {
