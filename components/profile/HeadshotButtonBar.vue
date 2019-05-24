@@ -1,8 +1,13 @@
 <template>
   <v-layout row justify-center>
-    <v-flex v-for="link in imageLinks" :key="link.href" shrink mr-2>
-      <IconLinkButton :href="link.href" :img-src="link.imgSrc" :img-src-alternate="link.imgSrcAlternate" />
-    </v-flex>
+    <IconLinkButton
+      v-for="link in imageLinks"
+      :key="link.href"
+      :href="link.href"
+      :img-src="link.imgSrc"
+      :img-src-alternate="link.imgSrcAlternate"
+      class="mr-5"
+    />
   </v-layout>
 </template>
 
