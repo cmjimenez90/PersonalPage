@@ -1,13 +1,38 @@
+
 <template>
-  <v-layout>
+  <v-layout @mousemove="mousemove" @mouseup.left="mouseup">
     <div id="window_1" />
-    <div id="window_divider" draggable />
+    <div
+      id="window_divider"  
+      @mousedown.left="mousedown"
+    />
     <div id="window_2" />
   </v-layout>
 </template>
 
 <script>
-export default {}
+export default {
+  data: function() {
+    return {
+      isMoving: false
+    }
+  },
+  methods: {
+    mousedown(event) {
+      this.isMoving = true
+    },
+    mouseup(event) {
+      this.isMoving = false
+    },
+    mousemove(event) {
+      if (this.isMoving) {
+        const xPos = event.clientX
+        const window1 = document.getElementById('window_1')
+        window1.style.width = xPos - 5 + 'px'
+      }
+    }
+  }
+}
 </script>
 
 <style lang="stylus" scoped>
