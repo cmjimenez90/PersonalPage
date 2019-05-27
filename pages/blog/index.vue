@@ -1,34 +1,14 @@
 <template>
-  <v-container fluid>
-    <v-layout wrap>
-      <v-flex v-if="$vuetify.breakpoint.mdAndUp" md4>
-        <BlogFilter />
-      </v-flex>
-      <v-flex v-else xs12>
-        <ExpandingBlogFilter />
-      </v-flex>
-      <v-flex xs12 offset-md1 md6>
-        <BlogList :blog-list="filteredBlogs" />
-      </v-flex>
-    </v-layout>
+  <v-container fluid fill-height>
+    <DualWindow />
   </v-container>
 </template>
 
 <script>
-import BlogList from '~/components/blog/BlogList.vue'
-import BlogFilter from '~/components/blog/BlogFilter.vue'
-import ExpandingBlogFilter from '~/components/blog/ExpandingBlogFilter.vue'
-
+import DualWindow from '~/components/core/window/DualWindow.vue'
 export default {
   components: {
-    BlogList,
-    BlogFilter,
-    ExpandingBlogFilter
-  },
-  computed: {
-    filteredBlogs: function() {
-      return this.$store.getters['blogFilter/getFilteredBlogs']
-    }
+    DualWindow
   },
   async fetch({ store }) {
     await store.dispatch('blog/fetchBlogPosts')
