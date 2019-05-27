@@ -1,28 +1,23 @@
 <template>
-  <v-container>
-    <v-layout
-      wrap
-      secondary
-      lighten-2
-    >
-      <v-flex xs12>
-        <v-toolbar
-          class="primary
-          darken-2
-          white--text
-          title"
-        >
-          <v-toolbar-title>RECENT POST</v-toolbar-title>
-        </v-toolbar>
-      </v-flex>
-      <v-layout column>
-        <v-flex v-for="(post,index) in sortedBlogPost" :key="index" class="pa-1">
-          <BlogSummaryCard :blog-post="post" />
-        </v-flex>
-      </v-layout>
-    </v-layout>
-  </v-container>
+  <v-layout column>
+    <v-flex>
+      <v-toolbar class="list-title">
+        <v-toolbar-title><h3>{{ title }}</h3>
+        </v-toolbar-title>
+      </v-toolbar>
+    </v-flex>
+    <v-flex>
+      <v-container pt-2>
+        <v-layout column>
+          <v-flex v-for="(post,index) in sortedBlogPost" :key="index" mb-2>
+            <BlogSummaryCard :blog-post="post" />
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-flex>
+  </v-layout>
 </template>
+
 <script>
 import BlogSummaryCard from '~/components/blog/BlogSummaryCard.vue'
 export default {
@@ -39,6 +34,10 @@ export default {
     shownBlogCount: {
       type: Number,
       default: 3
+    },
+    title: {
+      type: String,
+      required: true
     }
   },
   computed: {
@@ -65,3 +64,9 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.list-title
+  background-color: var(--v-secondary-base)
+  color: var(--v-primary-base)
+</style>

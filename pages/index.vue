@@ -1,34 +1,30 @@
 <template>
-  <v-container>
-    <BioCard :name="name" :caption="caption" :description="description" />
-    <v-layout row wrap>
-      <v-flex sm6 xs12>
-        <ProjectHighlightsList :projects="projects" />
+  <v-container :fluid="$vuetify.breakpoint.lgAndDown">
+    <v-layout :column="$vuetify.breakpoint.mdAndDown" justify-center align-center mb-2>
+      <v-flex :mr-3="$vuetify.breakpoint.lgAndUp" :mb-2="$vuetify.breakpoint.mdAndDown">
+        <HeadshotCard />
       </v-flex>
-      <v-flex sm6 xs12>
-        <RecentBlogPostList :blog-posts="blogPosts" />
+      <v-flex>
+        <MostRecentProject :projects="projects" />
+      </v-flex>
+    </v-layout>
+    <v-layout>
+      <v-flex>
+        <ProjectListing :projects="projects.slice(1)" />
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import BioCard from '~/components/profile/BioCard.vue'
-import ProjectHighlightsList from '~/components/profile/ProjectHighlightsList.vue'
-import RecentBlogPostList from '~/components/blog/RecentBlogPostList.vue'
+import HeadshotCard from '~/components/profile/HeadshotCard.vue'
+import MostRecentProject from '~/components/project/MostRecentProject.vue'
+import ProjectListing from '~/components/project/ProjectListing.vue'
 export default {
   components: {
-    BioCard,
-    ProjectHighlightsList,
-    RecentBlogPostList
-  },
-  data: function() {
-    return {
-      name: 'Carlos Jimenez',
-      caption: 'Problem Solver, Developer, Computer Technician',
-      description:
-        'A new developer with a strong desire to take on any challenge. Carlos is currently employed as a Technical Support Technician for Rowan College at Gloucester County while also pursuing a degree in Computer Science. In the meantime, he continues to push himself by learning new technologies and creating different tools on the side; whether it is to solve a problem at work or just for fun!'
-    }
+    HeadshotCard,
+    MostRecentProject,
+    ProjectListing
   },
   computed: {
     blogPosts: function() {
@@ -44,3 +40,7 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+
+</style>

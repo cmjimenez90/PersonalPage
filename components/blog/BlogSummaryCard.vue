@@ -1,37 +1,41 @@
 <template>
-  <section>
-    <v-card width="100%">
-      <v-card-title class=" primary white--text">
-        <v-layout column>
-          <div class="text-xs-right subheading text-uppercase">
-            {{ BlogPost.categories[0].name }}
-          </div>
-          <h3 class="title">
-            {{ BlogPost.title }}
-          </h3>
-          <div class="blog-date subheading">
-            {{ formatedPublishedDate }}
-          </div>
+  <v-card class="blog-summary-card">
+    <v-layout column>
+      <v-flex mb-3>
+        <v-layout column class="blog-summary-heading" pa-2>
+          <v-flex class="blog-summary-category pr-2">
+            <h4 class="text-xs-right">
+              {{ BlogPost.categories[0].name }}
+            </h4>
+          </v-flex>
+          <v-flex class="blog-summary-title">
+            <h3>
+              {{ BlogPost.title }}
+            </h3>
+          </v-flex>
+          <v-flex class="blog-summary-date pl-2">
+            <span>{{ formatedPublishedDate }}</span>
+          </v-flex>
         </v-layout>
-      </v-card-title>
-      <v-card-text class="body-1">
-        <v-responsive>
-          <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="125px" contain />
-        </v-responsive>
-        <p class="pt-5">
+      </v-flex>
+      <v-flex class="blog-summary-image">
+        <v-img v-if=" BlogPost.featured_image" :src=" BlogPost.featured_image" height="125px" contain />
+      </v-flex>
+      <v-flex>
+        <p class="blog-summary-summary pl-2">
           {{ BlogPost.summary }}
         </p>
         <ChipContainer :items="BlogPost.tags" heading="Tag:" />
-      </v-card-text>
-      <v-card-actions class="secondary lighten-4">
-        <v-btn nuxt :to="/blog/+BlogPost.slug" flat>
-          <span class="font-weight-bold">
+      </v-flex>
+      <v-flex class="text-xs-right" pr-4 mb-2>
+        <v-btn nuxt :to="/blog/+BlogPost.slug" class="blog-summary-button primary--text" color="accent">
+          <span>
             READ
           </span>
         </v-btn>
-      </v-card-actions>
-    </v-card>
-  </section>
+      </v-flex>
+    </v-layout>
+  </v-card>
 </template>
 
 <script>
@@ -63,6 +67,16 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.blog-date
-  padding-left 10px
+.blog-summary-card
+  background-color: var(--v-primary-base)
+  color: var(--v-secondary-base)
+.blog-summary-heading
+  background-color: var(--v-secondary-base)
+  color: var(--v-primary-base)
+.blog-summary-summary
+    margin: 20px 15px
+    font-size: 1.1em 
+    @media screen and (min-width: 600px) {
+      font-size: 1.2em
+    }
 </style>

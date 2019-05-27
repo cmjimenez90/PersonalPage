@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import NavigationMenu from '~/components/main/NavigationMenu.vue'
+import NavigationMenu from '~/components/core/NavigationMenu.vue'
 
 export default {
   components: {
