@@ -1,12 +1,20 @@
 
 <template>
   <v-layout @mousemove="mousemove" @mouseup.left="mouseup">
-    <div id="window_1" />
+    <div id="window_1">
+      <slot class="window" name="window1">
+        WINDOW 1
+      </slot>
+    </div>
     <div
       id="window_divider"  
       @mousedown.left="mousedown"
     />
-    <div id="window_2" />
+    <div id="window_2">
+      <slot class="window" name="window2">
+        WINDOW 2
+      </slot>
+    </div>
   </v-layout>
 </template>
 
@@ -37,15 +45,18 @@ export default {
 
 <style lang="stylus" scoped>
 #window_1, #window_2
-    border: 1px red dotted
 #window_1
     width: 20%
 #window_2
     flex: 1 1 auto
 #window_divider
     align-self: center
-    height: 20%
+    height: 90%
     width: 5px
-    background-color: black
+    border-right: 1px black solid
     cursor: pointer
+.window
+    overflow: hidden
+    text-overflow: clip
+    white-space: nowrap
 </style>
