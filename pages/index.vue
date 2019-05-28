@@ -27,9 +27,6 @@ export default {
     ProjectListing
   },
   computed: {
-    blogPosts: function() {
-      return this.$store.state.blog.list
-    },
     projects: function() {
       return this.$store.state.projects.list
     }
