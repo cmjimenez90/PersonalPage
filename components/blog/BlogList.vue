@@ -8,7 +8,6 @@
     <v-divider />
     <template v-for="post in blogList">
       <BlogListItem :key="post.slug" class="blog-list-item" :blog-post="post" />
-      <v-divider :key="post.slug" inset />
     </template>
   </v-list>
 </template>
