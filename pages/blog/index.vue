@@ -2,7 +2,7 @@
   <v-container fluid fill-height>
     <DualWindow>
       <template #window1>
-        <BlogSummary v-for="post in blogPosts" :key="post.slug" :blog-post="post" />
+        <BlogList :blog-list="blogPosts" />
       </template>
     </DualWindow>
   </v-container>
@@ -10,11 +10,11 @@
 
 <script>
 import DualWindow from '~/components/core/window/DualWindow.vue'
-import BlogSummary from '~/components/blog/BlogSummary.vue'
+import BlogList from '~/components/blog/BlogList.vue'
 export default {
   components: {
     DualWindow,
-    BlogSummary
+    BlogList
   },
   computed: {
     blogPosts: function() {
