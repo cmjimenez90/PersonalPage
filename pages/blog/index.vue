@@ -4,6 +4,9 @@
       <template #window1>
         <BlogList :blog-list="blogPosts" />
       </template>
+      <template #window2>
+        <IFrameSection src="blog/copy-example-post" />
+      </template>
     </DualWindow>
   </v-container>
 </template>
@@ -11,10 +14,12 @@
 <script>
 import DualWindow from '~/components/core/window/DualWindow.vue'
 import BlogList from '~/components/blog/BlogList.vue'
+import IFrameSection from '~/components/core/IFrameSection.vue'
 export default {
   components: {
     DualWindow,
-    BlogList
+    BlogList,
+    IFrameSection
   },
   computed: {
     blogPosts: function() {

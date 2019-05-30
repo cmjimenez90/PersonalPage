@@ -1,6 +1,6 @@
 <template>
   <v-list three-line class="blog-list">
-    <v-subheader>
+    <v-subheader class="blog-list-title">
       <h2 class="title blog-list-title">
         Blog Post
       </h2>
@@ -32,4 +32,9 @@ export default {
 .blog-list, .blog-list-title
     background-color: var(--v-primary-darken1)
     color: var(--v-secondary-base)
+.blog-list-title
+  background-color: var(--v-secondary-base)
+  color: var(--v-accent-base)
+  text-transform: uppercase
+  font-weight: 700
 </style>

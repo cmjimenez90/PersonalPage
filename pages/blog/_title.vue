@@ -11,6 +11,15 @@
 
 <script>
 export default {
+  layout: ({ top, self }) => {
+    if (top !== self) {
+      // eslint-disable-next-line no-console
+      console.log('iframe')
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('non')
+    }
+  },
   computed: {
     post() {
       const postBySlug = this.$store.getters['blog/blogPostBySlug']
