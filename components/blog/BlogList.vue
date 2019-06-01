@@ -1,5 +1,5 @@
 <template>
-  <v-list three-line class="blog-list pa-0">
+  <v-list three-line class="blog-list pa-0 fill-height primary">
     <v-toolbar class="blog-list-title secondary primary--text title">
       <v-toolbar-title>
         <h2 class="title blog-list-title">
@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style lang="stylus">
+.blog-list
+  border: 2px var(--v-secondary-base) outset
 .blog-list-item
   background-color: var(--v-primary-base)
   color: var(--v-secondary-base)

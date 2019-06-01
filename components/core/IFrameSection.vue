@@ -1,5 +1,5 @@
 <template>
-  <iframe :src="src" :height="height" :width="width" />
+  <iframe class="frame-style" :src="src" :height="height" :width="width" />
 </template>
 
 <script>
@@ -25,5 +25,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+.frame-style
+  border: none
 </style>
