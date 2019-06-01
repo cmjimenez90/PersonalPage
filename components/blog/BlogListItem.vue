@@ -1,20 +1,22 @@
 <template>
-  <v-list-tile @click="$emit('click')">
-    <v-list-tile-content>
-      <v-list-tile-sub-title>
+  <li @click="$emit('click')">
+    <v-layout column px-2 pt-1>
+      <span class="text-uppercase font-italic">
         {{ blogPost.categories[0].name }}
-      </v-list-tile-sub-title>
-      <v-list-tile-title>
-        {{ blogPost.title }}
-      </v-list-tile-title>
-      <v-list-tile-sub-title>
+      </span>
+      <v-layout justify-space-between>
+        <h3 class="title">
+          {{ blogPost.title }}
+        </h3>
+        <span class="subheading accent--text ">
+          {{ publishDate }}
+        </span>
+      </v-layout>
+      <p class="mb-1">
         {{ blogPost.summary }}
-      </v-list-tile-sub-title>
-    </v-list-tile-content>
-    <v-list-tile-action>
-      <v-list-tile-action-text>{{ publishDate }}</v-list-tile-action-text>
-    </v-list-tile-action>
-  </v-list-tile>
+      </p>
+    </v-layout>
+  </li>
 </template>
 
 <script>
@@ -35,8 +37,4 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.blog-list-item
-  color: var(--v-secondary-base)
-.selected-blog
-  background-color: var(--v-primary-darken2)
 </style>

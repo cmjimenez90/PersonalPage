@@ -1,7 +1,7 @@
 
 <template>
-  <v-layout @mousemove="mousemove" @mouseup.left="mouseup">
-    <div id="window_1">
+  <v-layout @mousemove.stop="mousemove" @mouseup.left="mouseup">
+    <div id="window_1" :style="{width: currentWidth}">
       <slot class="window" name="window1">
         WINDOW 1
       </slot>
@@ -22,7 +22,9 @@
 export default {
   data: function() {
     return {
-      isMoving: false
+      isMoving: false,
+      currentWidth: '400px',
+      minWidth: 350
     }
   },
   methods: {
@@ -35,8 +37,9 @@ export default {
     mousemove(event) {
       if (this.isMoving) {
         const xPos = event.clientX
-        const window1 = document.getElementById('window_1')
-        window1.style.width = xPos - 5 + 'px'
+        if (xPos >= this.minWidth) {
+          this.currentWidth = xPos + 'px'
+        }
       }
     }
   }
@@ -44,19 +47,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#window_1, #window_2
-#window_1
-    width: 20%
 #window_2
     flex: 1 1 auto
+    height: 100%
 #window_divider
     align-self: center
-    height: 90%
+    height: 100%
     width: 5px
-    border-right: 1px black solid
     cursor: pointer
-.window
-    overflow: hidden
-    text-overflow: clip
-    white-space: nowrap
 </style>
