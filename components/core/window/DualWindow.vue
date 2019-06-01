@@ -7,9 +7,13 @@
       </slot>
     </div>
     <div
-      id="window_divider"  
+      class="window_divider"
       @mousedown.left="mousedown"
-    />
+    >
+      <v-icon class="secondary--text">
+        swap_horiz
+      </v-icon>
+    </div>
     <div id="window_2">
       <slot class="window" name="window2">
         WINDOW 2
@@ -50,9 +54,11 @@ export default {
 #window_2
     flex: 1 1 auto
     height: 100%
-#window_divider
-    align-self: center
+.window_divider
     height: 100%
-    width: 5px
     cursor: pointer
+    display: flex
+    align-items: center
+.window_divider:hover
+      background-color: var(--v-primary-darken2)
 </style>
