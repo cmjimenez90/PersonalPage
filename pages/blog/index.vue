@@ -2,10 +2,10 @@
   <v-container fluid fill-height>
     <DualWindow>
       <template #window1>
-        <BlogList :blog-list="blogPosts" />
+        <BlogList :blog-list="blogPosts" @new-blog-selected="{currentSlug = 'blog/' + $event}" />
       </template>
       <template #window2>
-        <IFrameSection src="blog/copy-example-post" />
+        <IFrameSection :src="currentSlug" />
       </template>
     </DualWindow>
   </v-container>
@@ -20,6 +20,11 @@ export default {
     DualWindow,
     BlogList,
     IFrameSection
+  },
+  data: function() {
+    return {
+      currentSlug: ''
+    }
   },
   computed: {
     blogPosts: function() {

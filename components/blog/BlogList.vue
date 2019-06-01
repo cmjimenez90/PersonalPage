@@ -7,7 +7,7 @@
     </v-subheader>
     <v-divider />
     <template v-for="post in blogList">
-      <BlogListItem :key="post.slug" class="blog-list-item" :blog-post="post" />
+      <BlogListItem :key="post.slug" :class="{'selected-blog': post.slug == currentPostSlug}" :blog-post="post" @click="selectItem(post.slug)" />
     </template>
   </v-list>
 </template>
@@ -22,6 +22,17 @@ export default {
     blogList: {
       type: Array,
       required: true
+    }
+  },
+  data: function() {
+    return {
+      currentPostSlug: ''
+    }
+  },
+  methods: {
+    selectItem: function(slug) {
+      this.currentPostSlug = slug
+      this.$emit('new-blog-selected', this.currentPostSlug)
     }
   }
 }

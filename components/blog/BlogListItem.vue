@@ -1,5 +1,5 @@
 <template>
-  <v-list-tile @click="$emit('select-blog-item',{'slug': blogPost.slug})">
+  <v-list-tile @click="$emit('click')">
     <v-list-tile-content>
       <v-list-tile-sub-title>
         {{ blogPost.categories[0].name }}
@@ -37,4 +37,6 @@ export default {
 <style lang="stylus" scoped>
 .blog-list-item
   color: var(--v-secondary-base)
+.selected-blog
+  background-color: var(--v-primary-darken2)
 </style>
