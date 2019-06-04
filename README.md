@@ -36,7 +36,7 @@ $ docker run --rm -d -p 3000:3000/tcp personalpage:dev
 
 ``` bash
 #Run local docker static site
-$ docker build --rm -f "dockerfile" --target prod -t personalpagestatic:latest .
+$ docker build --rm -f "prod.dockerfile" --target prod -t personalpagestatic:latest .
 $ docker run --rm -d -p 80:80/tcp personalpagestatic:latest
 ```
 
