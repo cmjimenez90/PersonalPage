@@ -1,7 +1,7 @@
 
 <template>
   <v-layout @mousemove.stop="mousemove" @mouseup.left="mouseup">
-    <div id="window_1" :style="{width: currentWidth}">
+    <div id="window_1" :style="{width: realWidth}">
       <slot class="window" name="window1">
         WINDOW 1
       </slot>
@@ -26,9 +26,12 @@
 export default {
   data: function() {
     return {
-      isMoving: false,
-      currentWidth: '400px',
-      minWidth: 350
+      isMoving: false
+    }
+  },
+  computed: {
+    realWidth: function() {
+      return this.$store.getters['dualWindow/getMainWindowWidth']
     }
   },
   methods: {
@@ -41,9 +44,7 @@ export default {
     mousemove(event) {
       if (this.isMoving) {
         const xPos = event.clientX
-        if (xPos >= this.minWidth) {
-          this.currentWidth = xPos + 'px'
-        }
+        this.$store.dispatch('dualWindow/changeWidth', xPos)
       }
     }
   }
