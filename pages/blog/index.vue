@@ -1,11 +1,10 @@
 <template>
-  <v-container />
+  <div />
 </template>
 
 <script>
 export default {
   layout: 'blog',
-  data: function() {},
   computed: {},
   async fetch({ store }) {
     await store.dispatch('blog/fetchBlogPosts')
@@ -15,6 +14,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-</style>
