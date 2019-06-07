@@ -49,12 +49,12 @@ export default {
     color: var(--v-secondary-base)
     font-size: 1.1em
 .project-title
-  background-color: var(--v-secondary-base)
-  color: var(--v-primary-base)
+  color: var(--v-secondary-base)
+  font-size: 1.4rem 
 .project-description
     margin: 20px 15px
-    font-size: 1.1em 
+    font-size: 1.2rem 
     @media screen and (min-width: 600px) {
-      font-size: 1.2em
+      font-size: 1.3em
     }
 </style>

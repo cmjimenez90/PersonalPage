@@ -26,6 +26,8 @@ export default {
 
 <style lang="stylus" scoped>
 .component-header
-    background-color: var(--v-accent-base)
+    background-color: var(--v-secondary-base)
     color: var(--v-primary-base)
+    text-transform: uppercase
+    font-size: 1.3rem
 </style>
