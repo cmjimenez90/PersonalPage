@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  layout: 'iframeLayout',
+  layout: 'blog',
   computed: {
     post() {
       const postBySlug = this.$store.getters['blog/blogPostBySlug']

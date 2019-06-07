@@ -28,5 +28,4 @@ export default {
 .component-header
     background-color: var(--v-accent-base)
     color: var(--v-primary-base)
-
 </style>

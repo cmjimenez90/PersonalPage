@@ -1,36 +1,12 @@
 <template>
-  <v-container fluid fill-height>
-    <DualWindow>
-      <template #window1>
-        <BlogList :blog-list="blogPosts" @new-blog-selected="{currentSlug = 'blog/' + $event}" />
-      </template>
-      <template #window2>
-        <IFrameSection :src="currentSlug" />
-      </template>
-    </DualWindow>
-  </v-container>
+  <v-container />
 </template>
 
 <script>
-import DualWindow from '~/components/core/window/DualWindow.vue'
-import BlogList from '~/components/blog/BlogList.vue'
-import IFrameSection from '~/components/core/IFrameSection.vue'
 export default {
-  components: {
-    DualWindow,
-    BlogList,
-    IFrameSection
-  },
-  data: function() {
-    return {
-      currentSlug: ''
-    }
-  },
-  computed: {
-    blogPosts: function() {
-      return this.$store.state.blog.list
-    }
-  },
+  layout: 'blog',
+  data: function() {},
+  computed: {},
   async fetch({ store }) {
     await store.dispatch('blog/fetchBlogPosts')
     await store.dispatch('blog/fetchCategories')
@@ -39,3 +15,6 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+</style>
