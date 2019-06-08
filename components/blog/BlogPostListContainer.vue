@@ -17,6 +17,11 @@ export default {
   components: {
     BlogPostListItem
   },
+  data: function() {
+    return {
+      drawer: true
+    }
+  },
   computed: {
     blogPosts: function() {
       return this.$store.state.blog.list
@@ -29,6 +34,7 @@ export default {
 .list-container 
   background-color: var(--v-secondary-lighten2)
   width: 100%
+  height: 100%
   ul
     list-style: none
     margin: 0

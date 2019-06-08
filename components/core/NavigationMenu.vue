@@ -1,5 +1,5 @@
 <template>
-  <span class="navigation-menu">
+  <nav class="navigation-menu">
     <v-navigation-drawer
       v-model="drawer"
       app
@@ -32,7 +32,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-  </span>
+  </nav>
 </template>
 
 <script>
