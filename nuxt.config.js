@@ -1,3 +1,5 @@
+import butter from 'buttercms'
+
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
@@ -83,6 +85,17 @@ module.exports = {
   watchers: {
     webpack: {
       poll: true
+    }
+  },
+  generate: {
+    routes: async function() {
+      const { data } = await butter.post.list({ page_size: 5 })
+      return data.data.map(post => {
+        return {
+          route: '/blog/' + post.slug,
+          payload: post
+        }
+      })
     }
   }
 }

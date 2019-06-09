@@ -12,14 +12,13 @@
 <script>
 export default {
   layout: 'blog',
-  computed: {
-    post() {
-      const postBySlug = this.$store.getters['blog/blogPostBySlug']
-      return postBySlug(this.$route.params.title)
+  asyncData({ params, error, store, payload }) {
+    if (payload) return { post: payload }
+    else {
+      // eslint-disable-next-line no-console
+      console.log(params)
+      return { post: store.getters['blog/blogPostBySlug'](params.title) }
     }
-  },
-  async fetch({ store }) {
-    await store.dispatch('blog/fetchBlogPosts')
   }
 }
 </script>
