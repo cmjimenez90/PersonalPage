@@ -4,6 +4,8 @@
       <v-toolbar-title>
         <h3>Blog</h3>
       </v-toolbar-title>
+      <v-spacer />
+      <BlogListSortButton />
     </v-toolbar>
     <ul>
       <BlogPostListItem v-for="(post,index) in blogPosts" :key="index" :post="post" />
@@ -13,14 +15,11 @@
 
 <script>
 import BlogPostListItem from '~/components/blog/BlogPostListItem.vue'
+import BlogListSortButton from '~/components/blog/BlogListSortButton.vue'
 export default {
   components: {
-    BlogPostListItem
-  },
-  data: function() {
-    return {
-      drawer: true
-    }
+    BlogPostListItem,
+    BlogListSortButton
   },
   computed: {
     blogPosts: function() {
