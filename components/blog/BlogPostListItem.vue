@@ -1,6 +1,6 @@
 <template>
   <li>
-    <v-card class="post-item" nuxt :to="linkToPost" flat>
+    <v-card class="post-item" nuxt :to="linkToPost">
       <v-layout column>
         <div class="post-heading">
           <span class="post-category">
