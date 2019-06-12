@@ -1,6 +1,6 @@
 <template>
   <li>
-    <v-card class="post-item" nuxt :to="linkToPost">
+    <v-card class="post-item" nuxt :to="linkToPost" flat>
       <v-layout column>
         <div class="post-heading">
           <span class="post-category">
@@ -57,24 +57,26 @@ export default {
 .post-item
   background-color: var(--v-primary-base)
   color: var(--v-secondary-base)
+  font-size: 1.3em
 .post-body p
-  margin: 0
   padding: 0 2rem
-  font-size: 1.2em
 .post-category, .post-published-date
   display: inline-block
 .post-heading
   display: flex
   justify-content: space-between
+  align-items: center
   padding: 0 1rem
   background-color: var(--v-secondary-base)
   color: var(--v-primary-base)
   font-weight: 600
   font-style: italic
+  height: 36px
 .post-title
   padding-top: .5rem
   text-align: center
   text-transform: uppercase
+  font-size: 1.4rem
 .post-tags
   display: flex
   flex-wrap: wrap

@@ -2,7 +2,7 @@
   <div class="list-container">
     <v-toolbar class="container-heading">
       <v-toolbar-title>
-        <h3>Blog Post</h3>
+        <h3>Blog</h3>
       </v-toolbar-title>
     </v-toolbar>
     <ul>
@@ -32,15 +32,14 @@ export default {
 
 <style lang="stylus" scoped>
 .list-container 
-  background-color: var(--v-secondary-lighten2)
   width: 100%
   height: 100%
   ul
     list-style: none
     margin: 0
-    padding: 0 1rem
+    padding: 0
   li
-    margin-bottom: 1rem
+    margin-bottom: .4rem
 .container-heading
   background-color: var(--v-secondary-base)
   margin-bottom: 1rem

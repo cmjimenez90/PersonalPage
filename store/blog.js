@@ -3,7 +3,8 @@ import { butter } from '@/buttercms'
 export const state = () => ({
   list: [],
   categories: [],
-  tags: []
+  tags: [],
+  fetched: false
 })
 
 export const mutations = {

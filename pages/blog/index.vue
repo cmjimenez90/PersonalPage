@@ -1,10 +1,16 @@
 <template>
-  <div />
+  <v-container>
+    <BlogPostListContainer />
+  </v-container>
 </template>
 
 <script>
+import BlogPostListContainer from '~/components/blog/BlogPostListContainer.vue'
 export default {
-  layout: 'blog',
+  layout: 'default',
+  components: {
+    BlogPostListContainer
+  },
   computed: {},
   async fetch({ store }) {
     await store.dispatch('blog/fetchBlogPosts')
