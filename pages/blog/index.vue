@@ -1,6 +1,10 @@
 <template>
   <v-container>
-    <BlogPostListContainer />
+    <v-layout justify-center>
+      <v-flex xs12 md8>
+        <BlogPostListContainer />
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 
@@ -16,7 +20,6 @@ export default {
     await store.dispatch('blog/fetchBlogPosts')
     await store.dispatch('blog/fetchCategories')
     await store.dispatch('blog/fetchTags')
-    await store.dispatch('blogFilter/initializeBlogFilter')
   }
 }
 </script>
