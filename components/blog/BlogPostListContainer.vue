@@ -5,6 +5,7 @@
         <h3>Blog</h3>
       </v-toolbar-title>
       <v-spacer />
+      <span>SORT: </span>
       <BlogListSortButton @new-sort-by="currentSort = $event" />
     </v-toolbar>
     <ul>
@@ -110,8 +111,8 @@ export default {
 .container-heading
   background-color: var(--v-secondary-base)
   margin-bottom: 1rem
-  h3
+  color: var(--v-primary-base)
+  h3, span
     text-transform: uppercase
-    font-size: 2rem
-    color: var(--v-primary-base)
+    font-size: 2rem  
 </style>

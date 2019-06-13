@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-layout justify-center>
-      <v-flex xs12 md8>
+    <v-layout>
+      <v-flex xs12>
         <BlogPostListContainer />
       </v-flex>
     </v-layout>
