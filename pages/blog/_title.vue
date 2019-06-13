@@ -49,12 +49,12 @@ export default {
   figcaption 
     font-style: italic
     text-align: center
-    color: #ccc
+    color: var(--v-accent-base)
   p code 
     padding: 2px 4px
     font-size: 90%
-    color: #c7254e
-    background-color: #f9f2f4
+    color: var(--v-accent-base)
+    background-color: #000000
     border-radius: 4px
   pre
     display: block
