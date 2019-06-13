@@ -8,7 +8,7 @@
     <v-card>
       <v-radio-group v-model="sortBy" @change="$emit('new-sort-by',sortBy)">
         <v-radio label="Recent" value="recent" />
-        <v-radio label="Name" value="name" />
+        <v-radio label="Title" value="title" />
         <v-radio label="Category" value="category" />
       </v-radio-group>
     </v-card>

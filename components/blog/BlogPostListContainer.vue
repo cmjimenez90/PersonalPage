@@ -5,10 +5,10 @@
         <h3>Blog</h3>
       </v-toolbar-title>
       <v-spacer />
-      <BlogListSortButton />
+      <BlogListSortButton @new-sort-by="currentSort = $event" />
     </v-toolbar>
     <ul>
-      <BlogPostListItem v-for="(post,index) in blogPosts" :key="index" :post="post" />
+      <BlogPostListItem v-for="(post,index) in sortedBlogPost" :key="index" :post="post" />
     </ul>
   </div>
 </template>
@@ -21,9 +21,77 @@ export default {
     BlogPostListItem,
     BlogListSortButton
   },
+  data: function() {
+    return {
+      blogPosts: this.$store.state.blog.list,
+      currentSort: 'recent'
+    }
+  },
   computed: {
-    blogPosts: function() {
-      return this.$store.state.blog.list
+    sortedBlogPost: function() {
+      let sortedPost = this.blogPosts
+      switch (this.currentSort) {
+        case 'recent':
+          sortedPost = sortedPost
+            .slice()
+            .sort((current, next) => this.sortByMostRecent(current, next))
+          break
+        case 'title':
+          sortedPost = sortedPost
+            .slice()
+            .sort((current, next) => this.sortByTitle(current, next))
+          break
+        case 'category':
+          sortedPost = sortedPost
+            .slice()
+            .sort((current, next) => this.sortByCategory(current, next))
+          break
+      }
+      return sortedPost
+    }
+  },
+  methods: {
+    sortByMostRecent(currentPost, nextPost) {
+      const currentPublishDate = new Date(currentPost.published)
+      const nextPublishDate = new Date(nextPost.published)
+      if (currentPublishDate > nextPublishDate) {
+        return -1
+      }
+      if (currentPublishDate < nextPublishDate) {
+        return 1
+      }
+      return 0
+    },
+    sortByTitle(currentPost, nextPost) {
+      function removeArticlesFromTitle(blogTitle) {
+        const articles = ['the', 'a', 'an']
+        const splitTitle = blogTitle.split(' ')
+        if (articles.includes(splitTitle[0])) {
+          return splitTitle.splice(1).join(' ')
+        }
+        return blogTitle
+      }
+      const currentPostTitle = removeArticlesFromTitle(currentPost.title)
+      const nextPostTitle = removeArticlesFromTitle(nextPost.title)
+      if (currentPostTitle > nextPostTitle) {
+        return 1
+      }
+      if (currentPostTitle < nextPostTitle) {
+        return -1
+      }
+      return 0
+    },
+    sortByCategory(currentPost, nextPost) {
+      const currentPostCategory = currentPost.categories[0]
+      const nextPostCategory = nextPost.categories[0]
+
+      if (currentPostCategory.name > nextPostCategory.name) {
+        return 1
+      }
+      if (currentPostCategory.name < nextPostCategory.name) {
+        return -1
+      }
+      return 0
     }
   }
 }
