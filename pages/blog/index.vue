@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout justify-space-around>
-      <v-flex class="hidden-xs-only" sm3>
+      <v-flex sm3>
         <BlogPostFilter :blog-post="blogPost" @filter-change="updateBlogPostListContainer($event)" />
       </v-flex>
       <v-flex xs12 sm6>
