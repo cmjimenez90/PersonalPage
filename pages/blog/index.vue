@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout>
+    <v-layout justify-space-around>
       <v-flex sm4>
         <BlogPostFilter :blog-post="blogPost" @filter-change="updateBlogPostListContainer($event)" />
       </v-flex>

@@ -1,34 +1,32 @@
 <template>
-  <v-card class="filter-card">
-    <v-layout column>
-      <div class="checkbox-container">
-        <v-subheader>
-          <h3>Categories</h3>
-        </v-subheader>
-        <v-checkbox
-          v-for="category in blogCategories" 
-          :key="category.slug" 
-          v-model="selectedCategories"
-          :label="category.name"
-          :value="category"
-          @change="filterBlogPost"
-        />
-      </div>
-      <div class="checkbox-container">
-        <v-subheader>
-          <h3>Tags</h3>
-        </v-subheader>
-        <v-checkbox 
-          v-for="tag in blogTags" 
-          :key="tag.slug" 
-          v-model="selectedTags"
-          :label="tag.name"
-          :value="tag"
-          @change="filterBlogPost"
-        />
-      </div>
-    </v-layout>
-  </v-card>
+  <v-layout column>
+    <v-card class="checkbox-container">
+      <v-subheader class="checkbox-subheader">
+        <h3>Categories</h3>
+      </v-subheader>
+      <v-checkbox
+        v-for="category in blogCategories" 
+        :key="category.slug" 
+        v-model="selectedCategories"
+        :label="category.name"
+        :value="category"
+        @change="filterBlogPost"
+      />
+    </v-card>
+    <v-card class="checkbox-container">
+      <v-subheader class="checkbox-subheader">
+        <h3>Tags</h3>
+      </v-subheader>
+      <v-checkbox 
+        v-for="tag in blogTags" 
+        :key="tag.slug" 
+        v-model="selectedTags"
+        :label="tag.name"
+        :value="tag"
+        @change="filterBlogPost"
+      />
+    </v-card>
+  </v-layout>
 </template>
 
 <script>
@@ -95,11 +93,16 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.filter-card
+.checkbox-container
   background-color: var(--v-primary-base)
   color: var(--v-secondary-base)
-.checkbox-container
+  margin: 1rem 0
   .v-input--checkbox
     margin: 0 1.2rem
     padding: 0
+    color: var(--v-secondary-base)
+  .checkbox-subheader
+    background-color: var(--v-secondary-base)
+    color: var(--v-primary-base)
+    margin-bottom: 1rem
 </style>
