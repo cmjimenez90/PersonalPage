@@ -82,6 +82,7 @@ export default {
   flex-wrap: wrap
   justify-content: flex-start
   padding: 0 1rem
+  margin-bottom: 1rem
 .tag-chip
   background-color: var(--v-primary-darken1)
   color: var(--v-secondary-base)
