@@ -1,5 +1,5 @@
 <template>
-  <v-menu>
+  <v-menu transition="scale-transition">
     <template #activator>
       <v-btn class="filter-button primary secondary--text">
         {{ currentSortSelection }}
