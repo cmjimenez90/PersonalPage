@@ -61,9 +61,9 @@ export default {
     background-color: var(--v-secondary-base)
 #headshot-body
     background-color: var(--v-secondary-base)
-    color: var(--v-accent-base)
-    h2
-      color: var(--v-primary-base)
+    color: var(--v-primary-base)
+  h1
+    font-weight: 500
 #headshot-buttonbar
     background-color: var(--v-primary-base)
 </style>
