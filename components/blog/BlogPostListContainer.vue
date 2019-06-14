@@ -21,15 +21,22 @@ export default {
     BlogPostListItem,
     BlogListSortButton
   },
+  props: {
+    blogPosts: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
   data: function() {
     return {
-      blogPosts: this.$store.state.blog.list,
       currentSort: 'recent'
     }
   },
   computed: {
     sortedBlogPost: function() {
-      let sortedPost = this.blogPosts
+      let sortedPost = this.blogPosts.slice()
       switch (this.currentSort) {
         case 'recent':
           sortedPost = sortedPost
