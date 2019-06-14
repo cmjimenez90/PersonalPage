@@ -1,8 +1,11 @@
 <template>
-  <v-menu transition="scale-transition">
+  <v-menu transition="scale-transition" left>
     <template #activator>
-      <v-btn class="filter-button primary secondary--text">
+      <v-btn v-if="!useIcon" class="filter-button primary secondary--text">
         {{ currentSortSelection }}
+      </v-btn>
+      <v-btn v-else fab small class="filter-button primary secondary--text">
+        <v-icon>sort</v-icon>
       </v-btn>
     </template>
     <v-card class="primary secondary--text pl-2">
@@ -17,6 +20,12 @@
 
 <script>
 export default {
+  props: {
+    useIcon: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: function() {
     return {
       currentSortSelection: 'recent'
@@ -26,6 +35,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.filter-button
-  width: 150px
+
 </style>

@@ -5,7 +5,7 @@
         <h3>Blog</h3>
       </v-toolbar-title>
       <v-spacer />
-      <BlogListSortButton @new-sort-by="currentSort = $event" />
+      <BlogListSortButton :use-icon="$vuetify.breakpoint.xsOnly" @new-sort-by="currentSort = $event" />
     </v-toolbar>
     <ul>
       <BlogPostListItem v-for="(post,index) in sortedBlogPost" :key="index" :post="post" />
