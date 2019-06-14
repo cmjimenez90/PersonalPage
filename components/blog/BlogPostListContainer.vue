@@ -5,7 +5,6 @@
         <h3>Blog</h3>
       </v-toolbar-title>
       <v-spacer />
-      <span>SORT: </span>
       <BlogListSortButton @new-sort-by="currentSort = $event" />
     </v-toolbar>
     <ul>

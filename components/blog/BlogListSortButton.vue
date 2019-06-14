@@ -2,11 +2,11 @@
   <v-menu>
     <template #activator>
       <v-btn class="filter-button primary secondary--text">
-        {{ sortBy }}
+        {{ currentSortSelection }}
       </v-btn>
     </template>
-    <v-card>
-      <v-radio-group v-model="sortBy" @change="$emit('new-sort-by',sortBy)">
+    <v-card class="primary secondary--text pl-2">
+      <v-radio-group v-model="currentSortSelection" background-color="primary" @change="$emit('new-sort-by',currentSortSelection)">
         <v-radio label="Recent" value="recent" />
         <v-radio label="Title" value="title" />
         <v-radio label="Category" value="category" />
@@ -19,7 +19,7 @@
 export default {
   data: function() {
     return {
-      sortBy: 'recent'
+      currentSortSelection: 'recent'
     }
   }
 }
