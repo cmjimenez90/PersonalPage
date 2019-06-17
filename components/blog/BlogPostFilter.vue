@@ -1,92 +1,38 @@
 <template>
-  <div>
-    <v-layout v-if="$vuetify.breakpoint.smAndUp" column>
-      <v-card class="checkbox-container">
-        <v-subheader class="checkbox-subheader">
-          <h3>Categories</h3>
-          <v-spacer />
-          <v-btn small color="primary" @click="clearFilters()">
-            <span class="secondary--text">
-              CLEAR
-            </span>
-          </v-btn>
-        </v-subheader>
-        <v-checkbox
-          v-for="category in blogCategories" 
-          :key="category.slug" 
-          v-model="selectedCategories"
-          :label="category.name"
-          :value="category"
-          @change="filterBlogPost"
-        />
-      </v-card>
-      <v-card class="checkbox-container">
-        <v-subheader class="checkbox-subheader">
-          <h3>Tags</h3>
-        </v-subheader>
-        <v-checkbox 
-          v-for="tag in blogTags" 
-          :key="tag.slug" 
-          v-model="selectedTags"
-          :label="tag.name"
-          :value="tag"
-          @change="filterBlogPost"
-        />
-      </v-card>
-    </v-layout>
-    <v-btn
-      v-else
-      fab
-      small
-      fixed
-      bottom
-      right
-      class="accent primary--text"
-      @click.stop="drawer = !drawer"
-    >
-      <v-icon>filter_list</v-icon>
-    </v-btn>
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      tempoary
-      right
-      disable-resize-watcher
-    >
-      <v-card class="checkbox-menu">
-        <v-subheader class="checkbox-subheader">
-          <h3>Categories</h3>
-          <v-spacer />
-          <v-btn small color="primary" @click="clearFilters()">
-            <span class="secondary--text">
-              CLEAR
-            </span>
-          </v-btn>
-        </v-subheader>
-        <v-checkbox
-          v-for="category in blogCategories" 
-          :key="category.slug" 
-          v-model="selectedCategories"
-          :label="category.name"
-          :value="category"
-          @change="filterBlogPost"
-        />
-      </v-card>
-      <v-card class="checkbox-menu">
-        <v-subheader class="checkbox-subheader">
-          <h3>Tags</h3>
-        </v-subheader>
-        <v-checkbox 
-          v-for="tag in blogTags" 
-          :key="tag.slug" 
-          v-model="selectedTags"
-          :label="tag.name"
-          :value="tag"
-          @change="filterBlogPost"
-        />
-      </v-card>
-    </v-navigation-drawer>
-  </div>
+  <v-layout column>
+    <v-card class="checkbox-container">
+      <v-subheader class="checkbox-subheader">
+        <h3>Categories</h3>
+        <v-spacer />
+        <v-btn v-if="hasFilteredItems" small icon color="secondary" @click="clearFilters()">
+          <v-icon class="primary--text">
+            clear
+          </v-icon>
+        </v-btn>
+      </v-subheader>
+      <v-checkbox
+        v-for="category in blogCategories" 
+        :key="category.slug" 
+        v-model="selectedCategories"
+        :label="category.name"
+        :value="category"
+        @change="filterBlogPost"
+      />
+    </v-card>
+    <v-card class="checkbox-container">
+      <v-subheader class="checkbox-subheader">
+        <h3>Tags</h3>
+      </v-subheader>
+      <v-checkbox 
+        v-for="tag in blogTags" 
+        :key="tag.slug" 
+        v-model="selectedTags"
+        :label="tag.name"
+        :value="tag"
+        @change="filterBlogPost"
+      />
+    </v-card>
+  </v-layout>
 </template>
 
 <script>
@@ -112,6 +58,11 @@ export default {
     },
     blogCategories: function() {
       return this.$store.state.blog.categories
+    },
+    hasFilteredItems: function() {
+      if (this.selectedTags.length > 0 || this.selectedCategories.length > 0)
+        return true
+      return false
     }
   },
   methods: {
@@ -159,7 +110,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.checkbox-container, .checkbox-menu
+.checkbox-container
   background-color: var(--v-primary-base)
   color: var(--v-secondary-base)
   .v-input--checkbox
@@ -170,6 +121,4 @@ export default {
     background-color: var(--v-secondary-base)
     color: var(--v-primary-base)
     margin-bottom: 1rem
-.checkbox-container
-  margin: 1rem 0
 </style>

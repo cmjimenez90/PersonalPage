@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.project-item
+.project-item, .project-description
     background-color : var(--v-primary-base)
     color: var(--v-secondary-base)
     font-size: 1.1em

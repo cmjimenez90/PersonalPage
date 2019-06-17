@@ -1,12 +1,12 @@
 <template>
-  <v-container>
-    <v-layout justify-space-around>
-      <v-flex sm3>
+  <v-container fluid>
+    <v-layout justify-center>
+      <v-container class="shrink hidden-md-and-down">
         <BlogPostFilter :blog-post="blogPost" @filter-change="updateBlogPostListContainer($event)" />
-      </v-flex>
-      <v-flex xs12 sm6>
+      </v-container>
+      <v-container class="grow ma-0">
         <BlogPostListContainer :blog-posts="filteredPost" />
-      </v-flex>
+      </v-container>
     </v-layout>
   </v-container>
 </template>
