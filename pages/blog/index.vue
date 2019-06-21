@@ -1,12 +1,12 @@
 <template>
   <v-container fluid>
-    <v-layout justify-center>
-      <v-container class="shrink hidden-md-and-down">
+    <v-layout>
+      <v-flex shrink mr-2>
         <BlogPostFilter :blog-post="blogPost" @filter-change="updateBlogPostListContainer($event)" />
-      </v-container>
-      <v-container class="grow ma-0">
+      </v-flex>
+      <v-flex>
         <BlogPostListContainer :blog-posts="filteredPost" />
-      </v-container>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -38,3 +38,6 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+</style>

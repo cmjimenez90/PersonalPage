@@ -2,7 +2,7 @@
   <div class="list-container">
     <v-toolbar class="container-heading">
       <v-toolbar-title>
-        <h3>Blog</h3>
+        <h3>Blog Post</h3>
       </v-toolbar-title>
       <v-spacer />
       <BlogListSortButton @new-sort-by="currentSort = $event" />
@@ -107,7 +107,6 @@ export default {
 <style lang="stylus" scoped>
 .list-container 
   width: 100%
-  background-color: var(--v-primary-darken2)
   ul
     list-style: none
     margin: 0

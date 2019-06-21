@@ -66,7 +66,7 @@ export default {
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 0 1rem
+  padding: 2rem 1rem
   background-color: var(--v-secondary-base)
   color: var(--v-primary-base)
   font-weight: 600
