@@ -1,8 +1,11 @@
 <template>
   <v-container fluid>
-    <v-layout>
+    <v-layout :column="$vuetify.breakpoint.smAndDown">
       <v-flex v-if="$vuetify.breakpoint.mdAndUp" shrink mr-2>
         <BlogPostFilter />
+      </v-flex>
+      <v-flex v-else mb-2>
+        <HorizontalBlogPostFilter />
       </v-flex>
       <v-flex>
         <BlogPostListContainer :blog-posts="filteredPost" />
@@ -14,11 +17,13 @@
 <script>
 import BlogPostListContainer from '~/components/blog/BlogPostListContainer.vue'
 import BlogPostFilter from '~/components/blog/BlogPostFilter.vue'
+import HorizontalBlogPostFilter from '~/components/blog/HorizontalBlogPostFilter.vue'
 export default {
   layout: 'default',
   components: {
     BlogPostListContainer,
-    BlogPostFilter
+    BlogPostFilter,
+    HorizontalBlogPostFilter
   },
   computed: {
     filteredPost: function() {
