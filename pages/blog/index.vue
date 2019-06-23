@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout>
-      <v-flex shrink mr-2>
+      <v-flex v-if="$vuetify.breakpoint.mdAndUp" shrink mr-2>
         <BlogPostFilter />
       </v-flex>
       <v-flex>

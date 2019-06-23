@@ -20,12 +20,12 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar class="secondary primary--text" dark>
-      <v-toolbar-side-icon class="hidden-sm-and-up primary--text" @click="drawer = !drawer" />
+      <v-toolbar-side-icon class="hidden-md-and-up primary--text" @click="drawer = !drawer" />
       <v-spacer />
       <v-toolbar-items
         v-for="(link,index) in links"
         :key="index"
-        class="hidden-xs-only"
+        class="hidden-sm-and-down"
       >
         <v-btn class="primary--text" block flat :to="link.route" nuxt>
           {{ link.title }}
