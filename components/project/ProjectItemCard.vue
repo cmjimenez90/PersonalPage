@@ -44,12 +44,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.project-item, .project-description
+.project-item
     background-color : var(--v-primary-base)
     color: var(--v-secondary-base)
     font-size: 1.1em
 .project-title
-  color: var(--v-secondary-base)
   font-size: 1.4rem 
 .project-description
     margin: 20px 15px
