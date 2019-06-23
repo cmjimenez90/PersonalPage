@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout>
       <v-flex shrink mr-2>
-        <BlogPostFilter :blog-post="blogPost" @filter-change="updateBlogPostListContainer($event)" />
+        <BlogPostFilter />
       </v-flex>
       <v-flex>
         <BlogPostListContainer :blog-posts="filteredPost" />
@@ -20,21 +20,13 @@ export default {
     BlogPostListContainer,
     BlogPostFilter
   },
-  data: function() {
-    return {
-      blogPost: this.$store.state.blog.list,
-      filteredPost: this.$store.state.blog.list
-    }
-  },
-  methods: {
-    updateBlogPostListContainer(filteredPost) {
-      this.filteredPost = filteredPost
+  computed: {
+    filteredPost: function() {
+      return this.$store.getters['blog/filteredBlogList']
     }
   },
   async fetch({ store }) {
-    await store.dispatch('blog/fetchBlogPosts')
-    await store.dispatch('blog/fetchCategories')
-    await store.dispatch('blog/fetchTags')
+    await store.dispatch('blog/initializeBlogStore')
   }
 }
 </script>

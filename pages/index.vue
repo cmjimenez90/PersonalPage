@@ -33,7 +33,7 @@ export default {
   },
   async fetch({ store }) {
     await store.dispatch('projects/fetchProjects')
-    await store.dispatch('blog/fetchBlogPosts')
+    await store.dispatch('blog/initializeBlogStore')
   }
 }
 </script>
