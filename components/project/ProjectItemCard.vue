@@ -1,12 +1,12 @@
 <template>
-  <v-card class="project-item">
-    <v-layout column fill-height>
+  <v-card>
+    <v-layout class="project-item" column fill-height>
       <v-flex class="project-title" py-2 mb-2>
         <h3 class="text-xs-center">
           {{ project.project_title }}
         </h3>
       </v-flex>
-      <v-flex mb-1>
+      <v-flex class="project-image" mb-1>
         <v-img :src="project.project_image" height="125" contain alt="reference picture of " />
       </v-flex>
       <v-flex class="project-description" fill-height>
@@ -45,9 +45,8 @@ export default {
 
 <style lang="stylus" scoped>
 .project-item
-    background-color : var(--v-primary-base)
-    color: var(--v-secondary-base)
-    font-size: 1.1em
+  background-color: var(--v-primary-base)
+  color: var(--v-secondary-base)
 .project-title
   font-size: 1.4rem 
 .project-description
