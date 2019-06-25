@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="page-container">
+  <v-container fluid>
     <v-layout :column="$vuetify.breakpoint.smAndDown">
       <v-flex v-show="$vuetify.breakpoint.mdAndUp" shrink mr-2>
         <BlogPostFilter />
@@ -37,7 +37,4 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.page-container
-  height: 100vh
-  margin-bottom: 2rem
 </style>

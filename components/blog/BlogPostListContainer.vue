@@ -1,5 +1,5 @@
 <template>
-  <div class="list-container">
+  <v-layout column class="list-container">
     <v-toolbar class="container-heading secondary primary--text" flat>
       <v-toolbar-title>
         <h3>Blog Post</h3>
@@ -10,7 +10,7 @@
     <ul>
       <BlogPostListItem v-for="(post,index) in sortedBlogPost" :key="index" :post="post" />
     </ul>
-  </div>
+  </v-layout>
 </template>
 
 <script>
@@ -107,6 +107,7 @@ export default {
 <style lang="stylus" scoped>
 .list-container 
   width: 100%
+  min-height: 500px
   ul
     list-style: none
     margin: 0
