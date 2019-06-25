@@ -1,6 +1,6 @@
 <template>
   <div class="list-container">
-    <v-toolbar class="container-heading secondary primary--text">
+    <v-toolbar class="container-heading secondary primary--text" flat>
       <v-toolbar-title>
         <h3>Blog Post</h3>
       </v-toolbar-title>

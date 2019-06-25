@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="page-container">
     <v-layout :column="$vuetify.breakpoint.smAndDown">
       <v-flex v-show="$vuetify.breakpoint.mdAndUp" shrink mr-2>
         <BlogPostFilter />
       </v-flex>
-      <v-flex v-show="$vuetify.breakpoint.smAndDown" mb-2>
+      <v-flex v-show="$vuetify.breakpoint.smAndDown">
         <HorizontalBlogPostFilter />
       </v-flex>
       <v-flex>
@@ -37,4 +37,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.page-container
+  height: 100vh
+  margin-bottom: 2rem
 </style>
