@@ -1,6 +1,6 @@
 <template>
   <div class="list-container">
-    <v-toolbar class="container-heading">
+    <v-toolbar class="container-heading secondary primary--text">
       <v-toolbar-title>
         <h3>Blog Post</h3>
       </v-toolbar-title>
@@ -114,9 +114,7 @@ export default {
   li
     margin-bottom: .4rem
 .container-heading
-  background-color: var(--v-secondary-base)
   margin-bottom: 1rem
-  color: var(--v-primary-base)
   h3, span
     text-transform: uppercase
     font-size: 2rem  

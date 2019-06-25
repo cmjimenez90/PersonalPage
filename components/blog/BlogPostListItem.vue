@@ -1,8 +1,8 @@
 <template>
   <li>
-    <v-card class="post-item" nuxt :to="linkToPost">
+    <v-card class="post-item primary secondary--text" nuxt :to="linkToPost">
       <v-layout column>
-        <div class="post-heading">
+        <div class="post-heading secondary primary--text">
           <span class="post-category">
             {{ post.categories[0].name }}
           </span>
@@ -20,7 +20,7 @@
           <v-chip
             v-for="tag in post.tags"
             :key="tag.slug"
-            class="tag-chip"
+            class="tag-chip secondary primary--text"
             small
             label
             @click.stop.prevent="$emit('tag-selected',tag)"
@@ -55,8 +55,6 @@ export default {
 
 <style lang="stylus" scoped>
 .post-item
-  background-color: var(--v-primary-base)
-  color: var(--v-secondary-base)
   font-size: 1.3em
 .post-body p
   padding: 0 2rem
@@ -67,8 +65,6 @@ export default {
   justify-content: space-between
   align-items: center
   padding: 2rem 1rem
-  background-color: var(--v-secondary-base)
-  color: var(--v-primary-base)
   font-weight: 600
   font-style: italic
   height: 36px
@@ -84,7 +80,5 @@ export default {
   padding: 0 1rem
   margin-bottom: 1rem
 .tag-chip
-  background-color: var(--v-primary-darken1)
-  color: var(--v-secondary-base)
   text-transform: uppercase
 </style>
