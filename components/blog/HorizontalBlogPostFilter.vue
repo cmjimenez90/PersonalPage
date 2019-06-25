@@ -9,11 +9,13 @@
           v-for="category in blogCategories" 
           :key="category.slug"
         >
-          <v-checkbox 
-            v-model="selectedBlogCategories"
-            :label="category.name"
-            :value="category"
-          />
+          <v-list-tile-content>
+            <v-checkbox 
+              v-model="selectedBlogCategories"
+              :label="category.name"
+              :value="category"
+            />
+          </v-list-tile-content>
         </v-list-tile>
         <v-subheader class="secondary--text">
           Tags
@@ -22,11 +24,13 @@
           v-for="tag in blogTags" 
           :key="tag.slug"
         >
-          <v-checkbox
-            v-model="selectedBlogTags"
-            :label="tag.name"
-            :value="tag"
-          />
+          <v-list-tile-content>
+            <v-checkbox
+              v-model="selectedBlogTags"
+              :label="tag.name"
+              :value="tag"
+            />
+          </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
