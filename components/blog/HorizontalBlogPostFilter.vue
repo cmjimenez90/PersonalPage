@@ -1,5 +1,5 @@
 <template>
-  <v>
+  <div>
     <v-navigation-drawer v-model="drawer" class="primary" temporary disable-resize-watcher absolute>
       <v-list>
         <v-subheader class="secondary--text">
@@ -44,9 +44,7 @@
       </v-btn>
       </v-layout>
     </v-toolbar>
-    </div>
-    </v-layout>
-  </v>
+  </div>
 </template>
 
 <script>
