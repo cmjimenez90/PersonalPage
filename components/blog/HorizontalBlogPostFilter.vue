@@ -35,11 +35,11 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar flat class="secondary horizontal-filter">
-      <v-layout justify-end/>
-      <v-btn class="primary secondary--text" flat @click="drawer = !drawer">
+      <v-layout justify-end />
+      <v-btn class="primary secondary--text" small @click="drawer = !drawer">
         Filter<v-icon>filter_list</v-icon>
       </v-btn>
-      <v-btn class="primary secondary--text" flat @click="clearFilter()">
+      <v-btn class="primary secondary--text" small @click="clearFilter()">
         Reset
       </v-btn>
       </v-layout>

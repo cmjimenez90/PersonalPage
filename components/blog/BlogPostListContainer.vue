@@ -1,11 +1,12 @@
 <template>
   <v-layout column class="list-container">
     <v-toolbar class="container-heading secondary primary--text" flat>
-      <v-toolbar-title>
-        <h3>Blog Post</h3>
-      </v-toolbar-title>
-      <v-spacer />
-      <BlogListSortButton @new-sort-by="currentSort = $event" />
+      <v-layout justify-space-between>
+        <v-toolbar-title>
+          <h3>Blog Post</h3>
+        </v-toolbar-title>
+        <BlogListSortButton @new-sort-by="currentSort = $event" />
+      </v-layout>
     </v-toolbar>
     <ul>
       <BlogPostListItem v-for="(post,index) in sortedBlogPost" :key="index" :post="post" />
