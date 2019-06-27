@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" temporary disable-resize-watcher absolute>
-      <v-list class="primary">
+    <v-navigation-drawer v-model="drawer" class="primary" temporary disable-resize-watcher absolute>
+      <v-list>
         <v-subheader class="secondary--text">
           Categories
         </v-subheader>
