@@ -13,6 +13,9 @@ export const mutations = {
   setBlogPost(state, blogPosts) {
     state.blogList = blogPosts
   },
+  setFetch(state) {
+    state.fetched = true
+  },
   setCategories(state, categories) {
     state.categories = categories
   },
@@ -41,7 +44,7 @@ export const actions = {
       commit('setCategories', response.data.data)
       response = await butter.tag.list()
       commit('setTags', response.data.data)
-      this.fetched = true
+      commit('setFetch')
     }
   }
 }
@@ -95,5 +98,17 @@ export const getters = {
   },
   selectedBlogCategories: state => {
     return state.selectedFilterCategories
+  },
+  nextBlogPost: state => slug => {
+    const currentPost = state.blogList.find(post => post.slug === slug)
+    if (!currentPost) return {}
+    const nextBlogPostIndex = state.blogList.indexOf(currentPost) - 1
+    return state.blogList[nextBlogPostIndex]
+  },
+  previousBlogPost: state => slug => {
+    const currentPost = state.blogList.find(post => post.slug === slug)
+    if (!currentPost) return {}
+    const previousBlogPostIndex = state.blogList.indexOf(currentPost) + 1
+    return state.blogList[previousBlogPostIndex]
   }
 }

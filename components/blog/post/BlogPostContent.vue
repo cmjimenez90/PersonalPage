@@ -1,26 +1,15 @@
 <template>
-  <v-container>
-    <v-layout>
-      <section class="post-content">
-        <h1>{{ post.title }}</h1>
-        <section v-html="post.body" />
-      </section>
-    </v-layout>
-  </v-container>
+  <section class="post-content">
+    <section v-html="post.body" />
+  </section>
 </template>
 
 <script>
 export default {
-  layout: 'default',
-  asyncData({ params, error, store, payload }) {
-    if (payload) {
-      // eslint-disable-next-line no-console
-      console.log(payload)
-      return { post: payload }
-    } else {
-      // eslint-disable-next-line no-console
-      console.log(params)
-      return { post: store.getters['blog/blogPostBySlug'](params.title) }
+  props: {
+    post: {
+      type: Object,
+      required: true
     }
   }
 }
