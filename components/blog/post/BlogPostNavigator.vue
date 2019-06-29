@@ -4,8 +4,8 @@
       More Post
     </h3>
     <v-layout justify-space-between wrap align-center>
-      <BlogPostLink v-if="previousPost" :link="previousPost.slug" :text="previousPost.title" prev />
-      <BlogPostLink v-if="nextPost" :link="nextPost.slug" :text="nextPost.title" />
+      <BlogPostLink v-if="previousPost" :link="/blog/+previousPost.slug" :text="previousPost.title" prev />
+      <BlogPostLink v-if="nextPost" :link="/blog/+nextPost.slug" :text="nextPost.title" />
     </v-layout>
   </v-layout>
 </template>
