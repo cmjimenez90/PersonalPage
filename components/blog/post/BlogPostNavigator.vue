@@ -3,7 +3,7 @@
     <h3 class="title text-xs-center secondary--text text--darken-1">
       More Post
     </h3>
-    <v-layout justify-space-between wrap align-center>
+    <v-layout :class="linkLayout">
       <BlogPostLink v-if="previousPost" :link="/blog/+previousPost.slug" :text="previousPost.title" prev />
       <BlogPostLink v-if="nextPost" :link="/blog/+nextPost.slug" :text="nextPost.title" />
     </v-layout>
@@ -26,6 +26,18 @@ export default {
     },
     nextPost: function() {
       return this.$store.getters['blog/nextBlogPost'](this.currentPostSlug)
+    },
+    linkLayout: function() {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return {
+          column: true,
+          'align-center': true
+        }
+      }
+      return {
+        'justify-space-between': true,
+        'align-center': true
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
-  <section class="post-content">
+  <div class="post-content">
     <section v-html="post.body" />
-  </section>
+  </div>
 </template>
 
 <script>

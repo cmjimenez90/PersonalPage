@@ -1,20 +1,11 @@
 <template>
-  <v-layout column>
-    <v-layout secondary--text text--darken-1 justify-space-between wrap>
-      <v-layout column>
-        <h1>{{ post.title }}</h1>
-        <h2 class="ml-2">
-          Author: {{ authorName }}
-        </h2>
-      </v-layout>
-      <v-layout justify-end>
-        <h3>
-          Published: <span>
-            {{ publishDate }}
-          </span>
-        </h3>
-      </v-layout>
-    </v-layout>
+  <v-layout column secondary--text text--darken-1>
+    <h1>{{ post.title }}</h1>
+    <h2 class="pl-2">
+      Published: <span>
+        {{ publishDate }}
+      </span>
+    </h2>
     <v-divider />
   </v-layout>
 </template>
