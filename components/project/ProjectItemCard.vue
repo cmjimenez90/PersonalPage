@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card :href="project.project_vc_url">
     <v-layout class="project-item" column fill-height>
       <v-flex class="project-title" py-2 mb-2>
         <h3 class="text-xs-center">
@@ -15,8 +15,7 @@
         </p>
       </v-flex>
       <v-flex class="project-links">
-        <v-layout justify-space-around>
-          <ImageLinkButton v-if="project.project_vc_url !== ''" :href="project.project_vc_url" :img-src="project.project_vc_icon" />
+        <v-layout justify-center>
           <ImageLinkButton v-if="project.project_url !== ''" :href="project.project_url" :img-src="project.project_url_icon" />
         </v-layout>
       </v-flex>
