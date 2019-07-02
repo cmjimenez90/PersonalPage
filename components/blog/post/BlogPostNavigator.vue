@@ -28,7 +28,7 @@ export default {
       return this.$store.getters['blog/nextBlogPost'](this.currentPostSlug)
     },
     linkLayout: function() {
-      if (this.$vuetify.breakpoint.smAndDown) {
+      if (this.$vuetify.breakpoint.xsOnly) {
         return {
           column: true,
           'align-center': true

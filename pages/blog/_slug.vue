@@ -1,7 +1,7 @@
 <template>
   <v-container fill-height>
     <v-layout column>
-      <PostHeading :post="post" />
+      <PostHeading :post="post" class="mb-2" />
       <PostContent :post="post" />
       <PostNavigator :current-post-slug="post.slug" />
     </v-layout>
