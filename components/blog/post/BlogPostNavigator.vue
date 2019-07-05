@@ -1,7 +1,7 @@
 <template>
   <v-layout column>
     <h3 class="title text-xs-center secondary--text text--darken-1">
-      More Post
+      Read Another Post
     </h3>
     <v-layout :class="linkLayout">
       <BlogPostLink v-if="previousPost" :link="/blog/+previousPost.slug" :text="previousPost.title" prev />
