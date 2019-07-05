@@ -71,7 +71,6 @@ export default {
 .post-title
   padding-top: .5rem
   text-align: center
-  text-transform: uppercase
   font-size: 1.4rem
 .post-tags
   display: flex
