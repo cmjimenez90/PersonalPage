@@ -1,12 +1,14 @@
 <template>
   <v-layout column>
-    <h3 class="title text-xs-center secondary--text text--darken-1">
-      Read Another Post
-    </h3>
-    <v-layout :class="linkLayout">
-      <BlogPostLink v-if="previousPost" :link="/blog/+previousPost.slug" :text="previousPost.title" prev />
-      <BlogPostLink v-if="nextPost" :link="/blog/+nextPost.slug" :text="nextPost.title" />
-    </v-layout>
+    <div v-if="!isOnlyPost">
+      <h3 class="title text-xs-center secondary--text text--darken-1">
+        Read Another Post
+      </h3>
+      <v-layout :class="linkLayout">
+        <BlogPostLink v-if="previousPost" :link="/blog/+previousPost.slug" :text="previousPost.title" prev />
+        <BlogPostLink v-if="nextPost" :link="/blog/+nextPost.slug" :text="nextPost.title" />
+      </v-layout>
+    </div>
   </v-layout>
 </template>
 
@@ -21,6 +23,10 @@ export default {
     }
   },
   computed: {
+    isOnlyPost: function() {
+      if (!this.previousPost && !this.nextPost) return true
+      return false
+    },
     previousPost: function() {
       return this.$store.getters['blog/previousBlogPost'](this.currentPostSlug)
     },
