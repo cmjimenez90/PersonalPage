@@ -23,7 +23,7 @@
             class="tag-chip secondary primary--text"
             small
             label
-            @click.stop.prevent="$emit('tag-selected',tag)"
+            disabled
           >
             {{ tag.name }}
           </v-chip>
@@ -81,4 +81,6 @@ export default {
   margin-bottom: 1rem
 .tag-chip
   text-transform: uppercase
+  :hover
+    cursor: pointer
 </style>
