@@ -1,5 +1,5 @@
 <template>
-  <v-btn :href="href" flat target="_blank">
+  <v-btn :href="href" flat target="">
     <v-img :src="imgSrc" height="35" width="125" contain />
   </v-btn>
 </template>
