@@ -1,9 +1,11 @@
 <template>
   <v-container>
     <v-layout column>
-      <PostHeading :post="post" class="mb-2" />
-      <PostContent :post="post" class="mb-3" />
-      <PostNavigator :current-post-slug="post.slug" />
+      <v-card class="primary pa-4">
+        <PostHeading :post="post" class="mb-2" />
+        <PostContent :post="post" class="mb-3" />
+        <PostNavigator :current-post-slug="post.slug" />
+      </v-card>
     </v-layout>
   </v-container>
 </template>
