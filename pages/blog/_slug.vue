@@ -1,7 +1,8 @@
 <template>
   <v-container>
     <v-layout column>
-      <PostHeading :post="post" class="mb-2" />
+      <PostHeading :post="post" />
+      <v-divider class="mb-2" />
       <PostContent :post="post" class="mb-3" />
       <PostNavigator :current-post-slug="post.slug" />
     </v-layout>
@@ -45,3 +46,10 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.heading-divider
+  width: 100%
+  height: 5px
+  border: 1px solid red
+</style>

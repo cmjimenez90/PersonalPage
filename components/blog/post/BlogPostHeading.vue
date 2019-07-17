@@ -6,7 +6,6 @@
         {{ publishDate }}
       </span>
     </h2>
-    <v-divider />
   </v-layout>
 </template>
 
