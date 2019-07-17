@@ -1,11 +1,9 @@
 <template>
   <v-container>
     <v-layout column>
-      <v-card class="primary pa-4">
-        <PostHeading :post="post" class="mb-2" />
-        <PostContent :post="post" class="mb-3" />
-        <PostNavigator :current-post-slug="post.slug" />
-      </v-card>
+      <PostHeading :post="post" class="mb-2" />
+      <PostContent :post="post" class="mb-3" />
+      <PostNavigator :current-post-slug="post.slug" />
     </v-layout>
   </v-container>
 </template>
@@ -16,6 +14,15 @@ import PostNavigator from '~/components/blog/post/BlogPostNavigator.vue'
 import PostHeading from '~/components/blog/post/BlogPostHeading.vue'
 export default {
   layout: 'default',
+  head() {
+    return {
+      title: this.post.title,
+      titleTemplate: '%s | Carlos Jimenez',
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.summary }
+      ]
+    }
+  },
   components: {
     PostContent,
     PostNavigator,
