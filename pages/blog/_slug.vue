@@ -2,7 +2,7 @@
   <v-container>
     <v-layout column>
       <PostHeading :post="post" />
-      <v-divider class="mb-2" />
+      <v-divider class="mb-2 accent" />
       <PostContent :post="post" class="mb-3" />
       <PostNavigator :current-post-slug="post.slug" />
     </v-layout>
