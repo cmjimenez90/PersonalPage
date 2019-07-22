@@ -1,10 +1,13 @@
 <template>
   <v-layout column secondary--text text--darken-1>
     <h1>{{ post.title }}</h1>
-    <h2 class="pl-2 mb-2">
+    <h2 class="pl-2">
       Published: <span>
         {{ publishDate }}
       </span>
+    </h2>
+    <h2 class="pl-2 mb-2">
+      Author: {{ authorName }}
     </h2>
   </v-layout>
 </template>
