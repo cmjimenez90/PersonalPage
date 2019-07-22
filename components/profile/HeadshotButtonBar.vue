@@ -1,16 +1,12 @@
 <template>
-  <v-layout row>
-    <v-flex />
-    <v-layout>
-      <v-flex v-for="link in imageLinks" :key="link.href">
-        <IconLinkButton
-          :href="link.href"
-          :img-src="link.imgSrc"
-          :img-src-alternate="link.imgSrcAlternate"
-        />
-      </v-flex>
-    </v-layout>
-    <v-flex />
+  <v-layout row justify-center>
+    <IconLinkButton
+      v-for="link in imageLinks"
+      :key="link.href"
+      :href="link.href"
+      :img-src="link.imgSrc"
+      :img-src-alternate="link.imgSrcAlternate"
+    />
   </v-layout>
 </template>
 
