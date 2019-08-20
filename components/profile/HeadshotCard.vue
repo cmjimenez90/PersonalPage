@@ -3,7 +3,7 @@
     <v-layout column>
       <v-flex id="headshot-image" class="text-xs-center" py-3>
         <v-avatar size="160">
-          <v-img src="/self_prof_bw.jpg" alt="Headshot of Carlos Jimenez" />
+          <v-img src="/self_prof_bw.png" alt="Headshot of Carlos Jimenez" />
         </v-avatar>
       </v-flex>
       <v-flex id="headshot-body" class="text-xs-center" py-2>

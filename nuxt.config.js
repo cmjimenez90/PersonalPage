@@ -17,7 +17,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/cj_icon_base.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/cj_icon_base.png' },
       {
         rel: 'stylesheet',
         href:
