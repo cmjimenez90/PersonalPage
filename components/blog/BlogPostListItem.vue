@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     publishDate: function() {
-      return moment(this.post.published).format('MMM do, YYYY')
+      return moment(this.post.published).format('LLL')
     },
     linkToPost: function() {
       return '/blog/' + this.post.slug

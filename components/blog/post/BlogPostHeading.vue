@@ -1,14 +1,9 @@
 <template>
   <v-layout column secondary--text text--darken-1>
     <h1>{{ post.title }}</h1>
-    <h2 class="pl-2">
-      Published: <span>
-        {{ publishDate }}
-      </span>
-    </h2>
-    <h2 class="pl-2 mb-2">
-      Author: {{ authorName }}
-    </h2>
+    <span class="publish-date pl-2">
+      Published: {{ publishDate }}
+    </span>
   </v-layout>
 </template>
 
@@ -23,7 +18,7 @@ export default {
   },
   computed: {
     publishDate: function() {
-      return moment(this.post.published).format('MMM do, YYYY')
+      return moment(this.post.published).format('LLL')
     },
     authorName: function() {
       return `${this.post.author.first_name} ${this.post.author.last_name}`
@@ -32,5 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.publish-date
+  layout: block
 </style>
