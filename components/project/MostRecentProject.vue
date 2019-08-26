@@ -4,7 +4,7 @@
       <h2>Most Recent Project</h2>
     </v-flex>
     <v-flex>
-      <ProjectItemCard :project="projects[0]" />
+      <ProjectItemCard :project="project" />
     </v-flex>
   </v-card>
 </template>
@@ -16,8 +16,8 @@ export default {
     ProjectItemCard
   },
   props: {
-    projects: {
-      type: Array,
+    project: {
+      type: Object,
       required: true
     }
   }

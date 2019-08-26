@@ -5,12 +5,12 @@
         <HeadshotCard />
       </v-flex>
       <v-flex>
-        <MostRecentProject :projects="projects" />
+        <MostRecentProject :project="mostRecentProject" />
       </v-flex>
     </v-layout>
     <v-layout>
       <v-flex>
-        <ProjectListing :projects="projects.slice(1)" />
+        <ProjectListing :projects="otherProjects" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -27,8 +27,11 @@ export default {
     ProjectListing
   },
   computed: {
-    projects: function() {
-      return this.$store.state.projects.list
+    mostRecentProject: function() {
+      return this.$store.state.projects.list[0]
+    },
+    otherProjects: function() {
+      return this.$store.state.projects.list.slice(1)
     }
   },
   async fetch({ store }) {
