@@ -1,22 +1,22 @@
 <template>
-  <v-card :href="project.project_vc_url">
+  <v-card :href="project.vc_url">
     <v-layout class="project-item" column fill-height>
       <v-flex class="project-title" py-2 mb-2>
         <h3 class="text-xs-center">
-          {{ project.project_title }}
+          {{ project.title }}
         </h3>
       </v-flex>
       <v-flex class="project-image" mb-1>
-        <v-img :src="project.project_image" height="125" contain alt="reference picture of " />
+        <v-img :src="project.image" height="125" contain alt="reference picture of " />
       </v-flex>
       <v-flex class="project-description" fill-height>
         <p>
-          {{ project.project_description }}
+          {{ project.description }}
         </p>
       </v-flex>
       <v-flex class="project-links">
         <v-layout justify-center>
-          <ImageLinkButton v-if="project.project_url !== ''" :href="project.project_url" :img-src="project.project_url_icon" />
+          <ImageLinkButton v-if="project.url !== ''" :href="project.url" :img-src="project.url_icon" />
         </v-layout>
       </v-flex>
     </v-layout>
@@ -33,8 +33,8 @@ export default {
       type: Object,
       default: function() {
         return {
-          project_title: 'MISSING TITLE',
-          project_description: 'MISSING DESCRIPTION'
+          title: 'MISSING TITLE',
+          description: 'MISSING DESCRIPTION'
         }
       }
     }
