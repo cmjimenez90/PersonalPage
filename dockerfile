@@ -1,8 +1,8 @@
-FROM node:8-alpine as build
-COPY  . /build/website
-WORKDIR /build/website
+FROM node:latest as dev
+ENV WRK_DIR /app/
+COPY package*.json ${WRK_DIR}
+WORKDIR ${WRK_DIR}
 RUN npm install
-RUN npm run generate
-
-FROM nginx
-COPY --from=build /build/website/dist /usr/share/nginx/html
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3000
+EXPOSE 3000

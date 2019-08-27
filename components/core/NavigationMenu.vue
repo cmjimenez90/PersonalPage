@@ -1,39 +1,38 @@
 <template>
-  <span>
+  <nav class="navigation-menu">
     <v-navigation-drawer
       v-model="drawer"
       app
       disable-resize-watcher
-      class="primary darken-4"
+      class="secondary"
     >
       <v-list>
         <v-list-tile
           v-for="(link,index) in links"
           :key="index"
-          dark
         >
           <v-list-tile-content>
-            <v-btn block flat :to="link.route" nuxt>
+            <v-btn class="primary--text" block flat :to="link.route" nuxt>
               {{ link.title }}
             </v-btn>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar class="primary darken-4" dark>
-      <v-toolbar-side-icon class="hidden-sm-and-up" @click="drawer = !drawer" />
+    <v-toolbar class="secondary primary--text" dark>
+      <v-toolbar-side-icon class="hidden-md-and-up primary--text" @click="drawer = !drawer" />
       <v-spacer />
       <v-toolbar-items
         v-for="(link,index) in links"
         :key="index"
-        class="hidden-xs-only"
+        class="hidden-sm-and-down"
       >
-        <v-btn block flat :to="link.route" nuxt>
+        <v-btn class="primary--text" block flat :to="link.route" nuxt>
           {{ link.title }}
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-  </span>
+  </nav>
 </template>
 
 <script>
@@ -55,3 +54,6 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+</style>

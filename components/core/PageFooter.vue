@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="py-2 primary darken-4" height="auto" dark :class="{'py-3': $vuetify.breakpoint.smAndDown}">
+  <v-footer class="py-2 secondary darken-1" height="auto" dark :class="{'py-3': $vuetify.breakpoint.smAndDown}">
     <v-layout
       wrap
       class="text-xs-center"

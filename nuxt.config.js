@@ -1,3 +1,5 @@
+import { butter } from './buttercms'
+
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
@@ -8,7 +10,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'The Problem Solver | Carlos Jimenez',
+    title: 'Carlos M Jimenez',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,7 +34,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/style/app.styl'],
+  css: ['~/assets/style/app.styl', '~/assets/style/main.styl'],
 
   /*
   ** Plugins to load before mounting the App
@@ -44,13 +46,18 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/google-analytics'
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  googleAnalytics: {
+    id: 'UA-146223618-1'
   },
 
   /*
@@ -78,6 +85,22 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    }
+  },
+  watchers: {
+    webpack: {
+      poll: true
+    }
+  },
+  generate: {
+    routes: async function() {
+      const response = await butter.post.list()
+      return response.data.data.map(post => {
+        return {
+          route: '/blog/' + post.slug,
+          payload: post
+        }
+      })
     }
   }
 }
