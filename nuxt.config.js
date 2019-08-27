@@ -10,7 +10,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'The Problem Solver | Carlos Jimenez',
+    title: 'Carlos M Jimenez',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
