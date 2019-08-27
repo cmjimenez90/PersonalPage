@@ -11,7 +11,7 @@
           Carlos M. Jimenez
         </h1>
         <h2 class="subheading">
-          Developer, Technical Support Technician, Problem Solver
+          Developer and Technical Support Technician
         </h2>
       </v-flex>
       <v-flex>
