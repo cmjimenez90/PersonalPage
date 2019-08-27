@@ -3,7 +3,7 @@
     <v-layout column>
       <v-flex id="headshot-image" class="text-xs-center" py-3>
         <v-avatar size="160">
-          <v-img src="/self_prof_bw.jpg" alt="Headshot of Carlos Jimenez" />
+          <v-img src="/self_prof_bw.png" alt="Headshot of Carlos Jimenez" />
         </v-avatar>
       </v-flex>
       <v-flex id="headshot-body" class="text-xs-center" py-2>
@@ -61,9 +61,9 @@ export default {
     background-color: var(--v-secondary-base)
 #headshot-body
     background-color: var(--v-secondary-base)
-    color: var(--v-accent-base)
-    h2
-      color: var(--v-primary-base)
+    color: var(--v-primary-base)
+  h1
+    font-weight: 500
 #headshot-buttonbar
     background-color: var(--v-primary-base)
 </style>

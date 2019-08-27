@@ -1,3 +1,5 @@
+import { butter } from './buttercms'
+
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
@@ -15,7 +17,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/cj_icon_base.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/cj_icon_base.png' },
       {
         rel: 'stylesheet',
         href:
@@ -83,6 +85,17 @@ module.exports = {
   watchers: {
     webpack: {
       poll: true
+    }
+  },
+  generate: {
+    routes: async function() {
+      const response = await butter.post.list()
+      return response.data.data.map(post => {
+        return {
+          route: '/blog/' + post.slug,
+          payload: post
+        }
+      })
     }
   }
 }

@@ -6,7 +6,6 @@
       :href="link.href"
       :img-src="link.imgSrc"
       :img-src-alternate="link.imgSrcAlternate"
-      class="mr-5"
     />
   </v-layout>
 </template>
