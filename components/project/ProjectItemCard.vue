@@ -7,7 +7,7 @@
         </h3>
       </v-flex>
       <v-flex class="project-image" mb-1>
-        <v-img :src="project.image" height="125" contain :alt="project.alt_image_text " />
+        <v-img :src="project.image" height="125" contain alt="reference picture of " />
       </v-flex>
       <v-flex class="project-description" fill-height>
         <p>

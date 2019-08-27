@@ -22,15 +22,9 @@ export default {
   layout: 'default',
   head() {
     return {
-      title: 'Blog Post',
+      title: 'Blog List',
       titleTemplate: '%s | Carlos Jimenez',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'List of blog post written by Carlos Jimenez'
-        }
-      ]
+      meta: [{ hid: 'description', name: 'description', content: 'Blog List' }]
     }
   },
   components: {
