@@ -21,10 +21,18 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      isHydrated: false
+    }
+  },
   computed: {
     isColumnOriented: function() {
-      return this.$vuetify.breakpoint.mdAndDown
+      return this.isHydrated ? this.$vuetify.breakpoint.mdAndDown : false
     }
+  },
+  mounted() {
+    this.isHydrated = true
   }
 }
 </script>
