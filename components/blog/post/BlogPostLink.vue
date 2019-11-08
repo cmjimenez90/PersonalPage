@@ -1,10 +1,10 @@
 <template>
   <v-btn flat color="primary" class="outline-btn font-weight-bold secondary--text" nuxt :to="link">
     <template v-if="prev">
-      <v-icon>navigate_before</v-icon> {{ text }}
+      <v-icon>navigate_before</v-icon>PREV
     </template>
     <template v-else>
-      {{ text }}<v-icon>navigate_next</v-icon>
+      NEXT<v-icon>navigate_next</v-icon>
     </template>
   </v-btn>
 </template>
@@ -13,10 +13,6 @@
 export default {
   props: {
     link: { type: String, required: true },
-    text: {
-      type: String,
-      required: true
-    },
     prev: {
       type: Boolean,
       required: false,
