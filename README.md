@@ -24,15 +24,12 @@ $ npm run generate
 ## run local docker dev environment
 
 ``` bash
-#Easiest (access at http://localhost:3000)
-$  docker-compose up
+#Dev environment (access at http://localhost:3000)
+$  docker-compose run --service-port dev
+$  npm install
+$  npm run dev
 ```
 
-``` bash
-#Manual (access at http://localhost:3000)
-$ docker build --rm -f "dockerfile" --target dev -t personalpage:dev .
-$ docker run --rm -d -p 3000:3000/tcp personalpage:dev
-```
 
 ``` bash
 #Run local docker static site
