@@ -5,8 +5,8 @@
         Read Another Post
       </h3>
       <v-layout :class="linkLayout">
-        <BlogPostLink v-if="previousPost" :link="/blog/+previousPost.slug" :text="previousPost.title" prev />
-        <BlogPostLink v-if="nextPost" :link="/blog/+nextPost.slug" :text="nextPost.title" />
+        <BlogPostLink v-if="previousPost" :link="/blog/+previousPost.slug" prev />
+        <BlogPostLink v-if="nextPost" :link="/blog/+nextPost.slug" />
       </v-layout>
     </div>
   </v-layout>

@@ -2,6 +2,9 @@
 
 Personal Web page based on nuxt vue vuetify and buttercms
 
+
+Version 1.0.1
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2c7938b1-98da-4f3e-89b2-278a11c06e23/deploy-status)](https://app.netlify.com/sites/eager-noyce-b8f0dd/deploys)
 
 ## Build Setup

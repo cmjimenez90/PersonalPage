@@ -46,6 +46,7 @@ export default {
     background-color: #000000
     border-radius: 4px
   pre
+    white-space: pre-wrap
     display: block
     padding: 1em
     margin: 0 0 2em
