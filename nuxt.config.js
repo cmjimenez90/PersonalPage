@@ -99,8 +99,8 @@ module.exports = {
       type: 'rss2',
       async create (feed) {
         feed.options = {
-          title: "CMJIMENEZ Blog",
-          description: "Carlos Jimenez's Blog Feed",
+          title: "CMJImenez Blog Feed",
+          description: "RSS Feed for Carlos Jimenez's Blog",
           id: "https://www.cmjimenez.com",
           link: "https://www.cmjimenez.com/blog"
         }
