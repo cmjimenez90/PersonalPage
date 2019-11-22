@@ -2,7 +2,8 @@
 
 Personal Web page based on nuxt vue vuetify and buttercms
 
-Version 1.0.1
+
+Version 1.1.0
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2c7938b1-98da-4f3e-89b2-278a11c06e23/deploy-status)](https://app.netlify.com/sites/eager-noyce-b8f0dd/deploys)
 
@@ -26,15 +27,12 @@ $ npm run generate
 ## run local docker dev environment
 
 ``` bash
-#Easiest (access at http://localhost:3000)
-$  docker-compose up
+#Dev environment (access at http://localhost:3000)
+$  docker-compose run --service-port dev
+$  npm install
+$  npm run dev
 ```
 
-``` bash
-#Manual (access at http://localhost:3000)
-$ docker build --rm -f "dockerfile" --target dev -t personalpage:dev .
-$ docker run --rm -d -p 3000:3000/tcp personalpage:dev
-```
 
 ``` bash
 #Run local docker static site
