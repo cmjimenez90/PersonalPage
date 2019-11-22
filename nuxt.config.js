@@ -1,5 +1,4 @@
 import { butter } from './buttercms'
-
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
@@ -47,7 +46,8 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/feed'
   ],
   /*
   ** Axios module configuration
@@ -92,6 +92,37 @@ module.exports = {
       poll: true
     }
   },
+  feed: [
+    {
+      path: '/blog/feed.xml',
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      async create (feed) {
+        feed.options = {
+          title: "CMJIMENEZ Blog",
+          description: "Carlos Jimenez's Blog Feed",
+          id: "https://www.cmjimenez.com",
+          link: "https://www.cmjimenez.com/blog"
+        }
+        feed.author = {
+          name: "Carlos M Jimenez",
+          email: "developer@cmjimenez.com",
+          link: "https://www.cmjimenez.com/blog"
+        }
+
+        const response = await butter.post.list();
+        for(const post of response.data.data) {
+          feed.addItem({
+            title: post.title,
+            description: post.description,
+            link: post.url,
+            id: post.slug,
+            content: post.body
+          })
+        }
+      }
+    }
+  ],
   generate: {
     routes: async function() {
       const response = await butter.post.list()
