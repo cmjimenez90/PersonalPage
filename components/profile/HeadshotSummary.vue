@@ -1,7 +1,7 @@
 <template>
   <v-layout class="summary-card">
     <v-flex ma-3>
-      <p>A developer with a strong desire to take on any challenge. Carlos is currently employed as a Applications and Systems Developer for Rowan College South Jersey while also pursuing a degree in Computer Science. In the meantime, he continues to learn new technologies while creating different tools on the side; whether it is to solve a problem at work or just for fun!</p>
+      <p>A developer with a strong desire to take on any challenge. Carlos is currently employed as a Systems and Applications Developer for Rowan College South Jersey while also pursuing a degree in Computer Science. In the meantime, he continues to learn new technologies while creating different tools on the side; whether it is to solve a problem at work or just for fun!</p>
     </v-flex>
   </v-layout>
 </template>
