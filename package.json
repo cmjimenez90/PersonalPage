@@ -20,7 +20,7 @@
     "buttercms": "^1.1.4",
     "cross-env": "^5.2.0",
     "moment": "^2.24.0",
-    "nuxt": "^2.4.0",
+    "nuxt": "^3.4.3",
     "vuetify": "^1.5.0",
     "vuetify-loader": "^1.2.0"
   },
